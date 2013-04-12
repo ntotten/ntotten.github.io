@@ -1,0 +1,22 @@
+---
+layout: post
+title: Post Categories
+description: Blog post categories on Nathan Totten's blog.
+---
+
+<ul class="nav nav-pills">
+  {% for category in site.categories order:ascending %}
+  <li><a href="#{{ category[0] | downcase | remove:' ' | remove:'.' }}">{{ category[0] }}</a></li>
+  {% endfor %}
+</ul>
+{% for category in site.categories order:ascending %}
+<h1 id="{{ category[0] | downcase | remove:' ' | remove:'.' }}">{{ category[0] }}</h1>
+<ul class="unstyled">
+  {% for page in category[1] %}  
+  <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+  {% endfor %}
+</ul>
+{% endfor %}
+
+
+
