@@ -47,7 +47,7 @@ task('minify', function() {
       'assets/css/bootstrap.min.css', 
       'assets/css/style.css'
     ],
-    fileOut: './assets/' + config.version + '.css',
+    fileOut: 'assets/' + config.version + '.css',
     callback: function(err){
       if (err) {
         console.log('Error minifying css.')
@@ -68,6 +68,51 @@ task('build', function() {
   //  console.log("TODO: SETUP OS X")
   //}
 });
+
+
+desc("Redirects")
+task('redirects', function() {
+  var files = fs.readdirSync('./_posts/');
+  for (var i = files.length - 1; i >= 0; i--) {
+    var file = files[i].replace('.md', '');
+    var year = file.substr(0, 4);
+    var month = file.substr(5, 2);
+    var day = file.substr(8, 2);
+    var slug = file.substr(11);
+
+    var yearDir = './' + year;
+    var yearExists = fs.existsSync(yearDir);
+    if (!yearExists) {
+      fs.mkdirSync(yearDir);
+    }
+
+    var monthDir = yearDir + '/' + month;
+    var monthExists = fs.existsSync(monthDir);
+    if (!monthExists) {
+      fs.mkdirSync(monthDir);
+    }
+
+    var slugDir = monthDir + '/' + slug;
+    var slugExists = fs.existsSync(slugDir); 
+    if (!slugExists) {
+      fs.mkdirSync(slugDir);
+    }
+
+    var indexFile = slugDir + '/index.html';
+    var indexExists = fs.existsSync(indexFile);
+    if (!indexExists) {
+      var url = '/' + year + '/' + month + '/' + day + '/' + slug + '/';
+      var html =  '<!DOCTYPE html>\n' + 
+                  '<html>\n' +
+                  '<head>\n' +
+                  '<meta http-equiv="content-type" content="text/html; charset=utf-8" />\n' +
+                  '<meta http-equiv="refresh" content="0;url=' + url + '" />\n' +
+                  '</head>\n' +
+                  '</html>';
+      fs.writeFileSync(indexFile, html, 'utf8');
+    }
+  };
+})
 
 
 
