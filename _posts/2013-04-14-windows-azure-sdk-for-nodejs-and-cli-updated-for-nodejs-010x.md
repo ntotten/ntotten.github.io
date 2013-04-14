@@ -13,7 +13,7 @@ To upgrade Node.js head over to [nodejs.org](http://nodejs.org) and click the in
 
     npm install azure-cli -g
 
-> Note on OS X you will need to run this command as sudo to install globally.
+> **Note**: On OS X you will need to run this command as sudo to install globally.
 
 To install the latest version of the Windows Azure SDK for Node.js in your project, you can use npm as well.
 
