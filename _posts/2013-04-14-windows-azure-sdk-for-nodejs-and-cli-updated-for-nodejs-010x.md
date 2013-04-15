@@ -7,7 +7,7 @@ categories:
 - NodeJS
 ---
 
-Good news! The Windows [Azure Cross-Platform CLI](https://github.com/WindowsAzure/azure-sdk-tools) and the [Windows Azure SDK for Node.js](https://github.com/WindowsAzure/azure-sdk-for-node/) has been updated to support Node.js version 0.10.3 and above. You can now update your installation of node and Windows Azure tools to the latest and greatest.
+Good news! The [Windows Azure Cross Platform CLI](https://github.com/WindowsAzure/azure-sdk-tools-xplat) and the [Windows Azure SDK for Node.js](https://github.com/WindowsAzure/azure-sdk-for-node/) has been updated to support Node.js version 0.10.3 and above. You can now update your installation of node and Windows Azure tools to the latest and greatest.
 
 > **Note**: Make sure you are using 0.10.3 or greater. [Guang Yang](https://twitter.com/guayan/), who is a PM on the team that writes the SDK [pointed out](https://twitter.com/guayan/status/323549326687219712) that there is a bug in earlier versions that can cause issues in the SDK.
 
@@ -21,4 +21,4 @@ To install the latest version of the Windows Azure SDK for Node.js in your proje
 
     npm install azure
 
-An alternative option is to use our one-click installers to install the SDK and tools together. You can find the [Node.js installere here](http://www.windowsazure.com/en-us/downloads/).
+An alternative option is to use our one-click installers to install the SDK and tools together. You can find the [Node.js installer here](http://www.windowsazure.com/en-us/downloads/).
