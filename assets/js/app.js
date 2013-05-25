@@ -9,6 +9,7 @@ prettyPrint();
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-17658402-1']);
 _gaq.push(['_trackPageview']);
+setTimeout("_gaq.push(['_trackEvent', '15_seconds', 'read'])",15000);
 
 // Load External Scripts
 function loadScripts() {

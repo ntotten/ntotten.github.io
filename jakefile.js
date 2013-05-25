@@ -11,54 +11,76 @@ var compressor = require('node-minify')
 
 var windows = os.platform() == 'win32';
 
-task('default', ['minify', 'build'])
+task('default', ['assets'])
 
-desc("minify")
-task('minify', function() {
-  // Clean up old files
-  var files = fs.readdirSync('./assets/');
-  for (var i = files.length - 1; i >= 0; i--) {
-    var file = files[i];
-    if (path.extname(file) == '.js' || path.extname(file) == '.css') {
-      fs.unlinkSync('./assets/' + file);
-    }
-  };
+desc("assets")
+task('assets', ['minify:all', 'version']);
 
-  // Using UglifyJS for JS
-  new compressor.minify({
-    type: windows ? 'uglifyjs' : 'gcc',
-    fileIn: [
-      'assets/js/prettify.js', 
-      'assets/js/app.js'
-    ],
-    fileOut: 'assets/' + config.version + '.js',
-    callback: function(err){
-      if (err) {
-        console.log('Error minifying javascript.')
-        console.log(err);
+
+namespace('minify', function() {
+
+  task('all', ['cleanup', 'js', 'css'])
+
+  desc("cleanup")
+  task('cleanup', function() {
+    // Clean up old files
+    var files = fs.readdirSync('./assets/');
+    for (var i = files.length - 1; i >= 0; i--) {
+      var file = files[i];
+      if (path.extname(file) == '.js' || path.extname(file) == '.css') {
+        fs.unlinkSync('./assets/' + file);
       }
-    }
+    };
   });
 
-  // Using Sqwish for CSS
-  new compressor.minify({
-    type: 'sqwish',
-    fileIn: [
-      'assets/css/bootstrap.min.css', 
-      'assets/css/style.css'
-    ],
-    fileOut: 'assets/' + config.version + '.css',
-    callback: function(err){
-      if (err) {
-        console.log('Error minifying css.')
-        console.log(err);
+  desc('js')
+  task('js', {async: true}, function() {
+    // Using UglifyJS for JS
+    new compressor.minify({
+      type: windows ? 'uglifyjs' : 'gcc',
+      fileIn: [
+        'assets/js/prettify.js', 
+        'assets/js/app.js'
+      ],
+      fileOut: 'assets/' + config.version + '.js',
+      callback: function(err){
+        if (err) {
+          console.error('Error minifying javascript.')
+          console.error(err);
+        } else {
+          console.log('JS Minified')
+        }
+        complete();
       }
-    }
+    });  
   });
+
+  desc('css')
+  task('css', {async: true}, function() {
+    // Using Sqwish for CSS
+    new compressor.minify({
+      type: 'sqwish',
+      fileIn: [
+        'assets/css/bootstrap.min.css', 
+        'assets/css/style.css'
+      ],
+      fileOut: 'assets/' + config.version + '.css',
+      callback: function(err){
+        if (err) {
+          console.error('Error minifying css.')
+          console.error(err);
+        } else {
+          console.log('CSS minified')
+        }
+        complete();
+      }
+    });
+  });
+
 });
 
-desc("Build")
-task('build', function() {
+desc("version")
+task('version', function() {
   console.log('Setting config version.')
   setConfigValue('version', config.version);
 
