@@ -15,7 +15,7 @@ You can find the full source to this action filter in [this Gist](https://gist.g
 
 Using the filter is easy. Simply add the filter to your controller and specific the IP address or network you want to allow.
 
-	[IPFilter("192.168.0.0/24")]
+	[IPFilter("123.45.0.0/16")]
 	public class HomeController : Controller
 	{
 	    public ActionResult Index()
@@ -26,7 +26,7 @@ Using the filter is easy. Simply add the filter to your controller and specific 
 
 Optionally, you can choose to block localhost access from your site. Localhost is allowed by default.
 
-    [IPFilter("131.107.0.0/16", AllowLocalhost = false)]
+    [IPFilter("123.45.0.0/16", AllowLocalhost = false)]
     public class HomeController : Controller
     {
         public ActionResult Index()
