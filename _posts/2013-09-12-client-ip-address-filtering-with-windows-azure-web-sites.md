@@ -42,7 +42,8 @@ Optionally, you can choose to block localhost access from your site. Localhost i
         var clientIP = httpContext.Request.Headers["X-Forwarded-For"];
         var isAuthorized = IsAuthorizedIPAddress(this.AuthorizedIPAddress, clientIP);
 
-        return isAuthorized || (this.AllowLocalhost && (httpContext.Request.Url.Host == "localhost"));
+        return isAuthorized || 
+              (this.AllowLocalhost && (httpContext.Request.Url.Host == "localhost"));
     }
 
 Second, this is just a sample I wrote quickly. If you are using this for something that requires real security or solid error handling, please look over the code first.
