@@ -7,7 +7,7 @@ categories:
 - Windows Azure
 ---
 
-UPDATE: This feature is now officially supported using the ```<ipSecurity>``` configuration in web.config. [More details on the Windows Azure blog](http://blogs.msdn.com/b/windowsazure/archive/2013/12/09/ip-and-domain-restrictions-for-windows-azure-web-sites.aspx).
+**UPDATE**: This feature is now officially supported using the ```<ipSecurity>``` configuration in web.config. [More details on the Windows Azure blog](http://blogs.msdn.com/b/windowsazure/archive/2013/12/09/ip-and-domain-restrictions-for-windows-azure-web-sites.aspx).
 
 I was recently working on a prototype for an internal project that I wanted to publish to Windows Azure Web Sites. Because the project is for Microsoft use only I needed to either setup authentication or filter by IP address. Authentication wasn't really what I wanted because I wanted the prototype to be easily shared within the company. Security wasn't super critical, but it needed to be good enough. My initial thought was to just use the ```<ipSecurity>``` configuration in web.config. However, I realized that this module isn't actually installed on Windows Azure Web Sites and that even if it was, it wouldn't work for my needs because sites in WAWS sit behind ARR servers.
 
