@@ -5,7 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+    {% if site.debug %}
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
+    {% else %}
     <link href="/assets/{{ site.version }}.css" rel="stylesheet" type="text/css">
+    {% endif %}
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -19,17 +24,7 @@
     <meta property="og:image" content="http://ntotten.com/assets/img/ntotten1000.png"/>
     <meta property="og:site_name" content="{{ site.name }}"/>
     <meta property="fb:admins" content="14812017"/>
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@ntotten">
-    <meta name="twitter:creator" content="@ntotten">
-    <meta name="twitter:url" content="http://ntotten.com{{ page.url | remove:'index.html'  }}">
-    <meta name="twitter:title" content="{{ page.title }}">
-    {% if page.description %}<meta name="twitter:description" content="{{ page.description }}">{% endif %}
-    <meta name="twitter:image" content="http://ntotten.com/assets/img/ntotten200.png">
-    <meta name="msapplication-starturl" content="./" />
-    <meta name="msapplication-TileImage" content="http://www.gravatar.com/avatar/d48b998c2dce49ca309710eba498c562.png?s=144" />
     <meta name="application-name" content="{{ site.name }}" />
-    <meta name="msapplication-tooltip" content="{{ site.name }}" />
     <link rel="shortcut icon" type="image/x-icon" href="http://www.gravatar.com/avatar/d48b998c2dce49ca309710eba498c562.png?s=16" sizes="16x16" />
     <link rel="icon" type="image/x-icon" href="http://www.gravatar.com/avatar/d48b998c2dce49ca309710eba498c562.png?s=16" sizes="16x16" />
     <link rel="apple-touch-icon" href="http://www.gravatar.com/avatar/d48b998c2dce49ca309710eba498c562.png?s=57">
