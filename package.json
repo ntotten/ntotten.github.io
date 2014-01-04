@@ -1,9 +1,10 @@
 {
   "name": "ntotten",
   "version": "1.0.0",
-  "dependencies": {
-    "node-minify": "~0.7.2",
-    "uuid": "~1.4.1",
-    "jake": "~0.5.13"
+  "devDependencies": {
+    "uuid": "latest",
+    "node-minify": "latest",
+    "jake": "latest",
+    "uglifyjs": "latest"
   }
 }
