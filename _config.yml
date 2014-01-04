@@ -2,7 +2,7 @@ markdown: rdiscount
 pygments: false
 permalink: /:year/:month/:day/:title/
 paginate: 5
-version: cd8c8afb-61ca-4efa-b5cb-920d8e791b78
+version: 01e44d5e-9729-425e-bdb7-2518dd4a5897
 name: Nathan Totten's Blog
 description: Thoughts and Experiences with Software Development.
 url: http://ntotten.com
