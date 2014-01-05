@@ -6,7 +6,7 @@
 			<square150x150logo src="assets/img/square.png"/>
 			<wide310x150logo src="assets/img/wide.jpg"/>
 			<square310x310logo src="assets/img/large.jpg"/>
-			<TileColor>#000000</TileColor>
+			<TileColor>#4287CE</TileColor>
 		</tile>
 		<notification>
 			<polling-uri src="http://notifications.buildmypinnedsite.com/?feed=http://ntotten.com/feed&amp;id=1"/>
