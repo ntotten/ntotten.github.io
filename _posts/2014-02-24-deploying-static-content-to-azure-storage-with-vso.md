@@ -14,7 +14,8 @@ Note, this script assumes that your site (in this case MyWebSite) and the script
 Also, notice that I am referencing the Windows Azure PowerShell Cmdlets which are installed on the VSO build server.
 
 
-    $env:PSModulePath=$env:PSModulePath+";"+"C:\Program Files (x86)\Microsoft SDKs\Windows Azure\PowerShell"
+    $env:PSModulePath=$env:PSModulePath+";
+            "+"C:\Program Files (x86)\Microsoft SDKs\Windows Azure\PowerShell"
     Import-Module Azure
     $storageAccount = "<your storage account>"
     $storageKey = "<your storage account key>"
@@ -25,7 +26,7 @@ Also, notice that I am referencing the Windows Azure PowerShell Cmdlets which ar
         $dir = $Env:TF_BUILD_SOURCESDIRECTORY + $dir
     }
 
-    $context = New-AzureStorageContext  –StorageAccountName $storageAccount `
+    $context = New-AzureStorageContext  –StorageAccountName $storageAccount
                                         -StorageAccountKey $storageKey
 
     # Set the ContentType and optionally the CacheControl
@@ -38,11 +39,11 @@ Also, notice that I am referencing the Windows Azure PowerShell Cmdlets which ar
     foreach ($file in $files)
     {
       $fqName = $dir + "\" + $file.Name
-      Set-AzureStorageBlobContent -Blob $file.Name `
-                                  -Container $containerName `
-                                  -File $fqName `
-                                  -Context $context `
-                                  -Properties $properties `
+      Set-AzureStorageBlobContent -Blob $file.Name
+                                  -Container $containerName
+                                  -File $fqName
+                                  -Context $context
+                                  -Properties $properties
                                   -Force 
     }
 
