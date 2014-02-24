@@ -38,7 +38,7 @@ Also, notice that I am referencing the Windows Azure PowerShell Cmdlets which ar
     $files = Get-ChildItem $dir -force | Where-Object {$_.FullName.EndsWith(".min.js")}
     foreach ($file in $files)
     {
-      $fqName = $dir + "\" + $file.Name
+      $fqName = $dir + '\' + $file.Name
       Set-AzureStorageBlobContent -Blob $file.Name
                                   -Container $containerName
                                   -File $fqName
