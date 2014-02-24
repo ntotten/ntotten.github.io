@@ -14,37 +14,37 @@ Note, this script assumes that your site (in this case MyWebSite) and the script
 Also, notice that I am referencing the Windows Azure PowerShell Cmdlets which are installed on the VSO build server.
 
 
-  $env:PSModulePath=$env:PSModulePath+";"+"C:\Program Files (x86)\Microsoft SDKs\Windows Azure\PowerShell"
-  Import-Module Azure
-  $storageAccount = "<your storage account>"
-  $storageKey = "<your storage account key>"
-  $containerName = "scripts"
-  $dir = "MyWebSite\Scripts"
-  if ($Env:TF_BUILD_SOURCESDIRECTORY)
-  {
-      $dir = $Env:TF_BUILD_SOURCESDIRECTORY + $dir
-  }
+    $env:PSModulePath=$env:PSModulePath+";"+"C:\Program Files (x86)\Microsoft SDKs\Windows Azure\PowerShell"
+    Import-Module Azure
+    $storageAccount = "<your storage account>"
+    $storageKey = "<your storage account key>"
+    $containerName = "scripts"
+    $dir = "MyWebSite\Scripts"
+    if ($Env:TF_BUILD_SOURCESDIRECTORY)
+    {
+        $dir = $Env:TF_BUILD_SOURCESDIRECTORY + $dir
+    }
 
-  $context = New-AzureStorageContext  –StorageAccountName $storageAccount `
-                                      -StorageAccountKey $storageKey
+    $context = New-AzureStorageContext  –StorageAccountName $storageAccount `
+                                        -StorageAccountKey $storageKey
 
-  # Set the ContentType and optionally the CacheControl
-  $properties = @{ 
-    "ContentType" = "application/javascript"; 
-    "CacheControl" = "public, max-age=31536000";
-  } 
+    # Set the ContentType and optionally the CacheControl
+    $properties = @{ 
+      "ContentType" = "application/javascript"; 
+      "CacheControl" = "public, max-age=31536000";
+    } 
 
-  $files = Get-ChildItem $dir -force | Where-Object {$_.FullName.EndsWith(".min.js")}
-  foreach ($file in $files)
-  {
-    $fqName = $dir + "\" + $file.Name
-    Set-AzureStorageBlobContent -Blob $file.Name `
-                                -Container $containerName `
-                                -File $fqName `
-                                -Context $context `
-                                -Properties $properties `
-                                -Force 
-  }
+    $files = Get-ChildItem $dir -force | Where-Object {$_.FullName.EndsWith(".min.js")}
+    foreach ($file in $files)
+    {
+      $fqName = $dir + "\" + $file.Name
+      Set-AzureStorageBlobContent -Blob $file.Name `
+                                  -Container $containerName `
+                                  -File $fqName `
+                                  -Context $context `
+                                  -Properties $properties `
+                                  -Force 
+    }
 
 In order to use this script for continuous integration simply add it to your source repo and edit your Build Definition to use the script as shown below.
 
