@@ -50,3 +50,5 @@ Also, notice that I am referencing the Windows Azure PowerShell Cmdlets which ar
 In order to use this script for continuous integration simply add it to your source repo and edit your Build Definition to use the script as shown below.
 
 [![Build Definition](/images/2014/02/builddefinition.png)](/images/2014/02/builddefinition.png)
+
+That should be it. Now when your build runs your scripts will be deployed to blob storage.
