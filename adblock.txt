@@ -1,0 +1,14 @@
+[Adblock Plus 2.0]
+! Version: 20140605
+! Title: NTOTTEN
+! Last modified: 05 Jun 2014
+! Expires: 4 days (update frequency)
+! Homepage: https://ntotten.com/adblock.txt
+! Licence: APACHE 2.0
+!
+!
+!-----------------------Filters-----------------------!
+! *** ntotten:adblock.txt ***
+
+http://disqus.com/embed/comments/
+https://www.facebook.com/plugins/comments.php
