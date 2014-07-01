@@ -37,9 +37,9 @@ namespace('minify', function() {
   task('js', {async: true}, function() {
     // Using UglifyJS for JS
     new compressor.minify({
-      type: windows ? 'uglifyjs' : 'gcc',
+      type: 'uglifyjs',
       fileIn: [
-        'assets/js/prettify.js', 
+        'assets/js/ace/ace.js', 
         'assets/js/app.js'
       ],
       fileOut: 'assets/' + config.version + '.js',

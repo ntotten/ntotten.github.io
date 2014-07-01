@@ -17,35 +17,41 @@ You can find the full source to this action filter in [this Gist](https://gist.g
 
 Using the filter is easy. Simply add the filter to your controller and specific the IP address or network you want to allow.
 
-	[IPFilter("123.45.0.0/16")]
-	public class HomeController : Controller
-	{
-	    public ActionResult Index()
-	    {
-	        return View();
-	    }
-	}
+```csharp
+[IPFilter("123.45.0.0/16")]
+public class HomeController : Controller
+{
+    public ActionResult Index()
+    {
+        return View();
+    }
+}
+```
 
 Optionally, you can choose to block localhost access from your site. Localhost is allowed by default.
 
-    [IPFilter("123.45.0.0/16", AllowLocalhost = false)]
-    public class HomeController : Controller
+```csharp
+[IPFilter("123.45.0.0/16", AllowLocalhost = false)]
+public class HomeController : Controller
+{
+    public ActionResult Index()
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
+        return View();
     }
+}
+```
 
  There are a couple things worth noting as to how this filter actually works. First, since Windows Azure Web Sites sits behind a ARR server the IP address of the end user is not the IP address the request comes from. The end user's IP address is actually stored in the header "X-Forwarded-For". You can see how we get the ip address below.
 
-    protected override bool AuthorizeCore(HttpContextBase httpContext)
-    {
-        var clientIP = httpContext.Request.Headers["X-Forwarded-For"];
-        var isAuthorized = IsAuthorizedIPAddress(this.AuthorizedIPAddress, clientIP);
+```csharp
+protected override bool AuthorizeCore(HttpContextBase httpContext)
+{
+    var clientIP = httpContext.Request.Headers["X-Forwarded-For"];
+    var isAuthorized = IsAuthorizedIPAddress(this.AuthorizedIPAddress, clientIP);
 
-        return isAuthorized || 
-              (this.AllowLocalhost && (httpContext.Request.Url.Host == "localhost"));
-    }
+    return isAuthorized || 
+          (this.AllowLocalhost && (httpContext.Request.Url.Host == "localhost"));
+}
+```
 
 Second, this is just a sample I wrote quickly. If you are using this for something that requires real security or solid error handling, please look over the code first.
