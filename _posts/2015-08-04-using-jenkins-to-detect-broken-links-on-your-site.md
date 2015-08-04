@@ -34,6 +34,6 @@ Set your desired notification preferences such as email or Slack when the build 
 
 Save your configuration and run your project. The console output will show you if you have a broken link on your site like this.
 
-![Jenkins Console Output](/images/2015/08/jenkins-brooken-link-console.png)
+![Jenkins Console Output](/images/2015/08/jenkins-broken-link-console.png)
 
 Now you are set to provide a more usable site for your readers or customers.
