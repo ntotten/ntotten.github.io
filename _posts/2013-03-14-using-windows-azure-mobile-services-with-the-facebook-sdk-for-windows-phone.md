@@ -7,6 +7,8 @@ categories:
 - Windows Azure
 ---
 
+> **NOTICE**: This content is very outdated. I recommend you check out [Auth0](https://manage.myauth0.com/docs/quickstart/native-mobile/windowsphone/azure-mobile-services) for an easy way to authenticate with Facebook.
+
 As you may have seen, [Windows Azure Mobile Services](http://www.windowsazure.com/en-us/home/scenarios/mobile-services/) makes it super easy to add a cloud backend to your mobile apps. Mobile Services also supports authentication with OAuth providers like Facebook, Microsoft, and Twitter. I have had people ask me if it is possible to use Mobile Services with the [Facebook SDK for .NET](https://github.com/facebook-csharp-sdk/facebook-csharp-sdk) (formally named the Facebook C# SDK). In short, yes.
 
 
