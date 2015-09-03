@@ -7,7 +7,7 @@ categories:
 - Facebook
 ---
 
-> NOTE: This content is very outdated. I recommend you check out Auth0[https://auth0.com/docs/quickstart/webapp/aspnet/] for an easy way to authenticate with Facebook.
+> **NOTICE**: This content is very outdated. I recommend you check out [Auth0](https://auth0.com/docs/quickstart/webapp/aspnet/) for an easy way to authenticate with Facebook.
 
 One of the most common questions I get around using the Facebook C# SDK is how to authenticate a user. While there are [samples](https://github.com/facebook-csharp-sdk/facebook-aspnet-sample) and [official Facebook documentation](https://developers.facebook.com/docs/concepts/login/) on the subject, it is something that is worth a review. Below you will find the step-by-step guide for authenticating a Facebook user to an ASP.NET MVC 4 application using the [Facebook C# SDK](http://facebooksdk.net).
 
