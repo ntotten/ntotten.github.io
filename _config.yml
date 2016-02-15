@@ -1,8 +1,8 @@
+highlighter: false
 markdown: rdiscount
-pygments: false
 permalink: /:year/:month/:day/:title/
 paginate: 5
-version: 5646dca1-9418-412f-b514-d78f532f85d4
 name: Nathan Totten's Blog
 description: Thoughts and Experiences with Software Development.
 url: http://ntotten.com
+gems: [jekyll-paginate]
