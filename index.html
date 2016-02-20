@@ -1,27 +1,23 @@
 ---
-layout: page
-title: Nathan Totten's Blog
-description: Thoughts and Experiences with Software Development.
+layout: default
 ---
 
-{% for post in paginator.posts %}
-<article>
-  <header>
-    <h1 class="entry-title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
-  </header>
-  {{ post.content }}
-</article>
-{% endfor %}
+<div class="home">
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a href="/page{{paginator.next_page}}" class="next ">Older</a>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.previous_page == 1 %}
-    <a href="/" class="previous">Newer</a>
-    {% else %}
-    <a href="/page{{paginator.previous_page}}" class="previous">Newer</a>
-    {% endif %}
-  {% endif %}
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed" | prepend: site.baseurl }}">via RSS</a></p>
+
 </div>

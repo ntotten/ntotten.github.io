@@ -1,0 +1,44 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="{{ site.title | escape }}"/>
+  <meta property="og:title" content="{{ site.title | escape }}"/>
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://ntotten.com/"/>
+  <meta property="og:image" content="https://ntotten.com/assets/images/ntotten1000.png"/>
+  <meta property="og:site_name" content="{{ site.title | escape }}"/>
+  <meta property="fb:admins" content="14812017"/>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@ntotten">
+  <meta name="twitter:creator" content="@ntotten">
+  <meta name="twitter:title" content="{{ site.title | escape }}">
+  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:image:src" content="https://ntotten.com/assets/images/ntotten250.png">
+  <meta name="twitter:domain" content="ntotten.com">
+  <meta name="application-name" content="{{ site.title | escape }}"/>
+  <meta name="msapplication-config" content="browserconfig.xml"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" type="image/x-icon" href="https://secure.gravatar.com/avatar/d48b998c2dce49ca309710eba498c562.png?s=64" sizes="16x16"/>
+  <link rel="icon" type="image/x-icon" href="https://secure.gravatar.com/avatar/d48b998c2dce49ca309710eba498c562.png?s=16" sizes="16x16"/>
+  <link rel="apple-touch-icon" href="https://secure.gravatar.com/avatar/d48b998c2dce49ca309710eba498c562.png?s=57">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://secure.gravatar.com/avatar/d48b998c2dce49ca309710eba498c562.png?s=72">
+  <link rel="apple-touch-icon" sizes="114x114" href="https://secure.gravatar.com/avatar/d48b998c2dce49ca309710eba498c562.png?s=114">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://secure.gravatar.com/avatar/d48b998c2dce49ca309710eba498c562.png?s=144"/>
+  <link rel="alternate" type="application/rss+xml" title="Nathan Totten's Blog" href="https://ntotten.com/feed/"/>
+  <link rel="canonical" href="https://ntotten.com/"/>
+  <link rel="me" type="text/html" href="https://plus.google.com/105437247828680895032?rel=me"/>
+  <link rel="me" type="text/html" href="https://twitter.com/ntotten"/>
+  <link rel="me" type="text/html" href="https://facebook.com/totten"/>
+  <link rel="me" type="text/html" href="https://www.github.com/ntotten"/>
+  <link rel="me" type="text/html" href="https://www.linkedin.com/in/nathantotten"/>
+
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+</head>

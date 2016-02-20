@@ -13,12 +13,16 @@ Good news! The [Windows Azure Cross Platform CLI](https://github.com/WindowsAzur
 
 To upgrade Node.js head over to [nodejs.org](http://nodejs.org) and click the install button. In order to upgrade the Windows Azure CLI tools simply use npm as show below.
 
-    npm install azure-cli -g
+```bash
+npm install azure-cli -g
+```
 
 > **Note**: On OS X you will need to run this command as sudo to install globally.
 
 To install the latest version of the Windows Azure SDK for Node.js in your project you can use npm as well.
 
-    npm install azure
+```bash
+npm install azure
+```
 
 An alternative option is to use our one-click installers to install the SDK and tools together. You can find the [Node.js installer here](http://www.windowsazure.com/en-us/downloads/).

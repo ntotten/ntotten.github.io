@@ -7,7 +7,7 @@ description: A simple powershell script to automate my Sublime Text config.
 
 One thing that I find odd about the default Sublime Text install on Windows is that you don't get the option to add subl to the path. On OS X this happens automagically. I wrote a simple script that I use on every new Windows machine to setup sublime the way I like. In addition to adding subl to the path, this also copies my sublime settings. Pretty simple script, but I find it useful.
 
-```
+```powershell
 # Make link to subl and add to path
 cmd /c mklink "C:\Program Files\Sublime Text 3\subl.exe" "C:\Program Files\Sublime Text 3\sublime_text.exe"
 $wsh = new-object -com wscript.shell

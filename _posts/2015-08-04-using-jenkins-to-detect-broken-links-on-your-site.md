@@ -24,7 +24,7 @@ Configure the project with a few basic settings. Under build triggers, check "Bu
 
 Next, set add a build step for "Execute Shell" and add the command to run linkchecker.
 
-```
+```bash
 linkchecker https://example.com
 ```
 

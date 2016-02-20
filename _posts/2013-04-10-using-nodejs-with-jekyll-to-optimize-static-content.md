@@ -17,79 +17,85 @@ Now, that you know why I am doing this. Lets talk about how. First, I decided to
 
 Below you can see how node-minify can be used to combine and minify js and css files.
 
-    // Using UglifyJS for JS
-    new compressor.minify({
-      type: 'uglifyjs',
-      fileIn: ['assets/js/prettify.js', 'assets/js/app.js'],
-      fileOut: 'assets/' + config.version + '.js',
-      callback: function(err){
-        if (err) {
-          console.log(err);
-        }
-      }
-    });
+```js
+// Using UglifyJS for JS
+new compressor.minify({
+  type: 'uglifyjs',
+  fileIn: ['assets/js/prettify.js', 'assets/js/app.js'],
+  fileOut: 'assets/' + config.version + '.js',
+  callback: function(err){
+    if (err) {
+      console.log(err);
+    }
+  }
+});
 
-    // Using Sqwish for CSS
-    new compressor.minify({
-      type: 'sqwish',
-      fileIn: ['assets/css/bootstrap.min.css', 'assets/css/style.css'],
-      fileOut: 'assets/' + config.version + '.css',
-      callback: function(err){
-        if (err) {
-          console.log(err);
-        }
-      }
-    });
+// Using Sqwish for CSS
+new compressor.minify({
+  type: 'sqwish',
+  fileIn: ['assets/css/bootstrap.min.css', 'assets/css/style.css'],
+  fileOut: 'assets/' + config.version + '.css',
+  callback: function(err){
+    if (err) {
+      console.log(err);
+    }
+  }
+});
+```
 
 In addition to node-minify I also wanted something that would help me automate the various tasks of building the site. For this I chose [Jake](https://github.com/mde/jake). Jake is a great tool that I have used on many other projects for creating build scripts.
 
 I setup my jakefile.js with a few simple tasks.
 
-    task('default', ['minify', 'build'])
+```js
+task('default', ['minify', 'build'])
 
-    task('minify', function() {
-      // Clean up old files
-      var files = fs.readdirSync('./assets/');
-      for (var i = files.length - 1; i >= 0; i--) {
-        var file = files[i];
-        if (path.extname(file) == '.js' || path.extname(file) == '.css') {
-          fs.unlinkSync('./assets/' + file);
-        }
-      };
+task('minify', function() {
+  // Clean up old files
+  var files = fs.readdirSync('./assets/');
+  for (var i = files.length - 1; i >= 0; i--) {
+    var file = files[i];
+    if (path.extname(file) == '.js' || path.extname(file) == '.css') {
+      fs.unlinkSync('./assets/' + file);
+    }
+  };
 
-      // Combine and minify code here
-      ...
-    });
+  // Combine and minify code here
+  ...
+});
 
-    task('build', function() {
-      setConfigValue('version', config.version);
-    });
+task('build', function() {
+  setConfigValue('version', config.version);
+});
+```
 
 On thing you will notice is that my static content is being created with a uuid version number. This way each time I publish my site I get a new version. Eventually, I am going to change this code to only perform the minification if the css or js files change. The issue with using a random name is that I need to somehow tell Jekyll which files to use. For this, I set a configuration value in the _config.yml file that Jekyll uses. You can see that file below. The version number gets updated every time I build my static content.
 
-    markdown: rdiscount
-    pygments: false
-    permalink: /:year/:month/:day/:title/
-    paginate: 5
-    version: 63301a88-ec4f-4f35-b9a7-7533810aec30
-    name: Nathan Tottes&#39;s Blog
-    description: Thoughts and Experiences with Software Development.
-    url: http://ntotten.com
+```yml
+markdown: rdiscount
+pygments: false
+permalink: /:year/:month/:day/:title/
+paginate: 5
+version: 63301a88-ec4f-4f35-b9a7-7533810aec30
+name: Nathan Tottes&#39;s Blog
+description: Thoughts and Experiences with Software Development.
+url: http://ntotten.com
+```
 
 Finally, I need to reference this version number in my Jekyll layouts. This is easy and can be seen below.
 
-{% raw %}
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <link href='http://fonts.googleapis.com/css?family=Droid+Sans' 
-          rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' 
-          rel='stylesheet' type='text/css'>
-        <link href='/assets/{{ site.version }}.css' 
-          rel='stylesheet' type='text/css'>
-{% endraw %}
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans'
+      rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700'
+      rel='stylesheet' type='text/css'>
+    <link href='/assets/{{ site.version }}.css'
+      rel='stylesheet' type='text/css'>
+```
 
 Now when I publish the site to Github pages, Jekyll will use the version number to setup the static content path and my site will be served with the smaller and optimized js and css files. You can see the full [jakefile.js](https://github.com/ntotten/ntotten.github.com/blob/master/jakefile.js) in my website's [Github repositoryy](https://github.com/ntotten/ntotten.github.com/).

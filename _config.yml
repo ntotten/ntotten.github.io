@@ -1,8 +1,12 @@
-highlighter: false
-markdown: rdiscount
-permalink: /:year/:month/:day/:title/
-paginate: 5
-name: Nathan Totten's Blog
+# Site settings
+title: Nathan Totten's Blog
+email: nathan@ntotten.com
 description: Thoughts and Experiences with Software Development.
+baseurl: "" # the subpath of your site, e.g. /blog
 url: http://ntotten.com
-gems: [jekyll-paginate]
+twitter_username: ntotten
+github_username:  ntotten
+
+# Build settings
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
