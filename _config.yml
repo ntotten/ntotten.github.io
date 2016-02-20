@@ -1,6 +1,5 @@
 # Site settings
-title: Nathan Totten's Blog
-email: nathan@ntotten.com
+title: Nathan Totten
 description: Thoughts and Experiences with Software Development.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: http://ntotten.com
