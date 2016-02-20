@@ -14,10 +14,14 @@ Rackspace includes a value “HTTP_CLUSTER_HTTPS” with the request when the re
 
 Change line 888 in the newly copied file from:
 
-    $secure = (!empty($_SERVER['HTTPS']) && ($_SERVER['HTTPS']!='off')) || $_SERVER['SERVER_PORT']=='443';
+```php
+$secure = (!empty($_SERVER['HTTPS']) && ($_SERVER['HTTPS']!='off')) || $_SERVER['SERVER_PORT']=='443';
+```
 
 to:
 
-    $secure = (!empty($_SERVER['HTTP_CLUSTER_HTTPS']) && ($_SERVER['HTTP_CLUSTER_HTTPS']!='off')) || $_SERVER['SERVER_PORT']=='443';
+```php
+$secure = (!empty($_SERVER['HTTP_CLUSTER_HTTPS']) && ($_SERVER['HTTP_CLUSTER_HTTPS']!='off')) || $_SERVER['SERVER_PORT']=='443';
+```
 
 Let me know if you have any problems or feedback.

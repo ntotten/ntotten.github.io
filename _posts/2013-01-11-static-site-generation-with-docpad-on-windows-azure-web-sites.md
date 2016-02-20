@@ -9,14 +9,14 @@ categories:
 
 There has been a lot of interest recently with static content generation tools. These tools allow you to generate a website from source documents such as markdown and serve static html files. The advantage of static sites is that they are extremely fast and very inexpensive to host. There are plenty of ways you can host static content that is already generated, but if you want a solution that provides integrated deployment and automated generation you can easily setup [Windows Azure Web Sites](http://www.windowsazure.com/en-us/home/scenarios/web-sites/) to host your statically generated site.
 
-
 > **SHAMELESS PLUG**: You can host up to 10 sites on [Windows Azure Web Sites](http://www.windowsazure.com/en-us/home/scenarios/web-sites/) for free. No trial, no expiration date, completely free. :)
-
 
 I have [previously written](/2012/03/02/github-pages-with-jekyll-local-development-on-windows/) about [Jekyll](https://github.com/mojombo/jekyll) and [Github pages](http://pages.github.com/) for generating static content. For this post I am going to use my new favorite tool, [DocPad](http://docpad.org). I like DocPad because it is written entirely in Node.js. This gives you the ability to use all kinds of cool Node tools like Jade, CoffeeScript, and Less. To get started with DocPad you just need to install it using Node Package Manager. Run the following commands to install DocPad and then, in an empty directory, create and run a new DocPad site.
 
-	npm install -g docpad
-	docpad run
+```bash
+npm install -g docpad
+docpad run
+```
 
 Running DocPad in an empty directory will scaffold your new site. You will be asked which template you would like to use. I am going to select "Twitter Boostrap with Jade". DocPad will create the site and also initialize the empty folder as a git repository.
 
@@ -49,18 +49,18 @@ This script will generate the static content in the /out folder. Now we need to 
 	# The DocPad Configuration File
 	# It is simply a CoffeeScript Object which is parsed by CSON
 	docpadConfig =
- 
+
 	  # Template Data
 	  # =============
 	  # These are variables that will be accessible via our templates
 	  # To access one of these within our templates, refer to the FAQ: https://github.com/bevry/docpad/wiki/FAQ
 	  prompts: false,
- 
+
 	  templateData:
- 
+
 		# Template data here...
- 
- 
+
+
 	# Export our DocPad Configuration
 	module.exports = docpadConfig
 

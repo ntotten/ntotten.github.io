@@ -14,35 +14,35 @@ First, you need to install Ruby. You download the Ruby installer for Windows [he
 
 After you have Ruby installed you will need to install the Ruby Development Kit. You can find this on the [Ruby downloads](http://rubyinstaller.org/downloads/) page as well. Download and extract the development kit nto a directory of your choice. I recommend C:\DevKit, but anything will work. After the developer kit has been extracted you need run the installation. You can do that by executing the following commands.
 
-    
-    cd C:\DevKit
-    ruby dk.rb init
-    ruby dk.rb install
-
+```bash
+cd C:\DevKit
+ruby dk.rb init
+ruby dk.rb install
+```
 
 ![](/images/2012/03/devkitinstall1.png)
 
 Now you are ready to install Jekyll. You can do that by running the following command.
 
-    
-    gem install jekyll
-
+```bash
+gem install jekyll
+```
 
 ![](/images/2012/03/geminstalljekyll.png)
 
 Finally, if you are using the [RDiscount](https://github.com/rtomayko/rdiscount) markdown engine, which is the one I prefer, you will need to install that as well.
 
-    
-    gem install rdiscount
-
+```bash
+gem install rdiscount
+```
 
 ![](/images/2012/03/rdiscountinstall.png)
 
 Now, you are ready to build your site using Jekyll. In order to do this simply navigate to your site's directory and run the following command.
 
-    
-    jekyll --server
-
+```bash
+jekyll --server
+```
 
 ![](/images/2012/03/jekyllserver.png)
 

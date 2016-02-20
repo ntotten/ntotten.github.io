@@ -28,43 +28,47 @@ To begin the user is presented with the simple registration form.
 
 _(Step 1)_ After the user clicks register, we submit the form using some simple ajax. The sample uses ASP.NET MVC3 for the single service, but you could use anything you like. Below you will find the controller action.
 
-	[HttpPost]
-	public ActionResult Register(RegisterModel model)
-	{
-	  var queue =
-			new AzureQueue<UserRegistrationMessage>
-			(account);
-		var registrationBlob =
-			new AzureBlobContainer<RegistrationTokenEntity>
-			(account, true);
- 
-		var containerId = Guid.NewGuid().ToString();
-		registrationBlob.Save
-		(containerId, new RegistrationTokenEntity
-		{
-			RegistrationToken = null,
-		});
- 
-		var expires = DateTime.Now.AddHours(1);
- 
-		var blobContainer = registrationBlob
-			.GetSharedAccessSignature(containerId, expires);
- 
-		queue.AddMessage(new UserRegistrationMessage
-		{
-			DateOfBirth = model.DateOfBirth,
-			Email = model.Email,
-			FirstName = model.FirstName,
-			LastName = model.LastName,
-			ContainerId = containerId,
-		});
- 
-		return Json(new { container = blobContainer });
-	}
+```cs
+[HttpPost]
+public ActionResult Register(RegisterModel model)
+{
+  var queue =
+    new AzureQueue<UserRegistrationMessage>
+    (account);
+  var registrationBlob =
+    new AzureBlobContainer<RegistrationTokenEntity>
+    (account, true);
+
+  var containerId = Guid.NewGuid().ToString();
+  registrationBlob.Save
+  (containerId, new RegistrationTokenEntity
+  {
+    RegistrationToken = null,
+  });
+
+  var expires = DateTime.Now.AddHours(1);
+
+  var blobContainer = registrationBlob
+    .GetSharedAccessSignature(containerId, expires);
+
+  queue.AddMessage(new UserRegistrationMessage
+  {
+    DateOfBirth = model.DateOfBirth,
+    Email = model.Email,
+    FirstName = model.FirstName,
+    LastName = model.LastName,
+    ContainerId = containerId,
+  });
+
+  return Json(new { container = blobContainer });
+}
+```
 
 _(Steps 2, 3, and 4)_ As you can see a few things are happening here. First, we are creating a random ID for the container. Next, we save the the blob container. The container we save has our token value set to null. Finally, we create the shared access token for the blob and return the blob url to the client. Below you can see the contents of the registration result blob in its initial state.
 
-	registrationtokenentityCallback({"RegistrationToken":null})
+```js
+registrationtokenentityCallback({"RegistrationToken":null})
+```
 
 _(Step 5) _After we send the register post to the server our browser will show us a waiting page. In the background the browser is continually requesting the contents of the registration result blob. If the registration token is set to null, the client continues to poll the blob. This continues indefinitely. Note, in the real world you would want to handle the situation where there is either a failure and the blob doesn’t update or the processing is taking longer than usual.
 
@@ -72,47 +76,51 @@ _(Step 5) _After we send the register post to the server our browser will show u
 
 _(Steps 6,7, and 8)_ While the client is waiting for the registration result blob to update our worker role is polling the registration queue for new registrations. In this case a new registration is in the queue so the worker role reads the message. This is the point where you would do your heavy lifting. This could be anything from saving the registration to a database, sending it to a web service, validating for duplicates, etc. After your worker role is done processing the registration it creates a token for the registration. The worker then updates the registration result blob with the token.
 
-	registrationtokenentityCallback(
-	   {"RegistrationToken":"665864095"}
-	)
+```js
+registrationtokenentityCallback(
+   {"RegistrationToken":"665864095"}
+)
+```
 
 After the registration result blob is updated with the registration token the client stops polling the blob and displays the result. You can see the polling script below.
 
-	var waitingId = null;
-	var tokenUrl = null;
-	$(document).ready(function () {
-	  step(0);
-		$('#register').validate({
-			submitHandler: function (form) {
-				$(form).ajaxSubmit(function (result) {
-					tokenUrl = result.container;
-					waitingId =
-					   setInterval('checkForToken()', 1000);
-					step(1);
-				});
-			}
-		})
-	});
- 
-	function checkForToken() {
-		try {
-			$.ajax({
-				type: "GET",
-				url: tokenUrl,
-				dataType: "jsonp",
-				jsonpCallback: 'registrationtokenentityCallback'
-			});
-		} catch (ex) { }
-	}
- 
-	function registrationtokenentityCallback(data) {
-		var regToken = data.RegistrationToken;
-		if (regToken != null) {
-			clearInterval(waitingId);
-			$('#txtToken').text(regToken);
-			step(2);
-		}
-	}
+```js
+var waitingId = null;
+var tokenUrl = null;
+$(document).ready(function () {
+  step(0);
+  $('#register').validate({
+    submitHandler: function (form) {
+      $(form).ajaxSubmit(function (result) {
+        tokenUrl = result.container;
+        waitingId =
+           setInterval('checkForToken()', 1000);
+        step(1);
+      });
+    }
+  })
+});
+
+function checkForToken() {
+  try {
+    $.ajax({
+      type: "GET",
+      url: tokenUrl,
+      dataType: "jsonp",
+      jsonpCallback: 'registrationtokenentityCallback'
+    });
+  } catch (ex) { }
+}
+
+function registrationtokenentityCallback(data) {
+  var regToken = data.RegistrationToken;
+  if (regToken != null) {
+    clearInterval(waitingId);
+    $('#txtToken').text(regToken);
+    step(2);
+  }
+}
+```
 
 [![](/images/2011/10/snaghtmlc5cd12_thumb.png)](/images/2011/10/snaghtmlc5cd12.png)
 

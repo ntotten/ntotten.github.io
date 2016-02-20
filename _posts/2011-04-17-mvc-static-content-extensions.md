@@ -15,37 +15,43 @@ To get started with this extension, install one of the NuGet packages. There are
 
 To use the extension simply replace your @Url.Content methods with @Url.StaticContent.
 
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>@ViewBag.Title</title>
-		<link href="@Url.StaticContent("~/Content/Site.css")" rel="stylesheet" type="text/css" />
-		<script src="@Url.StaticContent("~/Scripts/jquery-1.5.1.min.js")" type="text/javascript"></script>
-		<script src="@Url.StaticContent("~/Scripts/modernizr-1.7.min.js")" type="text/javascript"></script>
-	</head>
-	<body>
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>@ViewBag.Title</title>
+  <link href="@Url.StaticContent("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+  <script src="@Url.StaticContent("~/Scripts/jquery-1.5.1.min.js")" type="text/javascript"></script>
+  <script src="@Url.StaticContent("~/Scripts/modernizr-1.7.min.js")" type="text/javascript"></script>
+</head>
+<body>
+```
 
 Using the StaticContent method renders the following html output.
 
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>Home Page</title>
-		<link href="http://example1.cloudapp.net/cdn/Content/Site.css" rel="stylesheet" type="text/css" />
-		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.1.min.js" type="text/javascript"></script>
-		<script src="http://example1.cloudapp.net/cdn/Scripts/modernizr-1.7.min.js" type="text/javascript"></script>
-	</head>
-	<body>
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Home Page</title>
+  <link href="http://example1.cloudapp.net/cdn/Content/Site.css" rel="stylesheet" type="text/css" />
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.1.min.js" type="text/javascript"></script>
+  <script src="http://example1.cloudapp.net/cdn/Scripts/modernizr-1.7.min.js" type="text/javascript"></script>
+</head>
+<body>
+```
 
 As you can see, the static files are now served using either the Windows Azure CDN or the ASP.NET Ajax CDN. The ASP.NET Ajax CDN is used whenever possible because it is completely free and most likely the files are already on your user's local cache.
 
 Next you need to set your Windows Azure CDN namespace. Windows Azure CDN will host your files from a url such as http://mytest.cloudapp.net/cdn/. You must set the app setting in your web.config file as show.
 
-	<appSettings>
-		<add key="WindowsAzureCdnNamespace" value="set_this_value" />
-	</appSettings>
+```xml
+<appSettings>
+  <add key="WindowsAzureCdnNamespace" value="set_this_value" />
+</appSettings>
+```
 
 NOTE: If you don't want to use Windows Azure CDN, then simply remove the entire app setting value. The extension method will only use content from the ASP.NET Ajax CDN if it is available, otherwise it will ues the normal content path from you web server.
 

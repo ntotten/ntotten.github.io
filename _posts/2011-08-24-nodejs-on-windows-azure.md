@@ -12,21 +12,20 @@ We have been working on some enhancements to the [Windows Azure Toolkit for Soci
 The first thing you will want to do is setup your Windows Azure project. We will create a standard cloud project with a single Worker Role.
 
 Create our cloud project:
+
 [![SNAGHTMLd3b9438](/images/2011/08/snaghtmld3b9438_thumb.png)](/images/2011/08/snaghtmld3b9438.png)
 
 Add our worker role:
+
 [![SNAGHTMLd3c3586](/images/2011/08/snaghtmld3c3586_thumb.png)](/images/2011/08/snaghtmld3c3586.png)
 
 Now we need to add node.exe to our worker role. You can download the current Windows build for Node.JS on [www.nodejs.org](http://www.nodejs.org).
 
 I am going to add node.exe to the root of my worker role. When you add it, make sure you set the Copy To Output Directory property to “Copy if newer”.
 
-
 [![image](/images/2011/08/image_thumb8.png)](/images/2011/08/image8.png)
 
-
 [![image](/images/2011/08/image_thumb9.png)](/images/2011/08/image9.png)
-
 
 Next, we need to add our app.js file. This will be our node applications entry point. While I am at it I will also create a folder called “node_modules”. This folder will be used for any modules I want to include in the project. I am not going to show that in this post, but you will need to download modules manually because Node Package Manager does not yet work on Windows. You will need to make sure you set your app.js file and any module files to “Copy if newer” as well.
 
@@ -34,41 +33,45 @@ Next, we need to add our app.js file. This will be our node applications entry p
 
 Now we need to do is modify our worker role entry point to start the node.exe process.
 
-	public class WorkerRole : RoleEntryPoint
-	{
-		Process proc;
+```cs
+public class WorkerRole : RoleEntryPoint
+{
+  Process proc;
 
-		public override void Run()
-		{
-			proc.WaitForExit();
-		}
+  public override void Run()
+  {
+    proc.WaitForExit();
+  }
 
-		public override bool OnStart()
-		{
-			proc = new Process()
-			{
-				StartInfo = new ProcessStartInfo(
-					Environment.ExpandEnvironmentVariables(@"%RoleRoot%approotnode.exe"), "app.js")
-				{
-					UseShellExecute = false,
-					CreateNoWindow = true,
-					WorkingDirectory = Environment.ExpandEnvironmentVariables(@"%RoleRoot%approot"),
-				}
-			};
-			proc.Start();
+  public override bool OnStart()
+  {
+    proc = new Process()
+    {
+      StartInfo = new ProcessStartInfo(
+        Environment.ExpandEnvironmentVariables(@"%RoleRoot%approotnode.exe"), "app.js")
+      {
+        UseShellExecute = false,
+        CreateNoWindow = true,
+        WorkingDirectory = Environment.ExpandEnvironmentVariables(@"%RoleRoot%approot"),
+      }
+    };
+    proc.Start();
 
-			return base.OnStart();
-		}
-	}
+    return base.OnStart();
+  }
+}
+```
 
 We will take the most basic example of a node app and add that code to our app.js file.
 
-	var http = require('http');
+```js
+var http = require('http');
 
-	http.createServer(function (req, res) {
-	    res.writeHead(200, { 'Content-Type': 'text/plain' });
-	    res.end('NodeJS.exe running on Windows Azure!');
-	}).listen(8080);
+http.createServer(function (req, res) {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('NodeJS.exe running on Windows Azure!');
+}).listen(8080);
+```
 
 Next, we need to make sure we open up the ports we are using in node. In this case we are listening on port 80. This change is made in our worker role cloud configuration.
 

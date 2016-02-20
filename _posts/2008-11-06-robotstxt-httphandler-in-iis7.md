@@ -20,6 +20,8 @@ After the assembly has been registered, we will register the handler in IIS7. Se
 
 Now, test to make sure everything worked correctly using your web browser. Go to [http://www.mysite.com/robots.txt](http://www.mysite.com/robots.txt). You should see this text:
 
+```text
 User-agent: * Disallow: /
+```
 
 You could definitely expand this to use custom rules from a database or configuration file. You could also set the file to allow all robots by changing "Disallow: /" to "Disallow:".

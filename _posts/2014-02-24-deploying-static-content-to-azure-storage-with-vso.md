@@ -23,7 +23,7 @@ $containerName = "scripts"
 $dir = "MyWebSite\Scripts"
 if ($Env:TF_BUILD_SOURCESDIRECTORY)
 {
-    $dir = $Env:TF_BUILD_SOURCESDIRECTORY + $dir
+  $dir = $Env:TF_BUILD_SOURCESDIRECTORY + $dir
 }
 
 $context = New-AzureStorageContext  –StorageAccountName $storageAccount

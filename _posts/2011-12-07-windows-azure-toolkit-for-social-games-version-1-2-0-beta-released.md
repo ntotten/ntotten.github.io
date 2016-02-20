@@ -14,20 +14,22 @@ The biggest changes in this release is that we are now using dependency injectio
 
 Below you will see how we setup MVC3 and the WCF Web APIs to use Autofac for DI.
 
-	// Setup AutoFac
-	var builder = new ContainerBuilder();
-	DependancySetup(builder);
-	var container = builder.Build();
- 
-	DependencyResolver.SetResolver(
-	new AutofacDependencyResolver(container));
- 
-	// Setup WCF Web API Config
-	var config = new WebApiConfiguration();
-	config.EnableTestClient = true;
-	config.CreateInstance = ((t, i, h) =>
-	DependencyResolver.Current.GetService(t));
-	RouteTable.Routes.SetDefaultHttpConfiguration(config);
+```cs
+// Setup AutoFac
+var builder = new ContainerBuilder();
+DependancySetup(builder);
+var container = builder.Build();
+
+DependencyResolver.SetResolver(
+new AutofacDependencyResolver(container));
+
+// Setup WCF Web API Config
+var config = new WebApiConfiguration();
+config.EnableTestClient = true;
+config.CreateInstance = ((t, i, h) =>
+DependencyResolver.Current.GetService(t));
+RouteTable.Routes.SetDefaultHttpConfiguration(config);
+```
 
 Additionally, we updated all the Nuget packages to their most recent versions. This includes the [WCF Web APIs](http://wcf.codeplex.com) to Preview 6 and jQuery to version 1.7.1. Finally, we fixed a few bugs. There was a memory leak that some people were seeing in the worker role that should be fixed.
 

@@ -12,7 +12,6 @@ Today we released the first stable version of the [Windows Azure Toolkit for Soc
 
 This release of the Social Game Toolkit and Tankster contain the following features.
 
-
 # Server APIs
 
   * Authentication (Uses Windows Azure Access Control Servers)
@@ -24,7 +23,6 @@ This release of the Social Game Toolkit and Tankster contain the following featu
   * Real-Time Communication (Chat, etc.)
   * Notifications
   * In-App Purchases
-
 
 # HTML5 Features
 

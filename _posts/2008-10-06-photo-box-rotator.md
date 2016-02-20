@@ -10,76 +10,80 @@ I have created a JavaScript photo rotator similar to the one on iStockPhoto.com'
 
 First we setup the containers to hold the images:
 
-    <ul id="panes" class="blockpix">
-        <li class="onehunpic">
-          <img src="<%=Url.Content("~/content/images/splash/0.jpg") %>" />
-        </li>
-        <li class="onehunpic">
-          <img src="<%=Url.Content("~/content/images/splash/1.jpg") %>" />
-        </li>
-        <li class="onehunpic whitesq"></li>
-        <li class="onehunpic whitesq"></li>
-        <li class="onehunpic">
-          <img src="<%=Url.Content("~/content/images/splash/2.jpg") %>" />
-        </li>
-        <li class="onehunpic">
-          <img src="<%=Url.Content("~/content/images/splash/3.jpg") %>" />
-        </li>
-        <li class="onehunpic">
-          <img src="<%=Url.Content("~/content/images/splash/4.jpg") %>" />
-        </li>
-        <li class="onehunpic whitesq"></li>
-        <li class="onehunpic">
-          <img src="<%=Url.Content("~/content/images/splash/5.jpg") %>" />
-        </li>
-        <li class="onehunpic">
-          <img src="<%=Url.Content("~/content/images/splash/6.jpg") %>" />
-        </li>
-        <li class="onehunpic">
-          <img src="<%=Url.Content("~/content/images/splash/7.jpg") %>" />
-        </li>
-        <li class="onehunpic">
-          <img src="<%=Url.Content("~/content/images/splash/8.jpg") %>" />
-        </li>
-    </ul>
+```html
+<ul id="panes" class="blockpix">
+  <li class="onehunpic">
+    <img src="<%=Url.Content("~/content/images/splash/0.jpg") %>" />
+  </li>
+  <li class="onehunpic">
+    <img src="<%=Url.Content("~/content/images/splash/1.jpg") %>" />
+  </li>
+  <li class="onehunpic whitesq"></li>
+  <li class="onehunpic whitesq"></li>
+  <li class="onehunpic">
+    <img src="<%=Url.Content("~/content/images/splash/2.jpg") %>" />
+  </li>
+  <li class="onehunpic">
+    <img src="<%=Url.Content("~/content/images/splash/3.jpg") %>" />
+  </li>
+  <li class="onehunpic">
+    <img src="<%=Url.Content("~/content/images/splash/4.jpg") %>" />
+  </li>
+  <li class="onehunpic whitesq"></li>
+  <li class="onehunpic">
+    <img src="<%=Url.Content("~/content/images/splash/5.jpg") %>" />
+  </li>
+  <li class="onehunpic">
+    <img src="<%=Url.Content("~/content/images/splash/6.jpg") %>" />
+  </li>
+  <li class="onehunpic">
+    <img src="<%=Url.Content("~/content/images/splash/7.jpg") %>" />
+  </li>
+  <li class="onehunpic">
+    <img src="<%=Url.Content("~/content/images/splash/8.jpg") %>" />
+  </li>
+</ul>
+```
 
 Next, is the JavaScript:
 
-    // All images
-    var im0 = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
-     13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25);
-    // Loaded images (set manually in html, then dynamically)
-    var im1 = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8);
-    // The indexes of the panels that will rotate
-    var pn = new Array(0, 1, 4, 5, 6, 8, 9, 10, 11);
-    // The path were the images are located
-    var imagePath = '<%=Url.Content("~/content/images/splash/") %>';
-    var currentPane = 0;
-    var currentImage = 0;
-    var speed = 1750;
-    var panes;
-    function StartRotate() {
-        try {
-            if (!panes) {
-                panes = document.getElementById("panes");
-            }
-            setTimeout(function() {
-                var randPane;
-                do {
-                    randPane = Math.floor(Math.random() * pn.length);
-                } while (randPane == currentPane);
-                do {
-                    currentImage = Math.floor(Math.random() * im0.length);
-                } while (Array.contains(im1, currentImage));
-                im1[randPane] = currentImage;
-                var src = imagePath + currentImage + ".jpg";
-                panes.getElementsByTagName("li")[pn[randPane]].childNodes[0].src = src;
-                currentPane = randPane;
-                StartRotate();
-            }, speed);
-        } catch (ex) { }
+```js
+// All images
+var im0 = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
+ 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25);
+// Loaded images (set manually in html, then dynamically)
+var im1 = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8);
+// The indexes of the panels that will rotate
+var pn = new Array(0, 1, 4, 5, 6, 8, 9, 10, 11);
+// The path were the images are located
+var imagePath = '<%=Url.Content("~/content/images/splash/") %>';
+var currentPane = 0;
+var currentImage = 0;
+var speed = 1750;
+var panes;
+function StartRotate() {
+  try {
+    if (!panes) {
+      panes = document.getElementById("panes");
     }
-    Sys.Application.add_load(StartRotate);
+    setTimeout(function() {
+      var randPane;
+      do {
+        randPane = Math.floor(Math.random() * pn.length);
+      } while (randPane == currentPane);
+      do {
+        currentImage = Math.floor(Math.random() * im0.length);
+      } while (Array.contains(im1, currentImage));
+      im1[randPane] = currentImage;
+      var src = imagePath + currentImage + ".jpg";
+      panes.getElementsByTagName("li")[pn[randPane]].childNodes[0].src = src;
+      currentPane = randPane;
+      StartRotate();
+    }, speed);
+  } catch (ex) { }
+}
+Sys.Application.add_load(StartRotate);
+```
 
 There are a few nice features about this rotator. First, the images are completely random. Second, one pane will not switch images more than one time before another pane rotates. Third, there will never be duplicate images displayed at the same time.
 

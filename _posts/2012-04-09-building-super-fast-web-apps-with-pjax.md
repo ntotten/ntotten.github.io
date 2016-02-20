@@ -26,80 +26,81 @@ On the client I am using a great jQuery library called[ jQuery-pjax](https://git
 
 The first thing we need to do is setup our links to be pjax links. We can do this by adding the data-pjax attribute to the link. This attribute is set to the container where the content will be loaded. In this case a div with the id set to 'main'.
 
-	<a href='/explore' data-pjax='#main'>Explore</a>
+```html
+<a href='/explore' data-pjax='#main'>Explore</a>
+```
 
 Next, we simply need to call the pjax extension on every element that contains the data attribute 'data-pjax'. You can see how we do this in a single line of code below.
 
-	$('a[data-pjax]').pjax()
+```js
+$('a[data-pjax]').pjax()
+```
 
 That's it for the client; now we need to modify the server. The trick with this library is that when a PJAX request is made an HTTP header named 'X-PJAX' is added to the request. By looking for this request our server knows whether to return only the html fragment that applies to this specific content or to return the entire HTML document.
 
 There is a node module called [express-pjax](https://github.com/dakatsuka/express-pjax) that extends Express and actually takes care of handling these PJAX request for us. This module is very simple. All it does is look for the header and if the header is present it sets the request options to not use a layout page. This results in only the portion of our view that is page specific to be rendered and returned. If the PJAX header is not present then the page is rendered like normal with the full view. The code of this module is below.
 
-	module.exports = function() {
-	  return function(req, res, next) {
-		if (req.header('X-PJAX')) {
-		  req.pjax = true;
-		}
- 
-		res.renderPjax = function(view, options, fn) {
-		  if (req.pjax) {
-			if (options) {
-			  options.layout = false;
-			} else {
-			  options = {};
-			  options.layout = false;
-			}
-		  }
- 
-		  res.render(view, options, fn);
-		};
- 
-		next();
-	  };
-	};
+```js
+module.exports = function() {
+  return function(req, res, next) {
+  if (req.header('X-PJAX')) {
+    req.pjax = true;
+  }
+
+  res.renderPjax = function(view, options, fn) {
+    if (req.pjax) {
+    if (options) {
+      options.layout = false;
+    } else {
+      options = {};
+      options.layout = false;
+    }
+    }
+
+    res.render(view, options, fn);
+  };
+
+  next();
+  };
+};
+```
 
 Since we are using the express-pjax module we only need to make a simple modification to our routes. Instead of calling render we need to call renderPjax.
 
-	module.exports = function(app) {
- 
-		app.get('/', function(req, res) {
-			res.renderPjax('home/index', { title: 'SocialDrawing' });
-		});
- 
-		app.get('/about', function(req, res) {
-			res.renderPjax('home/about', { title: 'About' });
-		});
- 
-		app.get('/contact', function(req, res) {
-			res.renderPjax('home/contact', { title: 'Contact' });
-		});
- 
-	};
+```js
+module.exports = function(app) {
+
+  app.get('/', function(req, res) {
+    res.renderPjax('home/index', { title: 'SocialDrawing' });
+  });
+
+  app.get('/about', function(req, res) {
+    res.renderPjax('home/about', { title: 'About' });
+  });
+
+  app.get('/contact', function(req, res) {
+    res.renderPjax('home/contact', { title: 'Contact' });
+  });
+
+};
+```
 
 The beautify of this method is that it requires very little change to your application and you can share url routes with both the client and the server. Additionally, because jQuery-pjax uses the HTML5 history API you don't have to use hashes in your urls. Lastly, any browser that is not compatible with this approach will just revert to normal requests which means you can support every browser back to IE6 (not that I recommend doing that).
 
-
 # Events
-
-
 A common issue with this method is executing Javascript when a PJAX page is loaded or unloaded. To handle this the jQuery-pjax library has a number of events you can subscribe.
 
-	$('a.pjax').pjax('#main')
-	$('#main')
-	  .on('pjax:start', function() { $('#loading').show() })
-	  .on('pjax:end',   function() { $('#loading').hide() })
+```js
+$('a.pjax').pjax('#main')
+$('#main')
+  .on('pjax:start', function() { $('#loading').show() })
+  .on('pjax:end',   function() { $('#loading').hide() })
+```
 
 By subscribing to these events you can run code that you would normally run on $(document).ready(). In a future post I will show you how you can use these events to automatically handle loading and unloading views in a way that also works with normal page loads.
 
-
 # Caching
-
-
 In order to further improve the performance of you PJAX page loads you should impliment server-side and client-side caching. By utilizing caching you can build an application that is extremely responsive and in most cases your uses will not be able to tell the difference between this style of application and a full client-side application. There is a [great article](http://37signals.com/svn/posts/3112-how-basecamp-next-got-to-be-so-damn-fast-without-using-much-client-side-ui) written on the [37Signals](http://37signals.com/)' blog about how they used this approach in their new version of [Basecamp](http://basecamp.com). The post goes into detail about how they use PJAX and caching to build a super fast app.
 
-
 # Conclusion
-
-
 The biggest advantage of this approach is simplicity. I find that writing an application in a full client-side framework can result in a great app, but sometimes it is overly complicated. With great server-side tooling available for rendering views in frameworks like ExpressJS or ASP.NET MVC sometimes it is just easier to handle the view rendering on the server. The PJAX approach allows you to use the tools you are familiar with while still getting great client-side performance. As with most design choices, there are trade-offs. This approach isn't for every app, but it is a great tool to have available and use when appropriate.

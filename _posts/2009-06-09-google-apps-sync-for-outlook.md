@@ -10,16 +10,6 @@ Today Google issued a heavy blow in the fight for small business, non-profit, an
 
 As somebody who has setup numerous deployments of Exchange and Google Apps I can tell you that this is the one thing my customers have been waiting for. Many organizations have been using Exchange Server since its early days. All of their employees are using Outlook to manage their email, calendar, tasks, and contacts and for these organizations training all their employees to use Gmail would have simply been too difficult and too great of cost. However, this new tool allows organizations to seamlessly transition to Google Apps without the difficulty of removing Outlook.
 
-Below is a demo of the new Outlook Sync tool.
-
-
-
-
-
-[youtube=http://www.youtube.com/watch?v=KQcwW9hNRMk&w;=425&h;=355]
-
-
-
-
+You can see is a demo of the new Outlook Sync tool [here](http://www.youtube.com/watch?v=KQcwW9hNRMk).
 
 Microsoft really needs to step up their game if they want to continue to succeed in this market. I am not saying Exchange Server is going to simply vanish, but fewer smaller organizations are going to be considering products like Small Business Server in the future and will instead be relying on cloud file storage and services like Google Apps and Salesforce.com to power their businesses.

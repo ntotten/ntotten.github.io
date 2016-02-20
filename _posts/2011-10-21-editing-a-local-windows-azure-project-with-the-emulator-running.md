@@ -10,23 +10,11 @@ While working on another blog post today I just discovered a hidden gem in the W
 
 To refresh your memory on how inconvenient this used to be here are the steps you would have had to go through to make a minor CSS change and preview it while running in the local emulator.
 
-
-
-	
   1. Make your edit
-
-	
   2. Run your application either through debugging (F5) or just by running it (Ctrl+F5).
-
-	
   3. Wait for the Windows Azure emulator to redeploy and start
-
-	
   4. Load your site.
-
-	
   5. Repeat.
-
 
 In all this process would take 30 seconds to a minute or so depending on the machine you are on. While generally not a huge deal for most work, when you are doing something like testing your CSS design or fine tuning some JavaScript this could become very inconvenient.
 

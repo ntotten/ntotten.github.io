@@ -29,9 +29,9 @@ To test the configuration I am going to deploy a simple site that includes three
 
 I have this solution deployed to [http://info.demo.ntotten.com](http://info.demo.ntotten.com) so you can see the working results.
 
-  * [http://info.demo.ntotten.com/info.php](http://info.demo.ntotten.com/info.php)
-  * [http://info.demo.ntotten.com/info.cshtml](http://info.demo.ntotten.com/info.cshtml)
-  * [http://info.demo.ntotten.com/info.aspx](http://info.demo.ntotten.com/info.aspx)
+* [http://info.demo.ntotten.com/info.php](http://info.demo.ntotten.com/info.php)
+* [http://info.demo.ntotten.com/info.cshtml](http://info.demo.ntotten.com/info.cshtml)
+* [http://info.demo.ntotten.com/info.aspx](http://info.demo.ntotten.com/info.aspx)
 
 [![SNAGHTML1f8620](/images/2011/07/snaghtml1f8620_thumb.png)](/images/2011/07/snaghtml1f8620.png)
 

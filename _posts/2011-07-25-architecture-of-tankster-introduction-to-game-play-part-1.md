@@ -11,12 +11,9 @@ The game [Tankster](http://www.tankster.net) is a proof-of-concept game that is 
 
 Before we begin with an explanation of the implementation, it is important to know what our goals where for this game. We had three primary goals when building this game.
 
-
-
-	
-  1. The game must scale to handle several hundred thousand concurrent users.*
-  2. The architecture must be cost effective.
-  3. The architecture must be flexible enough for different types of games.
+1. The game must scale to handle several hundred thousand concurrent users.*
+2. The architecture must be cost effective.
+3. The architecture must be flexible enough for different types of games.
 
 * This is the goal, but there are still some known limitations in the current version that would prevent this. I will be writing more about that later.
 
@@ -40,37 +37,37 @@ Request Body:
 
 Next, the web role adds the message to the game queue. The game queue is a Windows Azure queue that contains messages relating to users requesting to join games. The WCF service code is below. Note, we are using the [WCF Web API](http://wcf.codeplex.com) in this project.
 
+```cs
+public HttpResponseMessage Queue(HttpRequestMessage request)
+{
+  var formContent = GetFormContent(request);
+  GameType gameType;
 
-    public HttpResponseMessage Queue(HttpRequestMessage request)
+  if (!Enum.TryParse(formContent.gameType.Value, true, out gameType))
+  {
+    return BadRequest("Invalid gameType parameter");
+  }
+
+  try
+  {
+    // Update userSession blob
+    var userSession = new UserSession
     {
-        var formContent = GetFormContent(request);
-        GameType gameType;
+        UserId = CurrentUserId,
+        ActiveGameQueueId = Guid.Empty
+    };
 
-        if (!Enum.TryParse(formContent.gameType.Value, true, out gameType))
-        {
-            return BadRequest("Invalid gameType parameter");
-        }
+    this.userRepository.AddOrUpdateUserSession(userSession);
+    this.gameRepository.AddUserToGameQueue(CurrentUserId, gameType);
+  }
+  catch (Exception ex)
+  {
+    return BadRequest(ex.Message);
+  }
 
-        try
-        {
-            // Update userSession blob
-            var userSession = new UserSession
-            {
-                UserId = CurrentUserId,
-                ActiveGameQueueId = Guid.Empty
-            };
-
-            this.userRepository.AddOrUpdateUserSession(userSession);
-            this.gameRepository.AddUserToGameQueue(CurrentUserId, gameType);
-        }
-        catch (Exception ex)
-        {
-            return BadRequest(ex.Message);
-        }
-
-        return SuccessResponse;
-    }
-
+  return SuccessResponse;
+}
+```
 
 The response returned from this request does not contain any information. It is simply returned as success or failure. This is because we don't want the request to stay open and wait for processing to occur.
 
@@ -84,10 +81,12 @@ GET: http://tankster.blob.core.windows.net/sessions/<userId>
 
 Response Body:
 
-    sessionsCallback(
-    	{'UserId':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
-    	,'ActiveGameQueueId':'00000000-0000-0000-0000-000000000000'
-    	})
+```js
+sessionsCallback(
+  {'UserId':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
+  ,'ActiveGameQueueId':'00000000-0000-0000-0000-000000000000'
+  })
+```
 
 Notice that the ActiveGameQueueId is set to all zeros. This is the default value and means the game queue has not yet been created.
 
@@ -99,10 +98,12 @@ GET: http://tankster.blob.core.windows.net/sessions/<userId>?_=<timestamp>
 
 Response Body:
 
-    sessionsCallback(
-    	{'UserId':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
-    	,'ActiveGameQueueId':'445a9d20-5705-4f39-878b-cd7bda3db862'
-    	})
+```js
+sessionsCallback(
+  {'UserId':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
+  ,'ActiveGameQueueId':'445a9d20-5705-4f39-878b-cd7bda3db862'
+  })
+```
 
 Now that the client knows the ActiveGameQueueId it will begin polling that game queues container which now contains a blob object named to the value of ActiveGameQueueId.
 
@@ -112,21 +113,23 @@ GET: http://tankster.blob.core.windows.net/gamesqueues/<ActiveGameQueueId>?_=<ti
 
 Response Body:
 
-    gamesqueuesCallback(
-    	{'Id':'445a9d20-5705-4f39-878b-cd7bda3db862'
-    	,'Status':0
-    	,'GameId':'00000000-0000-0000-0000-000000000000'
-    	,'CreationTime':'/Date(1311617480095)/'
-    	,'Users':[
-    		{'UserId':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
-    		,'UserName':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
-    		,'Weapons':[]
-    		},
-    		{'UserId':'ZXjeyzvw7WTdP8/Uio4P6cDZ8jmKvCXCDp7JjWolAOY='
-    		,'UserName':'ZXjeyzvw7WTdP8/Uio4P6cDZ8jmKvCXCDp7JjWolAOY='
-    		,'Weapons':[]
-    		}]
-    	})
+```js
+gamesqueuesCallback(
+  {'Id':'445a9d20-5705-4f39-878b-cd7bda3db862'
+  ,'Status':0
+  ,'GameId':'00000000-0000-0000-0000-000000000000'
+  ,'CreationTime':'/Date(1311617480095)/'
+  ,'Users':[
+    {'UserId':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
+    ,'UserName':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
+    ,'Weapons':[]
+    },
+    {'UserId':'ZXjeyzvw7WTdP8/Uio4P6cDZ8jmKvCXCDp7JjWolAOY='
+    ,'UserName':'ZXjeyzvw7WTdP8/Uio4P6cDZ8jmKvCXCDp7JjWolAOY='
+    ,'Weapons':[]
+    }]
+  })
+```
 
 Since we only have two users in the queue the worker role will wait and keep checking for more users. If none arrive after 30 seconds, the game queue is closed and a game blob object is created. After the game is created. The value of GameId is set in the game queue. The client will continue to poll the game queue object until the GameId is set. At which point the client will begin polling the game object.
 
@@ -134,24 +137,26 @@ GET: http://tankster.blob.core.windows.net/games/<gameId>?_=<timestamp>
 
 Response Body:
 
-    gamesCallback(
-    	{'Id':'620f6257-83e6-4fdc-99e3-3109718934a6'
-    	,'CreationTime':'/Date(1311617527935)/'
-    	,'Seed':1157059416
-    	,'Status':0
-    	,'Users':[
-    		{'UserId':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
-    		,'UserName':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
-    		,'Weapons':[]
-    		},
-    		{'UserId':'ZXjeyzvw7WTdP8/Uio4P6cDZ8jmKvCXCDp7JjWolAOY='
-    		,'UserName':'ZXjeyzvw7WTdP8/Uio4P6cDZ8jmKvCXCDp7JjWolAOY='
-    		,'Weapons':[]
-    		}]
-    	,'ActiveUser':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
-    	,'GameRules':[]
-    	,'GameActions':[]
-    	})
+```js
+gamesCallback(
+  {'Id':'620f6257-83e6-4fdc-99e3-3109718934a6'
+  ,'CreationTime':'/Date(1311617527935)/'
+  ,'Seed':1157059416
+  ,'Status':0
+  ,'Users':[
+    {'UserId':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
+    ,'UserName':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
+    ,'Weapons':[]
+    },
+    {'UserId':'ZXjeyzvw7WTdP8/Uio4P6cDZ8jmKvCXCDp7JjWolAOY='
+    ,'UserName':'ZXjeyzvw7WTdP8/Uio4P6cDZ8jmKvCXCDp7JjWolAOY='
+    ,'Weapons':[]
+    }]
+  ,'ActiveUser':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
+  ,'GameRules':[]
+  ,'GameActions':[]
+  })
+```
 
 The client will continually poll the blob object throughout the entire game on a defined interval.
 
@@ -161,8 +166,8 @@ POST: http://www.tankster.net/Game/Command/<gameId>
 
 Request Body:
 
-    
-    commandData%5Bid%5D=0&commandData%5Bx%5D=630.4452853164571&commandData%5By%5D=370.93496559564545&commandData%5Bangle%5D=0.7765261071773579&commandData%5Bpower%5D=2.230544159582499&commandData%5Bweapon%5D=missle_sml&type=15
+
+  commandData%5Bid%5D=0&commandData%5Bx%5D=630.4452853164571&commandData%5By%5D=370.93496559564545&commandData%5Bangle%5D=0.7765261071773579&commandData%5Bpower%5D=2.230544159582499&commandData%5Bweapon%5D=missle_sml&type=15
 
 
 [![image](/images/2011/07/image_thumb9.png)](/images/2011/07/image9.png)
@@ -171,55 +176,57 @@ After the server receives the game command it adds the command to the game blob 
 
 Here is what the game blob object looks like after some game play.
 
-    gamesCallback(
-    	{'Id':'089d3af0-5706-4f9f-98e5-2843b36f4eb0'
-    	,'CreationTime':'/Date(1311632852746)/'
-    	,'Seed':1477684927
-    	,'Status':0
-    	,'Users':[
-    		{'UserId':'ZXjeyzvw7WTdP8/Uio4P6cDZ8jmKvCXCDp7JjWolAOY='
-    		,'UserName':'ZXjeyzvw7WTdP8/Uio4P6cDZ8jmKvCXCDp7JjWolAOY='
-    		,'Weapons':[]
-    		},
-    		{'UserId':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
-    		,'UserName':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
-    		,'Weapons':[]
-    		}]
-    	,'ActiveUser':'ZXjeyzvw7WTdP8/Uio4P6cDZ8jmKvCXCDp7JjWolAOY='
-    	,'GameRules':[]
-    	,'GameActions':[
-    		{'Id':'9298c554-3a4b-48a8-b592-3e15480a1927'
-    		,'UserId':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
-    		,'Type':15
-    		,'CommandData':
-    			{'id':'1'
-    			,'x':'838.2676052680835'
-    			,'y':'405.42520196384174'
-    			,'angle':'1'
-    			,'power':'-1.9276202117247642'
-    			,'weapon':'missle_sml'
-    			}
-    		,'Timestamp':'/Date(1311633352333)/'
-    		},
-    		{'Id':'49d3c053-7fa4-4292-bcc7-441df9342e5f'
-    		,'UserId':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
-    		,'Type':13
-    		,'CommandData':
-    			{'id':'1'
-    			,'damage':'0,0'
-    			,'terrain':'292,292,293,...,274,273'
-    			}
-    		,'Timestamp':'/Date(1311633354662)/'
-    		},
-    		{'Id':'25b9c0ea-4c37-49ad-b190-4ecdd178493e'
-    		,'UserId':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
-    		,'Type':2
-    		,'CommandData':
-    			{'id':'1'
-    			}
-    		,'Timestamp':'/Date(1311633356973)/'
-    		}]
-    	})
+```js
+gamesCallback(
+  {'Id':'089d3af0-5706-4f9f-98e5-2843b36f4eb0'
+  ,'CreationTime':'/Date(1311632852746)/'
+  ,'Seed':1477684927
+  ,'Status':0
+  ,'Users':[
+    {'UserId':'ZXjeyzvw7WTdP8/Uio4P6cDZ8jmKvCXCDp7JjWolAOY='
+    ,'UserName':'ZXjeyzvw7WTdP8/Uio4P6cDZ8jmKvCXCDp7JjWolAOY='
+    ,'Weapons':[]
+    },
+    {'UserId':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
+    ,'UserName':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
+    ,'Weapons':[]
+    }]
+  ,'ActiveUser':'ZXjeyzvw7WTdP8/Uio4P6cDZ8jmKvCXCDp7JjWolAOY='
+  ,'GameRules':[]
+  ,'GameActions':[
+    {'Id':'9298c554-3a4b-48a8-b592-3e15480a1927'
+    ,'UserId':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
+    ,'Type':15
+    ,'CommandData':
+      {'id':'1'
+      ,'x':'838.2676052680835'
+      ,'y':'405.42520196384174'
+      ,'angle':'1'
+      ,'power':'-1.9276202117247642'
+      ,'weapon':'missle_sml'
+      }
+    ,'Timestamp':'/Date(1311633352333)/'
+    },
+    {'Id':'49d3c053-7fa4-4292-bcc7-441df9342e5f'
+    ,'UserId':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
+    ,'Type':13
+    ,'CommandData':
+      {'id':'1'
+      ,'damage':'0,0'
+      ,'terrain':'292,292,293,...,274,273'
+      }
+    ,'Timestamp':'/Date(1311633354662)/'
+    },
+    {'Id':'25b9c0ea-4c37-49ad-b190-4ecdd178493e'
+    ,'UserId':'MxAb1iZtey732BGsWsoMcwx3JbklW1xSnsxJX9+KanI='
+    ,'Type':2
+    ,'CommandData':
+      {'id':'1'
+      }
+    ,'Timestamp':'/Date(1311633356973)/'
+    }]
+  })
+```
 
 When a new command is read by the client the data in the command is used to execute an action in the game. For example, after your opponent fires the command is read by your browser and the values in the command are used to show the animation of your opponent’s shot.
 

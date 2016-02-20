@@ -15,9 +15,9 @@ To begin I have created an ASP.NET MVC 4 using the basic project template.
 
 Next, add the Facebook C# SDK to the project using NuGet by running the following command.
 
-
-		Install-Package Facebook
-
+```posh
+Install-Package Facebook
+```
 
 <img src="/images/2012/07/appstructure.png" class="left" />
 
@@ -34,67 +34,75 @@ After each of your applications are created you will be taken to the app informa
 
 Next set the App Id and App Secret values in our web.config files so we can use them in our application. We can use Web.config transforms in order to set the appropriate Facebook application for local development or production. For local development add the following keys to your Web.config file.
 
-	<appSettings>
-	  ...
-	  <add key="FacebookAppId" value="your_local_app_id"/>
-	  <add key="FacebookAppSecret" value="your_local_app_secret" />
-	</appSettings>
+```xml
+<appSettings>
+  ...
+  <add key="FacebookAppId" value="your_local_app_id"/>
+  <add key="FacebookAppSecret" value="your_local_app_secret" />
+</appSettings>
+```
 
 For the production environment add the following keys to your Web.Release.config file.
 
-	<appSettings>
-	<add key="FacebookAppId" value="your_prod_app_id"
-		 xdt:Transform="SetAttributes" xdt:Locator="Match(key)"/>
-	<add key="FacebookAppSecret" value="your_prod_app_secret"
-		 xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
-	</appSettings>
+```xml
+<appSettings>
+<add key="FacebookAppId" value="your_prod_app_id"
+   xdt:Transform="SetAttributes" xdt:Locator="Match(key)"/>
+<add key="FacebookAppSecret" value="your_prod_app_secret"
+   xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
+</appSettings>
+```
 
 Next we will setup our MVC Application for user authentication using Facebook's OAuth API. To begin, we set a page that will be secured. Open your AppController and add the [Authorize] attribute to the controller as shown below. This will ensure that only authorized users can access this page.
 
-	[Authorize]
-	public class AppController : Controller
-	{
-		//
-		// GET: /App/
- 
-		public ActionResult Index()
-		{
-			return View();
-		}
- 
-	}
+```cs
+[Authorize]
+public class AppController : Controller
+{
+  //
+  // GET: /App/
+
+  public ActionResult Index()
+  {
+    return View();
+  }
+
+}
+```
 
 The next step is to create our Facebook login action. We will do this in the AccountController. To begin, rename the Index action to Login. Next we need to create the Facebook OAuth url and redirect our user there. You can see below how to do this using the Facebook C# SDK.
 
-	public class AccountController : Controller
-	{
-		//
-		// GET: /Account/Login
- 
-		public ActionResult Login()
-		{
-			// Build the Return URI form the Request Url
-			var redirectUri = new UriBuilder(Request.Url);
-			redirectUri.Path = Url.Action("FbAuth", "Account");
- 
-			var client = new FacebookClient();
- 
-			// Generate the Facebook OAuth URL
-			// Example: https://www.facebook.com/dialog/oauth?
-			//                client_id=YOUR_APP_ID
-			//               &redirect_uri=YOUR_REDIRECT_URI
-			//               &scope=COMMA_SEPARATED_LIST_OF_PERMISSION_NAMES
-			//               &state=SOME_ARBITRARY_BUT_UNIQUE_STRING
-			var uri = client.GetLoginUrl(new
-			{
-				client_id = ConfigurationManager.AppSettings["FacebookAppId"],
-				redirect_uri = redirectUri.Uri.AbsoluteUri,
-				scope = "email",
-			});
- 
-			return Redirect(uri.ToString());
-		}
-	}
+```cs
+public class AccountController : Controller
+{
+  //
+  // GET: /Account/Login
+
+  public ActionResult Login()
+  {
+    // Build the Return URI form the Request Url
+    var redirectUri = new UriBuilder(Request.Url);
+    redirectUri.Path = Url.Action("FbAuth", "Account");
+
+    var client = new FacebookClient();
+
+    // Generate the Facebook OAuth URL
+    // Example: https://www.facebook.com/dialog/oauth?
+    //                client_id=YOUR_APP_ID
+    //               &redirect_uri=YOUR_REDIRECT_URI
+    //               &scope=COMMA_SEPARATED_LIST_OF_PERMISSION_NAMES
+    //               &state=SOME_ARBITRARY_BUT_UNIQUE_STRING
+    var uri = client.GetLoginUrl(new
+    {
+      client_id = ConfigurationManager.AppSettings["FacebookAppId"],
+      redirect_uri = redirectUri.Uri.AbsoluteUri,
+      scope = "email",
+    });
+
+    return Redirect(uri.ToString());
+  }
+}
+```
 
 Next, go ahead and run the site and navigate to http://localhost:####/App, where #### is the port number your site is running on. Because the AppController requires users to be authenticated you will be redirected to the Facebook OAuth page. However, you will notice that Facebook will give you an error as shown below.
 
@@ -112,66 +120,68 @@ After you click "Go to App" Facebook will redirect the user to the URL specified
 
 The FbAuth action that Facebook will redirect the user is responsible for reading the Facebook authorization result information, validating that information, and setting the user authentication cookie. You can perform these actions with the code below.
 
-	public ActionResult FbAuth(string returnUrl)
-	{
-		var client = new FacebookClient();
-		var oauthResult = client.ParseOAuthCallbackUrl(Request.Url);
- 
-		// Build the Return URI form the Request Url
-		var redirectUri = new UriBuilder(Request.Url);
-		redirectUri.Path = Url.Action("FbAuth", "Account");
- 
-		// Exchange the code for an access token
-		dynamic result = client.Get("/oauth/access_token", new
-		{
-			client_id = ConfigurationManager.AppSettings["FacebookAppId"],
-			redirect_uri = redirectUri.Uri.AbsoluteUri,
-			client_secret = ConfigurationManager.AppSettings["FacebookAppSecret"],
-			code = oauthResult.Code,
-		});
- 
-		// Read the auth values
-		string accessToken = result.access_token;
-		DateTime expires = DateTime.UtcNow.AddSeconds(Convert.ToDouble(result.expires));
- 
-		// Get the user's profile information
-		dynamic me = client.Get("/me", 
-					  new { 
-						 fields = "first_name,last_name,email", 
-						 access_token = accessToken 
-					  });
- 
-		// Read the Facebook user values
-		long facebookId = Convert.ToInt64(me.id);
-		string firstName = me.first_name;
-		string lastName = me.last_name;
-		string email = me.email;
- 
-		// Add the user to our persistent store
-		var userService = new UserService();
-		userService.AddOrUpdateUser(new User
-		{
-			Id = facebookId,
-			FirstName = firstName,
-			LastName = lastName,
-			Email = email,
-			AccessToken = accessToken,
-			Expires = expires
-		});
- 
-		// Set the Auth Cookie
-		FormsAuthentication.SetAuthCookie(email, false);
- 
-		// Redirect to the return url if availible
-		if (String.IsNullOrEmpty(returnUrl))
-		{
-			return Redirect("/App");
-		}
-		else
-		{
-			return Redirect(returnUrl);
-		}
-	}
+```cs
+public ActionResult FbAuth(string returnUrl)
+{
+  var client = new FacebookClient();
+  var oauthResult = client.ParseOAuthCallbackUrl(Request.Url);
+
+  // Build the Return URI form the Request Url
+  var redirectUri = new UriBuilder(Request.Url);
+  redirectUri.Path = Url.Action("FbAuth", "Account");
+
+  // Exchange the code for an access token
+  dynamic result = client.Get("/oauth/access_token", new
+  {
+    client_id = ConfigurationManager.AppSettings["FacebookAppId"],
+    redirect_uri = redirectUri.Uri.AbsoluteUri,
+    client_secret = ConfigurationManager.AppSettings["FacebookAppSecret"],
+    code = oauthResult.Code,
+  });
+
+  // Read the auth values
+  string accessToken = result.access_token;
+  DateTime expires = DateTime.UtcNow.AddSeconds(Convert.ToDouble(result.expires));
+
+  // Get the user's profile information
+  dynamic me = client.Get("/me",
+          new {
+           fields = "first_name,last_name,email",
+           access_token = accessToken
+          });
+
+  // Read the Facebook user values
+  long facebookId = Convert.ToInt64(me.id);
+  string firstName = me.first_name;
+  string lastName = me.last_name;
+  string email = me.email;
+
+  // Add the user to our persistent store
+  var userService = new UserService();
+  userService.AddOrUpdateUser(new User
+  {
+    Id = facebookId,
+    FirstName = firstName,
+    LastName = lastName,
+    Email = email,
+    AccessToken = accessToken,
+    Expires = expires
+  });
+
+  // Set the Auth Cookie
+  FormsAuthentication.SetAuthCookie(email, false);
+
+  // Redirect to the return url if availible
+  if (String.IsNullOrEmpty(returnUrl))
+  {
+    return Redirect("/App");
+  }
+  else
+  {
+    return Redirect(returnUrl);
+  }
+}
+```
 
 That is everything required to authenticate a user with Facebook. Now all that remains is to publish the site to [Windows Azure Web Sites](https://www.windowsazure.com/en-us/home/scenarios/web-sites/). If you don't already have a Windows Azure account you can sign up for a free trial on [WindowsAzure.com](https://www.windowsazure.com/en-us/pricing/free-trial/). If you already have an account login in the [new management portal](http://manage.windowsazure.com) and click "New" and click "Web Site". Select quick create and fill in the form as shown below. Use your own URL for your application.
 

@@ -10,12 +10,14 @@ The other day a friend of mine asked me to setup a few Wordpress blogs. These ar
 
 After the site is created, open up the site in either [WebMatrix](http://www.microsoft.com/web/webmatrix/) or through FTP to make a single configuration change. Open wp-config.php at the root of your site and set the table_prefix value to something other than "wp_". For example, you could use "wp2_" for your second site as shown below.
 
-	/**
-	 * WordPress Database Table prefix.
-	 *
-	 * You can have multiple installations in one database if you give each a unique
-	 * prefix. Only numbers, letters, and underscores please!
-	 */
-	$table_prefix  = 'wp2_';
+```php
+/**
+ * WordPress Database Table prefix.
+ *
+ * You can have multiple installations in one database if you give each a unique
+ * prefix. Only numbers, letters, and underscores please!
+ */
+$table_prefix  = 'wp2_';
+```
 
 That's it. With just one small change you can run a few Wordpress sites on Windows Azure for no cost.

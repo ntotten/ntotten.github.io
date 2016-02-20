@@ -18,42 +18,45 @@ To get started with the Windows Azure CDN Helpers install one of two Nuget packa
 After you install the packages you will need to setup your configuration. The configuration is all done using code that runs at your applications startup. You can find this code in /App_Start/CdnHelpers.cs.
 The two big things to change are your Cdn Endpoing Url and to enable blob storage backing if you are not hosting your website on Windows Azure. Here is the default configuration. Notice the CdnEndpointUrl is set to "[namespace].vo.msecdn.net". You must change this to your CDN endpoing URL.
 
+```cs
+public static void Start() {
 
-	public static void Start() {
+  CdnHelpersContext.Current.Configure(c => {
+    c.CdnEndointUrl = "[namespace].vo.msecnd.net";
+    //c.EnableBlobStorageBacking(CloudStorageAccount.DevelopmentStorageAccount);
+    c.EnableImageOptimizations();
+    c.UseCdnForContentFolder();
+    c.UseCdnForScriptsFolder();
+    c.HashKey = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+    c.DebuggingEnabled = () => { return System.Web.HttpContext.Current.Request.IsLocal; };
+  });
 
-		CdnHelpersContext.Current.Configure(c => {
-			c.CdnEndointUrl = "[namespace].vo.msecnd.net";
-			//c.EnableBlobStorageBacking(CloudStorageAccount.DevelopmentStorageAccount);
-			c.EnableImageOptimizations();
-			c.UseCdnForContentFolder();
-			c.UseCdnForScriptsFolder();
-			c.HashKey = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-			c.DebuggingEnabled = () => { return System.Web.HttpContext.Current.Request.IsLocal; };
-		});
+  CdnHelpersContext.Current.RegisterCombinedJsFiles("core",
+    "~/scripts/modernizr-1.7.js"
+  );
 
-		CdnHelpersContext.Current.RegisterCombinedJsFiles("core",
-			"~/scripts/modernizr-1.7.js"
-		);
-
-		CdnHelpersContext.Current.RegisterCombinedCssFiles("site",
-			"~/content/Site.css"
-		);
-	}
-
+  CdnHelpersContext.Current.RegisterCombinedCssFiles("site",
+    "~/content/Site.css"
+  );
+}
+```
 
 The two methods called here "RegisterCombinedJsFiles" and "RegisterCombinedCssFiles" are used to build combined and minimized JS and CSS files. You set the key of the file and enumerate all the files you want combined into that key. Then to use the files you set your CSS and JS files in your Master Page or Layout Page like this:
 
-
-	@ViewBag.Title
-	<script type="text/javascript" src="@Url.CdnContent("/Scripts/jquery-1.5.1.min.js")"></script>
-	<script type="text/javascript" src="@Url.CdnCombinedJs("core")"></script>
-
+```html
+@ViewBag.Title
+<script type="text/javascript" src="@Url.CdnContent("/Scripts/jquery-1.5.1.min.js")"></script>
+<script type="text/javascript" src="@Url.CdnCombinedJs("core")"></script>
+```
 
 After that you are ready to go. You will see that your static files are now combined and served from the Windows Azure CDN.
 
-	Home Page
-	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.1.min.js"></script>
-	<script type="text/javascript" src="http://[namespace].vo.msecnd.net/a87341b5b4c095639e86220e2db79980.js"></script>
+Home Page
+
+```html
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="http://[namespace].vo.msecnd.net/a87341b5b4c095639e86220e2db79980.js"></script>
+```
 
 You will also notice that the JQuery file is served from the [Microsoft Ajax CDN](http://www.asp.net/ajaxlibrary/CDN.ashx). Any file that is available in that CDN will automatically be used as this CDN is preferred to your own since it is likely the user already has that file cached on their local computer. You can define additional CDN files in the /App_Data/CdnHelpers.xml file.
 

@@ -24,53 +24,55 @@ The only thing that is left is to turn off the provisioning API in your Google A
 
 In case you would like to modify this program yourself here is the source code. You will need to download and reference the .Net library for the Google Data API [here](http://code.google.com/p/google-gdata/downloads/list). You will have to reference Google.GData.Apps, Google.GData.Client, and Google.GData.Extensions in your project.
 
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
-	using Google.GData.Apps;
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Google.GData.Apps;
 
-	namespace AtlasBay.GoogleAppsTools
-	{
-		class Program
-		{
-			static void Main(string[] args)
-			{
-				Console.WriteLine("Domain:");
-				string domain = Console.ReadLine();
-				Console.WriteLine("Administrator Email:");
-				string adminEmail = Console.ReadLine();
-				Console.WriteLine("Administrator Password:");
-				string adminPass = Console.ReadLine();
-				RenameUser(domain, adminEmail, adminPass);
-			}
+namespace AtlasBay.GoogleAppsTools
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine("Domain:");
+      string domain = Console.ReadLine();
+      Console.WriteLine("Administrator Email:");
+      string adminEmail = Console.ReadLine();
+      Console.WriteLine("Administrator Password:");
+      string adminPass = Console.ReadLine();
+      RenameUser(domain, adminEmail, adminPass);
+    }
 
-			static void RenameUser(string domain, string adminEmail, string adminPassword)
-			{
-				Console.WriteLine("Old Username:");
-				string oldUsername = Console.ReadLine();
-				Console.WriteLine("New Username:");
-				string newUsername = Console.ReadLine();
-				try
-				{
-					AppsService service = new AppsService(domain, adminEmail, adminPassword);
-					UserEntry entry = service.RetrieveUser(oldUsername);
-					entry.Login.UserName = newUsername;
-					service.UpdateUser(entry);
-					Console.WriteLine("Rename Successful. Perform another rename? y/n");
-				}
-				catch
-				{
-					Console.WriteLine("An error occurred while performing the update. Try another? y/n");
-				}
-				var key = Console.ReadKey();
-				if (key.Key == ConsoleKey.Y)
-				{
-					Console.WriteLine();
-					RenameUser(domain, adminEmail, adminPassword);
-				}
-			}
-		}
-	}
+    static void RenameUser(string domain, string adminEmail, string adminPassword)
+    {
+      Console.WriteLine("Old Username:");
+      string oldUsername = Console.ReadLine();
+      Console.WriteLine("New Username:");
+      string newUsername = Console.ReadLine();
+      try
+      {
+        AppsService service = new AppsService(domain, adminEmail, adminPassword);
+        UserEntry entry = service.RetrieveUser(oldUsername);
+        entry.Login.UserName = newUsername;
+        service.UpdateUser(entry);
+        Console.WriteLine("Rename Successful. Perform another rename? y/n");
+      }
+      catch
+      {
+        Console.WriteLine("An error occurred while performing the update. Try another? y/n");
+      }
+      var key = Console.ReadKey();
+      if (key.Key == ConsoleKey.Y)
+      {
+        Console.WriteLine();
+        RenameUser(domain, adminEmail, adminPassword);
+      }
+    }
+  }
+}
+```
 
 This application and code are provided as is. The application [works on my machine](http://www.codinghorror.com/blog/archives/000818.html), but you are using this at your own risk.

@@ -17,17 +17,9 @@ So we know that we can scale out web roles and worker roles as much as we need t
 
 The top level of scale for Windows Azure storage is at the account level. A single Windows Azure storage account has the following scalability targets:
 
-
-
-	
-  * Storage Capacity: Up to 100 TBs
-
-	
-  * Transactions: Up to 5,000 entities/messages/blobs per second
-
-	
-  * Bandwidth: Up to 3 gigabits per second
-
+* Storage Capacity: Up to 100 TBs
+* Transactions: Up to 5,000 entities/messages/blobs per second
+* Bandwidth: Up to 3 gigabits per second
 
 Additionally, a single Windows Azure queue can handle up to 500 messages per second and a single blob can handle up to 60 megabytes per second.
 

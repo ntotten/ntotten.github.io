@@ -13,9 +13,11 @@ You can see how to setup Github's password caching tool on their [help documenta
 You can see that after the password helper is setup we are prompted for credentials on the first commit, but on subsequent commits our cached credentials are used automatically.
 
 **First Push**
+
 [![push1](/images/2013/04/push1.png)](/images/2013/04/push1.png)
 
 **Second Push**
+
 [![push2](/images/2013/04/push2.png)](/images/2013/04/push2.png)
 
 Hopefully that helps save a little time when developing on Windows Azure.

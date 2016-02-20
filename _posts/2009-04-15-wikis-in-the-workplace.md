@@ -14,7 +14,9 @@ The storage and sharing of company knowledge is critical to the success of any b
 
 A wiki is the perfect solution to this problem. By creating a secure company-wide wiki you and your employees can begin to document their job and share their knowledge. Policies can be shared more easily, processes that are only known by few can be performed by many, and everyone can learn new skills that will enhance the value of themselves and the company.
 
-[![wikicapture](/images/2009/04/wikicapture-thumb.png)](/images/2009/04/wikicapture.png) We use a wiki at Atlas Bay for a variety of purposes. One of the most important uses of a wiki for us is to document technical processes. By storing this information in our wiki there is no need for multiple people to figure out the same problem. Additionally, when we must perform a task again after many months of learning the task we can simply read our wikis for any procedures and notes regarding the task.
+[![wikicapture](/images/2009/04/wikicapture-thumb.png)](/images/2009/04/wikicapture.png)
+
+We use a wiki at Atlas Bay for a variety of purposes. One of the most important uses of a wiki for us is to document technical processes. By storing this information in our wiki there is no need for multiple people to figure out the same problem. Additionally, when we must perform a task again after many months of learning the task we can simply read our wikis for any procedures and notes regarding the task.
 
 Another use of our wiki is software specification documentation. When working on a new project we work closely with a customer to determine exactly what they are looking for and what their needs are. By using our company wiki to to store this data, each person working on that project team has constant access to that information and can make updates as need.
 

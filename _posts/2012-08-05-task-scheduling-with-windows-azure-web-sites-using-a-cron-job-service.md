@@ -13,17 +13,19 @@ A common question I get related to Windows Azure Web Sites is how you handle sch
 
 For this demo I am using [SetCronJob.com](http://SetCronJob.com). There are a [bunch of free and paid hosted cron services](http://www.bing.com/search?setmkt=en-US&q=free+cron+service) available and I am not recommending any one over the other as I haven't used any except for this simple demo. I just picked this one at random so be sure to research and test the service you use.
 
-The first thing to do is create an action that runs at a set url in your web app. For this demo I will use node.js, but you could very easily do this with any language. Below is a simple action in an express app that responds to /crontask and sends an email using [SendGrid](http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/sendgrid-email-service/). 
+The first thing to do is create an action that runs at a set url in your web app. For this demo I will use node.js, but you could very easily do this with any language. Below is a simple action in an express app that responds to /crontask and sends an email using [SendGrid](http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/sendgrid-email-service/).
 
-	app.get('/crontask', function(req, res) {
-	  var sender = new SendGrid.SendGrid('user','key');
-	  sender.send({
-		  to: 'john@contoso.com',
-		  from: 'anna@contoso.com',
-		  subject: 'test mail',
-		  text: 'This is a sample email message.'
-	  });
-	});
+```js
+app.get('/crontask', function(req, res) {
+  var sender = new SendGrid.SendGrid('user','key');
+  sender.send({
+    to: 'john@contoso.com',
+    from: 'anna@contoso.com',
+    subject: 'test mail',
+    text: 'This is a sample email message.'
+  });
+});
+```
 
 Now to trigger this task to run you will need to setup a cron scheduler. First, you will need to create an account on [setcronjob.com](http://SetCronJob.com). They have a free plan that allows you to schedule jobs at 10 minute intervals. After you have an account you just need to create a new cron job. Enter the url of your Windows Azure Web Site and the path where your cron job is located.
 

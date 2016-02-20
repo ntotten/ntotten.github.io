@@ -21,10 +21,10 @@ Using the filter is easy. Simply add the filter to your controller and specific 
 [IPFilter("123.45.0.0/16")]
 public class HomeController : Controller
 {
-    public ActionResult Index()
-    {
-        return View();
-    }
+  public ActionResult Index()
+  {
+    return View();
+  }
 }
 ```
 
@@ -34,10 +34,10 @@ Optionally, you can choose to block localhost access from your site. Localhost i
 [IPFilter("123.45.0.0/16", AllowLocalhost = false)]
 public class HomeController : Controller
 {
-    public ActionResult Index()
-    {
-        return View();
-    }
+  public ActionResult Index()
+  {
+    return View();
+  }
 }
 ```
 
@@ -46,11 +46,11 @@ public class HomeController : Controller
 ```cs
 protected override bool AuthorizeCore(HttpContextBase httpContext)
 {
-    var clientIP = httpContext.Request.Headers["X-Forwarded-For"];
-    var isAuthorized = IsAuthorizedIPAddress(this.AuthorizedIPAddress, clientIP);
+  var clientIP = httpContext.Request.Headers["X-Forwarded-For"];
+  var isAuthorized = IsAuthorizedIPAddress(this.AuthorizedIPAddress, clientIP);
 
-    return isAuthorized ||
-          (this.AllowLocalhost && (httpContext.Request.Url.Host == "localhost"));
+  return isAuthorized ||
+    (this.AllowLocalhost && (httpContext.Request.Url.Host == "localhost"));
 }
 ```
 
