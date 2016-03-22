@@ -20,8 +20,12 @@ My current recommendation for a router is the [Ubiquiti EdgeRouter™ PoE](https
 
 This router has 5 ethernet ports. With 1 or 2 being used for the internet connection this will leave you with 3 or 4 LAN connections. If you need more than that you will need to get a switch.
 
+![](/images/2016/03/edgerouter.jpg)
+
 ## Switch
 While you need a decent switch, this is one of the areas that you likely don't need to go crazy. I haven't used it, but I'm sure the [Ubiquiti Switches](https://www.ubnt.com/unifi-switching-routing/unifi-switch/) are fantastic. If you don't mind the price (or size) I would say go for it. However, for most people (and what I use) the Netgear ProSAFE line of switches will be enough. You can find them on [Amazon](http://www.amazon.com/NETGEAR-ProSAFE-Gigabit-Desktop-GS108-400NAS/dp/B00MPVR50A/) in 5, 8, 16, 24 port configurations.
+
+![](/images/2016/03/netgear_prosafe.jpg)
 
 ## Access Points
 This part is important. If you want a good wireless network, don't go cheap on this part. First off some basics. There are different protocols for wireless access points. New computers and phones support [802.11ac](https://en.wikipedia.org/wiki/IEEE_802.11ac). You want this. AC wireless is faster than the old protocols like N, B, G, etc.
@@ -38,10 +42,14 @@ Additionally, you will need to hard-wire each access point, so if your house isn
 
 For most houses, I would probably recommend getting two access points. If your house is really big or spread out you might need more. Each access point runs about $150 each so they aren't super cheap, but they are worth it.
 
+![](/images/2016/03/unifi_ap.jpg)
+
 ## Control Software
 The UniFi access points don't have onboard setup software like most of your home routers do. Instead they are managed centrally by custom UniFi software. This allows you to easily setup multiple access points at the same time and ensures they all work seamlessly together.
 
 One thing of note, for some unfortunate reason the UniFi controller software requires Java on your computer. I hate this. Fortunately, there is a nice way around this. Ubiquiti actually makes a little device called the [Cloud Key](https://www.ubnt.com/unifi/unifi-cloud-key/) that runs the control software. You simply plug this device into a PoE port on your router and it will allow you to manage your wireless network. I haven't actually used this, but I did order one and it should arrive in the next few days. I am excited to remove Java from my computer.
+
+![](/images/2016/03/cloud_key.jpg)
 
 ## Power Backup
 One other thing that might be worth adding depending on where you live is a simple UPC backup for your router, switch, and modem. This will keep everything humming along in the event of a power outage or blown fuse. Certainly not needed, but it will help you achieve 100% uptime.
