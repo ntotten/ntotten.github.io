@@ -25,7 +25,7 @@ This router has 5 ethernet ports. With 1 or 2 being used for the internet connec
 ## Switch
 While you need a decent switch, this is one of the areas that you likely don't need to go crazy. I haven't used it, but I'm sure the [Ubiquiti Switches](https://www.ubnt.com/unifi-switching-routing/unifi-switch/) are fantastic. If you don't mind the price (or size) I would say go for it. However, for most people (and what I use) the Netgear ProSAFE line of switches will be enough. You can find them on [Amazon](http://www.amazon.com/NETGEAR-ProSAFE-Gigabit-Desktop-GS108-400NAS/dp/B00MPVR50A/) in 5, 8, 16, 24 port configurations.
 
-![](/images/2016/03/netgear_prosafe.jpg)
+![](/images/2016/03/prosafe_switch.jpg)
 
 ## Access Points
 This part is important. If you want a good wireless network, don't go cheap on this part. First off some basics. There are different protocols for wireless access points. New computers and phones support [802.11ac](https://en.wikipedia.org/wiki/IEEE_802.11ac). You want this. AC wireless is faster than the old protocols like N, B, G, etc.
