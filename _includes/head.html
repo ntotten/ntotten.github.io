@@ -10,7 +10,7 @@
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title | escape }}{% endif %}"/>
   <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:type" content="article"/>
-  <meta property="og:url" content="{% if page.url %}{{ page.url }}{% else %}https://ntotten.com/{% endif %}"/>
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"/>
   <meta property="og:image" content="https://ntotten.com/images/ntotten1000.png"/>
   <meta property="og:site_name" content="{{ site.title | escape }}"/>
   <meta property="fb:app_id" content="355508947902562"/>
@@ -30,8 +30,6 @@
   <link rel="apple-touch-icon" sizes="72x72" href="https://secure.gravatar.com/avatar/d48b998c2dce49ca309710eba498c562.png?s=72">
   <link rel="apple-touch-icon" sizes="114x114" href="https://secure.gravatar.com/avatar/d48b998c2dce49ca309710eba498c562.png?s=114">
   <link rel="apple-touch-icon" sizes="144x144" href="https://secure.gravatar.com/avatar/d48b998c2dce49ca309710eba498c562.png?s=144"/>
-  <link rel="alternate" type="application/rss+xml" title="Nathan Totten's Blog" href="https://ntotten.com/feed/"/>
-  <link rel="canonical" href="{% if page.url %}{{ page.url }}{% else %}https://ntotten.com/{% endif %}"/>
   <link rel="me" type="text/html" href="https://plus.google.com/105437247828680895032?rel=me"/>
   <link rel="me" type="text/html" href="https://twitter.com/ntotten"/>
   <link rel="me" type="text/html" href="https://facebook.com/totten"/>
