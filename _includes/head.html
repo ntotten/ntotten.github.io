@@ -4,22 +4,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="title" content="{{ site.title | escape }}"/>
-  <meta property="og:title" content="{{ site.title | escape }}"/>
-  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title | escape }}{% endif %}"/>
+  <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:type" content="article"/>
   <meta property="og:url" content="https://ntotten.com/"/>
-  <meta property="og:image" content="https://ntotten.com/assets/images/ntotten1000.png"/>
+  <meta property="og:image" content="https://ntotten.com/images/ntotten1000.png"/>
   <meta property="og:site_name" content="{{ site.title | escape }}"/>
-  <meta property="fb:admins" content="14812017"/>
+  <meta property="fb:app_id" content="355508947902562"/>
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@ntotten">
   <meta name="twitter:creator" content="@ntotten">
-  <meta name="twitter:title" content="{{ site.title | escape }}">
-  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="twitter:image:src" content="https://ntotten.com/assets/images/ntotten250.png">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title | escape }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:image:src" content="https://ntotten.com/images/ntotten250.png">
   <meta name="twitter:domain" content="ntotten.com">
   <meta name="application-name" content="{{ site.title | escape }}"/>
   <meta name="msapplication-config" content="browserconfig.xml"/>
