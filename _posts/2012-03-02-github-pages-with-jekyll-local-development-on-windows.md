@@ -1,9 +1,10 @@
 ---
-date: 2012-03-02 15:36:47
+date: '2012-03-02'
 layout: post
 title: Github Pages with Jekyll - Local Development on Windows
 categories:
-- Notes
+  - Notes
+reirect_from: /2012/03/github-pages-with-jekyll-local-development-on-windows/
 ---
 
 I love [Github pages](http://pages.github.com). They make writing simple sites, blogs, or even [complex documentation](http://csharpsdk.org) super enjoyable. Github pages uses [Jekyll](https://github.com/mojombo/jekyll) to build your markdown or other site content into static HTML pages. While it is easy to push new content to Github and preview changes in your live site, sometimes you want to develop and test your site locally. In order to do this you will need to install Ruby and Jekyll on your local machine. Since I do much of my development on Windows 7 or Windows 8 I wanted to have Jekyll setup on these machines as well. Below you see how to install and use Jekyll on your Windows box.
@@ -53,3 +54,4 @@ As you can see, I ran Jekyll on the [Facebook C# SDK documentation](https://gith
 Since we used the -server option when running Jekyll a simple web server was started and is running at [http://localhost:4000](http://localhost:4000). You can now view your site in the browser. Generally, I like to just use Jekyll to build the site and then use IIS on my local machine to host the site. You can do this by simply creating a new site in IIS and pointing it to the _site folder. Either way you now have your Jekyll site up and running for local development. This should make it a little easier to build your site, then when you are ready you can do a push to Github to deploy your site publicly.
 
 Let me know if you have any questions or feedback.
+

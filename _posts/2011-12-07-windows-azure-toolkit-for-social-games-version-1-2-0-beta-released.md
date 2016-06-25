@@ -1,9 +1,10 @@
 ---
-date: 2011-12-07 19:46:42
+date: '2011-12-07'
 layout: post
 title: Windows Azure Toolkit for Social Games Version 1.2.0 (beta) Released
 categories:
-- Windows Azure
+  - Windows Azure
+reirect_from: /2011/12/windows-azure-toolkit-for-social-games-version-1-2-0-beta-released/
 ---
 
 Today, I released version 1.2.0 (beta) of the [Windows Azure Toolkit for Social Games](http://go.microsoft.com/fwlink/?LinkID=234210). You can download the self-extracting exe [here](http://go.microsoft.com/fwlink/?LinkID=234062) or get the source directly [here](http://go.microsoft.com/fwlink/?LinkID=234213). This release is primarily a maintenance release that includes bug fixes and enhancements to the code base. There aren’t any additional features in the release, but you should notice improved performance and stability. This is a ‘point’ release because there are a few breaking changes with the APIs that were made to clean up the overall code base.
@@ -34,3 +35,4 @@ RouteTable.Routes.SetDefaultHttpConfiguration(config);
 Additionally, we updated all the Nuget packages to their most recent versions. This includes the [WCF Web APIs](http://wcf.codeplex.com) to Preview 6 and jQuery to version 1.7.1. Finally, we fixed a few bugs. There was a memory leak that some people were seeing in the worker role that should be fixed.
 
 [Download](http://go.microsoft.com/fwlink/?LinkID=234062) and deploy the toolkit to Windows Azure today. Let me know if you have any feedback, questions, or if you find any bugs.
+

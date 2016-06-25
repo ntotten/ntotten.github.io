@@ -1,10 +1,11 @@
 ---
-date: 2012-11-13 14:29:47
+date: '2012-11-13'
 layout: post
 title: Spotlight on Windows Azure Startup Mural.ly
 categories:
-- NodeJS
-- Windows Azure
+  - NodeJS
+  - Windows Azure
+reirect_from: /2012/11/spotlight-on-windows-azure-startup-mural-ly/
 ---
 
 If you watched the second [BUILD keynote](http://channel9.msdn.com/Events/Build/2012/1-002) a few weeks ago you may have seen Satya mention a company called [Mural.ly](http://mural.ly). Mural.ly is an exciting new startup that runs their core services and infrastructure on Windows Azure. If you haven't seen Mural.ly I definitely recommend signing up for a free account and giving them a try. We were fortunate to have [Johnny Halife](https://twitter.com/johnnyhalife) in Redmond for BUILD where he participated in a few talks and interviews which you will find below.
@@ -28,3 +29,4 @@ Below you will find several recordings from BUILD sessions and interviews where 
 **Cloud Cover Live @ BUILD 2012**
 
 [![](/images/2012/11/cc.png)](http://channel9.msdn.com/Events/Ch9Live/Channel-9-Live-at-BUILD-2012/Cloud-Cover-Live-at-Build-2012)
+

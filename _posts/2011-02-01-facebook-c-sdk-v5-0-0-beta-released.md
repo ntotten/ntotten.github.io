@@ -1,9 +1,10 @@
 ---
-date: 2011-02-01 16:17:22
+date: '2011-02-01'
 layout: post
-title: Facebook C# SDK V5.0.0 (BETA) Released
+title: 'Facebook C# SDK V5.0.0 (BETA) Released'
 categories:
-- Facebook
+  - Facebook
+reirect_from: /2011/02/facebook-c-sdk-v5-0-0-beta-released/
 ---
 
 Earlier today we released the beta version of our V5 branch of the [Facebook C# SDK](http://csharpsdk.org). We have been working on this version for over a month and hope it is a significant improvement over the 4.X versions. I will be writing a series of posts over the next few days about this update. First, I wanted to talk a little about the general ideas behind this new release.
@@ -19,3 +20,4 @@ Getting back to the initial issues of confusion and difficulty using this SDK. T
 Version 5 is the first version that was build entirely for Facebook’s newest OAuth system across all .Net platforms. Our goal was to keep authentication as consistent as possible regardless of whether you are developing a web application or a Windows Phone 7 application. It is my hope that our implementation is more intuitive to learn and much easier to setup.
 
 I would encourage everyone to download the [Facebook C# SDK Version 5.0.0 (BETA)](http://csharpsdk.org/) and give it a try. We want to receive as much community feedback as possible before we release the next stable version of this SDK.
+

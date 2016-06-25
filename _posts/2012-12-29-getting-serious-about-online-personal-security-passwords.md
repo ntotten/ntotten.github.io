@@ -1,9 +1,10 @@
 ---
-date: 2012-12-29 09:01:07
+date: '2012-12-29'
 layout: post
 title: Getting Serious About Online Personal Security - Passwords
 categories:
-- Notes
+  - Notes
+reirect_from: /2012/12/getting-serious-about-online-personal-security-passwords/
 ---
 
 One of the things I decided to focus on this year is online personal security. There have been a [number](http://www.pcworld.com/article/2021495/2012s-worst-security-exploits-fails-and-blunders.html) of [high](http://news.cnet.com/8301-1009_3-57471178-83/yahoos-password-leak-what-you-need-to-know-faq/) [profile](http://www.pcworld.com/article/260176/dropbox_blames_employee_account_breach_for_spam_attack.html) [security](http://www.circlevilletoday.com/news/nationwide-insurance-says-data-breach-affects-m/article_41ae5bf9-7b24-5e39-83af-e3420419055e.html) [breaches](http://www.sfgate.com/business/prweb/article/US-Federal-Contractor-Registration-Data-Breach-4095711.php) this past year and I would be willing to bet that there are steps everyone can take to make them less susceptible to what could be a devastating security breach. This series of posts is a basic how-to guide for improving your online personal security. There are many aspects of this topic, but I think this series is a good outline of the minimum actions everyone should be taking to protect their digital selves.
@@ -54,3 +55,4 @@ Another thing to note about a password manager is that since you no longer need 
 4. Trusted Devices (coming soon)
 5. Mobile Devices (coming soon
 6. Backup (coming soon)
+

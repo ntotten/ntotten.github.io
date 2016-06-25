@@ -1,10 +1,11 @@
 ---
-date: 2011-04-17 21:53:38
+date: '2011-04-17'
 layout: post
 title: MVC Extension Method for Hosting Static Content on a CDN
 categories:
-- ASP.NET
-- Windows Azure
+  - ASP.NET
+  - Windows Azure
+reirect_from: /2011/04/mvc-static-content-extensions/
 ---
 
 I created a simple extension method that allows you to easily host your static content off the Microsoft ASP.NET Ajax CDN and Windows Azure CDN. This simple extension method will improve the performance of your website as well as saving server capacity (i.e. money).
@@ -58,3 +59,4 @@ NOTE: If you don't want to use Windows Azure CDN, then simply remove the entire 
 There are few more things that might be nice to add to this plugin. First, the plugin should behave differently when you are debugging. When debugging you don't really want to use any CDN at all. Second, it might be good to set querystring values specifying the version number for files served from the Azure CDN. This will make sure that when you redeploy, users always have the correct static content. Last, I would like to move the static content to an external XML file stored in App_Data. This would make it easier to add new CDN files.
 
 Let me know if you have any questions or feedback.
+

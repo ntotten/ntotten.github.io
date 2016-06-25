@@ -1,9 +1,10 @@
 ---
-date: 2012-01-26 14:19:59
+date: '2012-01-26'
 layout: post
 title: Windows Azure Toolkit for Social Games Version 1.2.2 Released
 categories:
-- Windows Azure
+  - Windows Azure
+reirect_from: /2012/01/windows-azure-toolkit-for-social-games-version-1-2-2-released/
 ---
 
 Today, I released version 1.2.2 of the [Windows Azure Toolkit for Social Games](https://github.com/WindowsAzure-Toolkits/wa-toolkit-games). You can download the self-extracting package [here](https://github.com/downloads/WindowsAzure-Toolkits/wa-toolkit-games/WATGames-v1.2.2.exe). This version does not add any new features compared to the last (Version 1.2.0 - Beta), but this release is considered stable. We added a number of performance enhancements as well as optimized the setup of the Autofac dependency injection. The big news with this release is that we have moved the project to [Github](https://github.com/WindowsAzure-Toolkits/wa-toolkit-games).
@@ -38,3 +39,4 @@ After you have forked the project, you can push changed to your own repository. 
 If your pull request is accepted, your changes will be added to the original repository for everybody to use. Feel free to add features or fix any bugs you find and send us a pull request.
 
 As always, feel free to leave comments, feedback, or suggestions. I would love to hear how you are using the toolkit and what you think about using Github.
+

@@ -1,9 +1,10 @@
 ---
-date: 2013-01-16 09:57:00
+date: '2013-01-16'
 layout: post
-title: Seeking Contributors for the Facebook C# SDK
+title: 'Seeking Contributors for the Facebook C# SDK'
 categories:
-- Facebook
+  - Facebook
+reirect_from: /2013/01/seeking-contributors-for-the-facebook-c-sdk/
 ---
 
 <img src="/images/2013/01/logo500x500.png" class="left" />
@@ -29,3 +30,4 @@ Below you will find an outline of areas in which I would like help in improving 
 * **UI and Organization of Web Site - **I think our project website is fairly decent. We use [Jekyll](https://github.com/mojombo/jekyll) and [Github Pages](http://pages.github.com/) to build it and Bootstrap for the design. However, it could definitely be improved. Additionally, some TLC with organization of the site would improve the overall experience. We are open to using something other than Jekyll and Github Pages if you have a better idea. I can provide the project with Windows Azure hosting if that is required.
 
 If you are interested in helping, reach out to me on [Twitter](http://twitter.com/ntotten) (@ntotten) and we can figure out the best ways for you to help.
+

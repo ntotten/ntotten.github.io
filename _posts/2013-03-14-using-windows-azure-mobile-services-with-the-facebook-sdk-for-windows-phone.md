@@ -1,10 +1,12 @@
 ---
-date: 2013-03-14 14:10:19
+date: '2013-03-14'
 layout: post
 title: Using Windows Azure Mobile Services with the Facebook SDK for Windows Phone
 categories:
-- Facebook
-- Windows Azure
+  - Facebook
+  - Windows Azure
+reirect_from: >-
+  /2013/03/using-windows-azure-mobile-services-with-the-facebook-sdk-for-windows-phone/
 ---
 
 > **NOTICE**: This content is very outdated. I recommend you check out [Auth0](https://auth0.com/docs/quickstart/native-mobile/windowsphone/azure-mobile-services) for an easy way to authenticate with Facebook.
@@ -93,3 +95,4 @@ private async Task GraphRequest()
 ```
 
 Now you are free to interact with both the Facebook Graph API and the Mobile Services API as an authenticated user. You could also use the Facebook SDK for Windows Phone to request additional permissions if your application requires them.
+

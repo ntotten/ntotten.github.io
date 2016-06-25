@@ -1,10 +1,11 @@
 ---
-date: 2011-07-28 18:45:00
+date: '2011-07-28'
 layout: post
 title: Architecture of Tankster– Scale (Part 2)
 categories:
-- ASP.NET
-- Windows Azure
+  - ASP.NET
+  - Windows Azure
+reirect_from: /2011/07/architecture-of-tankster-scale-part-2/
 ---
 
 This is the second post about the architecture of the [Tankster ](http://www.tankster.net)game that is included in the [Windows Azure Toolkit for Social Games](http://watgames.codeplex.com). My [last post](http://ntotten.com/2011/07/architecture-of-tankster-introduction-to-game-play-part-1/) mentioned that we have a goal to make the solution scale up to several hundred thousand concurrent user, but we have not yet achieved that goal. In this post I will explain why our current architecture will not scale that high and how the problem can be solved.
@@ -32,3 +33,4 @@ The next bottleneck after we split out storage accounts will be at the Windows A
 The next bottleneck in the game has to do with the leaderboard. We are using SQL Azure to store leaderboard data. Using SQL Azure makes it very easy to do calculations, sort, and rank this data, but it limits the scale. We could solve this problem in several ways. First, we could move this data to table storage, but we would lose some of the flexibility. The other option would be to shard our database. Currently, there is not built in support for this in SQL Azure, but the feature has been [announced](http://social.technet.microsoft.com/wiki/contents/articles/2281.aspx). For now, you would have to manually federate this data across several SQL Azure databases.
 
 As I mentioned, this is something that we are looking into and hope to add to the toolkit and game soon. For now the game should easily handle 1000+ concurrent users without any issues. One last thing to point out, most of the scale targets for storage accounts are not strictly enforced so you may get more scale depending on your exact use. For more detail I highly recommend reading the [blob post](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/05/10/windows-azure-storage-abstractions-and-their-scalability-targets.aspx) about storage account scalability.
+

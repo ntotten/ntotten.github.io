@@ -1,9 +1,10 @@
 ---
-date: 2011-04-26 12:24:12
+date: '2011-04-26'
 layout: post
 title: IIS Extensions on Windows Azure
 categories:
-- Windows Azure
+  - Windows Azure
+reirect_from: /2011/04/iis-extensions-on-windows-azure/
 ---
 
 I have had a few questions recently about using IIS Extensions in Windows Azure. I thought it would be a good idea to clarify a few things and start a list of what extensions will work and which ones either won’t work or aren’t needed. First, off it is important to remember that a Windows Azure Web Role runs regular IIS so you can pretty much do anything you want to it.
@@ -23,3 +24,4 @@ The final extension is called [UrlScan](http://www.iis.net/download/UrlScan). Th
 There is another extension in the security category worth mentioning. This extension is called [Dynamic IP Restrictions](http://www.iis.net/download/DynamicIPRestrictions). However, this extension is in beta and I have not tried it out. This extension helps mitigate or block Denial of Service Attacks and Brute-force attacks by temporarily blocking clients who trigger security flags. If you want to give it a try in Azure let me know how it works for you.
 
 Thanks for reading.
+

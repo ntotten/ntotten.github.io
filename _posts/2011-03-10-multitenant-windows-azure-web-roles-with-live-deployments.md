@@ -1,10 +1,11 @@
 ---
-date: 2011-03-10 16:55:37
+date: '2011-03-10'
 layout: post
 title: Multitenant Windows Azure Web Roles with Live Deployments
 categories:
-- ASP.NET
-- Windows Azure
+  - ASP.NET
+  - Windows Azure
+reirect_from: /2011/03/multitenant-windows-azure-web-roles-with-live-deployments/
 ---
 
 **Update: I would recommend using the [Windows Azure Accelerator for Web Roles](http://waawebroles.codeplex.com) instead of this code. See my post about it [here](http://ntotten.com/2011/07/windows-azure-accelerator-for-web-roles/).**
@@ -52,3 +53,4 @@ That’s pretty much it. A simple and scalable solution for multitenant web host
 You can download the solution in two ways. You can either get the source to add to your web role on NuGet using the package [MutitenantWebRole](http://nuget.org/List/Packages/MultiTenantWebRole) or you can download the Azure role package on [codeplex](http://azuretoolkit.codeplex.com/releases/view/62330). You can download the zipped website sample used in the this post [here](http://azuretoolkit.codeplex.com/releases/62330/download/216060).
 
 Let me now how it works out for you.
+

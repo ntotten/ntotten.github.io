@@ -1,10 +1,12 @@
 ---
-date: 2012-08-05 13:11:16
+date: '2012-08-05'
 layout: post
 title: Task Scheduling with Windows Azure Web Sites using a Cron Job Service
 categories:
-- NodeJS
-- Windows Azure
+  - NodeJS
+  - Windows Azure
+reirect_from: >-
+  /2012/08/task-scheduling-with-windows-azure-web-sites-using-a-cron-job-service/
 ---
 
 **UPDATE**: This content is now fairly outdated. Instead of the solution below, I recommend checking out the [Azure Scheduler](http://azure.microsoft.com/en-us/services/scheduler/) and [Azure WebJobs](http://www.hanselman.com/blog/IntroducingWindowsAzureWebJobs.aspx) services.
@@ -32,3 +34,4 @@ Now to trigger this task to run you will need to setup a cron scheduler. First, 
 [![](/images/2012/08/createcron.png)](/images/2012/08/createcron.png)
 
 Now that you have the cron job setup your email task will run as scheduled. There are certainly more sophisticated tasks you could run such as reading from a queue for messages that need to be sent, but you can see how easy this is to setup.
+

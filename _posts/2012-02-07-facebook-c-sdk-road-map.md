@@ -1,9 +1,10 @@
 ---
-date: 2012-02-07 12:14:01
+date: '2012-02-07'
 layout: post
-title: Facebook C# SDK Road Map
+title: 'Facebook C# SDK Road Map'
 categories:
-- Facebook
+  - Facebook
+reirect_from: /2012/02/facebook-c-sdk-road-map/
 ---
 
 **_Disclaimer - The Facebook C# SDK is not a Microsoft project. The Facebook C# SDK as well as this post are the work and opinions of myself and not those of Microsoft._**
@@ -97,3 +98,4 @@ If you want to submit a patch, please send us a pull request. We would love help
 
 # Wrapping Up
 This post ended up being a lot longer than I had planned, but I hope you are excited about where the Facebook C# SDK is heading. There were a lot of big announcements today and we have a few more exciting announcements in the next few weeks. As always, please feel free to leave feedback. We would love to hear from you.
+

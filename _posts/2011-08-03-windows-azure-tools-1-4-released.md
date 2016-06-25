@@ -1,10 +1,11 @@
 ---
-date: 2011-08-03 16:51:37
+date: '2011-08-03'
 layout: post
 title: Windows Azure Tools 1.4 Released
 categories:
-- ASP.NET
-- Windows Azure
+  - ASP.NET
+  - Windows Azure
+reirect_from: /2011/08/windows-azure-tools-1-4-released/
 ---
 
 Today, the [Windows Azure Tools for Visual Studio 1.4](http://www.microsoft.com/web/gallery/install.aspx?appid=WindowsAzureToolsVS2010) were released. These tools add a number of enhancements to the Windows Azure development and deployment experience that will make your life a bit easier. Below I am going to cover a few of the enhancements included with this release. For the full details you can see the release notes on MSDN [here](http://msdn.microsoft.com/en-us/library/ff683673.aspx).
@@ -52,3 +53,4 @@ When you deploy your application you select which configuration file you want to
 [![SNAGHTML19b2572b](/images/2011/08/snaghtml19b2572b_thumb.png)](/images/2011/08/snaghtml19b2572b.png)
 
 I think you will find that this updated tools will improve your Windows Azure development experience. For the full set of features and changes read the [post](http://msdn.microsoft.com/en-us/library/ff683673.aspx) on MSDN and [download](http://www.microsoft.com/web/gallery/install.aspx?appid=WindowsAzureToolsVS2010) the tools now to try them out.
+

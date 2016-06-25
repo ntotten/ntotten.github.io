@@ -1,11 +1,14 @@
 ---
-date: 2012-08-02 13:32:52
+date: '2012-08-02'
 layout: post
-title: Node.js, Socket.IO, and ASP.NET MVC 4 on Windows Azure Web Sites - Tankster
+title: >-
+  Node.js, Socket.IO, and ASP.NET MVC 4 on Windows Azure Web Sites - Tankster
   Command Sample
 categories:
-- NodeJS
-- Windows Azure
+  - NodeJS
+  - Windows Azure
+reirect_from: >-
+  /2012/08/node-js-socket-io-and-asp-net-mvc-4-on-windows-azure-web-sites-tankster-command-sample/
 ---
 
 Today I am releasing another sample application called [Tankster Command](https://github.com/WindowsAzure-Samples/TanksterCommand). This sample shows how to build an application that uses both ASP.NET and Node.js side-by-side. I used ASP.NET MVC 4 to build the bulk of the application and used Node.js and Socket.IO to create a simple chat client. This sample also uses Facebook to authenticate the users.
@@ -101,3 +104,4 @@ Second, if you are publishing your app using Web Deploy you must include the nod
 
 # Conclusion
 I hope this samples give you a better idea of how you can mix various technologies on Windows Azure Web Sites. You could do similar things with PHP
+

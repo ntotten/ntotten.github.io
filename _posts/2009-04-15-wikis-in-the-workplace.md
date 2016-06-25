@@ -1,9 +1,10 @@
 ---
-date: 2009-04-15 16:02:01
+date: '2009-04-15'
 layout: post
 title: Wikis In the Workplace
 categories:
-- Notes
+  - Notes
+reirect_from: /2009/04/wikis-in-the-workplace/
 ---
 
 Most likely when you hear the work “wiki” you think of [Wikipedia](http://en.wikipedia.org/wiki/Main_Page). Wikipedia, as you probably know, is a wildly popular online encyclopedia. If you haven’t integrated Wikipedia into your daily live you are really missing out, but that isn’t the topic of this post. This post is about the role of wikis in the workplace.
@@ -21,3 +22,4 @@ We use a wiki at Atlas Bay for a variety of purposes. One of the most important 
 Another use of our wiki is software specification documentation. When working on a new project we work closely with a customer to determine exactly what they are looking for and what their needs are. By using our company wiki to to store this data, each person working on that project team has constant access to that information and can make updates as need.
 
 I strongly recommend that your company utilize a wiki and begin to centralize your company knowledge. The process is simple and affordable. Your wiki will start out small, but over time it will grow organically into a large an useful collection of information that will increase the effectiveness of your business.
+

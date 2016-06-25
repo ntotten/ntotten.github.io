@@ -1,10 +1,11 @@
 ---
-date: 2012-12-19 16:36:00
+date: '2012-12-19'
 layout: post
-title: Facebook Authentication with the Facebook C# SDK and ASP.NET MVC 4
+title: 'Facebook Authentication with the Facebook C# SDK and ASP.NET MVC 4'
 categories:
-- ASP.NET
-- Facebook
+  - ASP.NET
+  - Facebook
+reirect_from: /2012/12/facebook-authentication-with-the-facebook-c-sdk-and-asp-net-mvc-4/
 ---
 
 > **NOTICE**: This content is very outdated. I recommend you check out [Auth0](https://auth0.com/docs/quickstart/webapp/aspnet/) for an easy way to authenticate with Facebook.
@@ -185,3 +186,4 @@ public ActionResult FacebookCallback(string code)
 If you are using a Membership provider you could create a user based on the user's Facebook profile information. You could also store the access token in a database to use later, but remember they only last about 20 minutes so you will have to renew them as they expire.
 
 Hopefully this helps clear up some of the confusion with Facebook authentication in an ASP.NET MVC 4 application.
+

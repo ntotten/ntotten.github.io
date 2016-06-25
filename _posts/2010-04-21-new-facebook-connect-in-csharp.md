@@ -1,9 +1,10 @@
 ---
-date: 2010-04-21 23:47:06
+date: '2010-04-21'
 layout: post
-title: New Facebook Connect in C#
+title: 'New Facebook Connect in C#'
 categories:
-- Facebook
+  - Facebook
+reirect_from: /2010/04/new-facebook-connect-in-csharp/
 ---
 
 The recent announcements of the Facebook Graph API brought with them some breaking changes to the way Facebook Connect authentication works. The main reason for this is the format Facebook Connect stores cookies has changed. In order to take advantage of these new features on ASP.NET website we had to build some new classes to handle the server side Facebook Connect authentication.
@@ -145,3 +146,4 @@ public class ConnectService : IConnectService {
 As you can see, this class is responsible for ensuring the user is connected and providing the UserId and SessionKey to the caller. Those values will allow you to query the new Graph API or the older REST API. You can use the [Facebook Toolkit](http://facebooktoolkit.codeplex.com) to query various data as well.
 
 **UPDATE: **I have posted the new Facebook .Net SDK on Github. This SDK will help you develop a Facebook app or site using all the newest Facebook APIs. You can download the SDK and samples here: [http://facebooksdk.net/](http://facebooksdk.net/)
+

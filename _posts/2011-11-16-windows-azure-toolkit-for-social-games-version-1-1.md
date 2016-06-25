@@ -1,9 +1,10 @@
 ---
-date: 2011-11-16 18:09:51
+date: '2011-11-16'
 layout: post
 title: Windows Azure Toolkit for Social Games Version 1.1
 categories:
-- Windows Azure
+  - Windows Azure
+reirect_from: /2011/11/windows-azure-toolkit-for-social-games-version-1-1/
 ---
 
 I am happy to report that we have updated the [Windows Azure Toolkit for Social Games](http://go.microsoft.com/fwlink/p/?LinkID=234210) to version 1.1. You can download the release [here](http://go.microsoft.com/fwlink/p/?LinkID=234062). This version is a significant step forward and enables developers to more easily and quickly build out their social games on the Windows Azure Platform.
@@ -39,3 +40,4 @@ As I mentioned previously, the Tankster game is still available for download as 
 Finally, if you want to see the toolkit in action you can access it at [http://watgames4.cloudapp.net/](http://watgames4.cloudapp.net/). Feel free to login and play a couple games of Tic-Tac-Toe or Four in a Row. If you use multiple browsers you can even challenge yourself to a game!
 
 As always, please let me know if you have any comments or feedback.
+

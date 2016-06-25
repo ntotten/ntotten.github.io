@@ -1,9 +1,10 @@
 ---
-date: 2010-09-07 18:13:13
+date: '2010-09-07'
 layout: post
-title: Dynamic objects and the Facebook C# SDK
+title: 'Dynamic objects and the Facebook C# SDK'
 categories:
-- Facebook
+  - Facebook
+reirect_from: /2010/09/dynamic-objects-and-the-facebook-c-sdk/
 ---
 
 Developing with Facebook is like building a house on a swamp. Facebook is constantly evolving their platform, adding new features, and making changes. This makes it a challenge for an application developer to keep their application working and up to date. For these reasons, an application developer needs a solid framework to build on that keeps the development experience consistent, intuitive, and flexible.
@@ -102,3 +103,4 @@ string firstName = me.first_name;
 Now, when you are browsing the [forums](http://forum.developers.facebook.net/) or Facebook’s [official documentation](http://developers.facebook.com/docs/) to solve a problem you will have a much easier time applying the solution to your .Net application. We have deliberately kept properties, methods, and objects consistent with the Facebook PHP SDK for exactly this reason.
 
 Thanks for reading and please let me know if you have any questions or comments.
+

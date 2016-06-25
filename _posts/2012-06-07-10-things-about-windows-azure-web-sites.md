@@ -1,9 +1,10 @@
 ---
-date: 2012-06-07 16:09:45
+date: '2012-06-07'
 layout: post
 title: 10 Things about Windows Azure Web Sites
 categories:
-- Windows Azure
+  - Windows Azure
+reirect_from: /2012/06/10-things-about-windows-azure-web-sites/
 ---
 
 [Windows Azure Web Sites](https://www.windowsazure.com/en-us/home/scenarios/web-sites/) (WAWS) is a feature I have been wanting for a while. Before I was at Microsoft I was a web developer building applications on Windows Azure. Cloud Services are great for many different types of applications, but many times you don't need or care about startup tasks, full system access, or tweaking the web server. For many projects, you just want to deploy your application to a high-scale environment that just works - this is were Windows Azure Web Sites comes in. In this post I will show you ten awesome features available with Windows Azure Web Sites.
@@ -61,3 +62,4 @@ Last, when you deploy your application to Windows Azure Web Sites there is no ne
 Now that you have seen some of the new features and tips on using Windows Azure Web Sites I hope you will give it a try.[ Click here to sign up for the preview](https://www.windowsazure.com/en-us/pricing/3-month-trial/). Additionally, if you want to learn more about this and other new features in Windows Azure tune in next Monday and watch [Learn Windows Azure](http://channel9.msdn.com/Events/windowsazure/Learn-2012TechEd-NA) streamed live from TechEd North America.
 
 **UPDATE: **[Three more Things about Windows Azure Web Sites](/2012/06/08/three-more-things-about-windows-azure-web-sites/)
+

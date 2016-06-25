@@ -1,10 +1,11 @@
 ---
-date: 2011-04-29 16:41:52
+date: '2011-04-29'
 layout: post
 title: Caching Data in ASP.NET Applications
 categories:
-- ASP.NET
-- Windows Azure
+  - ASP.NET
+  - Windows Azure
+reirect_from: /2011/04/caching-data-in-asp-net-applications/
 ---
 
 With the [release](http://blogs.msdn.com/b/sudhir/archive/2011/04/29/windows-azure-appfabric-caching-service-released.aspx) of [Windows Azure AppFabric Caching](http://www.microsoft.com/windowsazure/appfabric/overview/) yesterday I thought it would be a good time to talk about various caching scenarios in ASP.NET applications. There are a lot of different places where you want to cache data in your web application to increase performance or decrease demand on your data stores. This post will talk about how to handle various ways of caching data in your ASP.NET application and when each method should be used.
@@ -198,3 +199,4 @@ Additional Reading:
 [Caching Service (Windows Azure AppFabric)](http://msdn.microsoft.com/en-us/library/gg278356.aspx)
 
 Hopefully this helps you understand when and how to use a variety of different caching scenarios in your next ASP.NET application. Implemented properly, these tools will significantly speed up your application.
+

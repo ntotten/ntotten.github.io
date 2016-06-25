@@ -1,9 +1,10 @@
 ---
-date: 2011-04-30 17:37:46
+date: '2011-04-30'
 layout: post
 title: Windows Azure Table Storage Tip
 categories:
-- Windows Azure
+  - Windows Azure
+reirect_from: /2011/04/windows-azure-table-storage-tip/
 ---
 
 I have been using Windows Azure storage for quite a while now but I seem to learn something new about it every time I start a new project. Today, I learned about a very cool static method on CloudTableClient that will create your Windows Azure tables from your model. While not quite as easy to use as Entity Framework Code First, it is very close. This will be my new default way of using Table Storage.
@@ -118,3 +119,4 @@ var customer = context.Customers.SingleOrDefault(c => c.RowKey == "1234");
 Table storage is a great tool when you don’t need relational data. It is extremely scalable, fast, and flexible and you can use it with any type of application even if you aren’t running on Windows Azure Compute.
 
 Let me know how this works out for you.
+

@@ -1,9 +1,11 @@
 ---
-date: 2012-12-31 10:59:03
+date: '2012-12-31'
 layout: post
 title: Getting Serious About Online Personal Security - Two-Factor Authentication
 categories:
-- Notes
+  - Notes
+reirect_from: >-
+  /2012/12/getting-serious-about-online-personal-security-two-factor-authentication/
 ---
 
 This is the second post in a series about personal online security. This post is about a security measure called two-factor authentication. Two-factor authentication is about adding a second layer of security to your online accounts and will be described in more detail below. You can find the other parts of the series listed below.
@@ -70,3 +72,4 @@ Each provide that supports two-factor authentication has different instructions 
   4. Trusted Devices (coming soon)
   5. Mobile Devices (coming soon)
   6. Backup (coming soon)
+

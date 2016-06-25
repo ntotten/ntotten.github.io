@@ -1,10 +1,12 @@
 ---
-date: 2011-07-14 16:16:57
+date: '2011-07-14'
 layout: post
 title: Extending the Windows Azure Accelerator for Web Roles with PHP and MVC3
 categories:
-- ASP.NET
-- Windows Azure
+  - ASP.NET
+  - Windows Azure
+reirect_from: >-
+  /2011/07/extending-the-windows-azure-accelerator-for-web-roles-with-php-and-mvc3/
 ---
 
 A number of people have asked me if the Windows Azure Accelerator for Web Roles (WAAWR) supports PHP so I thought I would write a quick post on how to enable support. Out of the box we don’t install PHP on the WAAWR instances, but it is very easy to do so. While we are at it I will also show you how to install MVC3 on the server so you don’t have to do a bin deploy of the MVC3 references on every site deployment.
@@ -38,3 +40,4 @@ I have this solution deployed to [http://info.demo.ntotten.com](http://info.demo
 Again, [here](https://gist.github.com/1082776) is the updated [ConfigureIIS.cmd](https://gist.github.com/1082776) file for you to use in your WAAWR project.
 
 Let me know how this works for you.
+

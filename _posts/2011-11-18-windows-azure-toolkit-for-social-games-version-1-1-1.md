@@ -1,9 +1,10 @@
 ---
-date: 2011-11-18 21:38:54
+date: '2011-11-18'
 layout: post
 title: Windows Azure Toolkit for Social Games Version 1.1.1
 categories:
-- Windows Azure
+  - Windows Azure
+reirect_from: /2011/11/windows-azure-toolkit-for-social-games-version-1-1-1/
 ---
 
 I just released a minor update to the [Windows Azure Toolkit for Social Games](http://go.microsoft.com/fwlink/?LinkID=234210) Version 1.1. You can download this release [here](http://go.microsoft.com/fwlink/?LinkID=234062). This release updates the toolkit to use [Windows Azure Tools and SDK Version 1.6](http://blogs.msdn.com/b/windowsazure/archive/2011/11/14/updated-windows-azure-sdk-amp-windows-azure-hpc-scheduler-sdk.aspx). Additionally, this release includes a few minor, but significant, performance enhancements.
@@ -128,3 +129,4 @@ After these changes the time for a request went down to less than 2 seconds. You
 [![clip_image002[8]](/images/2011/11/clip_image0028_thumb.jpg)](/images/2011/11/clip_image0028.jpg)
 
 This is a good improvement, but there are still several more changes like this we can do. I hope to release a new version in the next week or so that improves performance even more. Until then, give the updated version a try and let me know if you have any feedback.
+

@@ -1,9 +1,10 @@
 ---
-date: 2009-01-30 15:08:00
+date: '2009-01-30'
 layout: post
 title: Cloud Hosting Experience
 categories:
-- ASP.NET
+  - ASP.NET
+reirect_from: /2009/01/cloud-hosting-experience/
 ---
 
 Recently, we have switched most of our hosting accounts over to Mosso’s ([http://www.mosso.com](http://www.mosso.com)) cloud hosting service. Previously, we were using virtual servers or dedicated servers to host all of our web applications and websites for Atlas Bay as well as our clients. My early experiences with Mosso have been great.
@@ -17,3 +18,4 @@ Third, I love the integrated billing system. Now with Mosso, we dont have to cre
 My one complaint, which is why we just started using Mosso, is that it took them a long time to roll out .net 3.5 sp1. I understand the issues with breaking changes, but I believe it is important for them and other hosting companies to making a commitment to supporting the newest technology. This is going to be an issue they will have to deal with in order to keep me as a long term customer. I can pretty much guarantee that if it takes them 6+ plus months to deploy the next version of .Net they will loose my business. Hopefully, they will have this worked out so they can quickly deploy new releases of frameworks and web servers without negatively impacting legacy software.
 
 Overall, I am extremely satisfied with Mosso and I would recommend it to anyone who is deploying web applications on either Windows or Linux.
+

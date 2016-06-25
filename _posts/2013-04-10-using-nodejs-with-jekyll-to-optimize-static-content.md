@@ -1,10 +1,13 @@
 ---
-date: 2013-04-10
+date: '2013-04-09'
 layout: post
 title: Using Node.js with Jekyll to Optimize Static Content
-description: Learn how to use Node.js to script common tasks for optimizing static content in a Jekyll page.
+description: >-
+  Learn how to use Node.js to script common tasks for optimizing static content
+  in a Jekyll page.
 categories:
-- NodeJS
+  - NodeJS
+reirect_from: /2013/04/using-nodejs-with-jekyll-to-optimize-static-content/
 ---
 
 I recently migrated my blog to [Jekyll](https://github.com/mojombo/jekyll) hosted on Github Pages. I did this primarily because I was sick of dealing with the web editor in Wordpress. Wordpress is a great blogging platform for many people, but I just wanted something simpler and more flexible. I have [written about](http://ntotten.com/2012/03/02/github-pages-with-jekyll-local-development-on-windows/) how to configure Jekyll on Windows in the past. This post is about optimizing the content of a Jekyll page using Node.js.
@@ -99,3 +102,4 @@ Finally, I need to reference this version number in my Jekyll layouts. This is e
 ```
 
 Now when I publish the site to Github pages, Jekyll will use the version number to setup the static content path and my site will be served with the smaller and optimized js and css files. You can see the full [jakefile.js](https://github.com/ntotten/ntotten.github.com/blob/master/jakefile.js) in my website's [Github repositoryy](https://github.com/ntotten/ntotten.github.com/).
+

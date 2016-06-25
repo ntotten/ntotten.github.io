@@ -1,9 +1,10 @@
 ---
-date: 2008-10-06 16:36:00
+date: '2008-10-06'
 layout: post
 title: Photo Box Rotator
 categories:
-- Notes
+  - Notes
+reirect_from: /2008/10/photo-box-rotator/
 ---
 
 I have created a JavaScript photo rotator similar to the one on iStockPhoto.com's home page. This rotator is pretty simple and only requires about 20 lines of JavaScript. You can see an example here: [http://www.solanocoalition.org](http://www.solanocoalition.org). This sample was built using ASP.NET and does use a few functions from the ASP.NET AJAX Library. You could easily change it to whichever library you use or don't use.
@@ -88,3 +89,4 @@ Sys.Application.add_load(StartRotate);
 There are a few nice features about this rotator. First, the images are completely random. Second, one pane will not switch images more than one time before another pane rotates. Third, there will never be duplicate images displayed at the same time.
 
 A few things to note. First, you could remove all of the hard coded images in the HTML and just build them dynamically the first time the function is run. This would cut down on some the HTML. I chose to do it this way in case there was an error on the client or if the user has JavaScript disabled. This way they will still see static images rather than an empty space.
+

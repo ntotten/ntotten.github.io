@@ -1,9 +1,10 @@
 ---
-date: 2012-06-08 12:47:43
+date: '2012-06-08'
 layout: post
 title: Three more Things about Windows Azure Web Sites
 categories:
-- Windows Azure
+  - Windows Azure
+reirect_from: /2012/06/three-more-things-about-windows-azure-web-sites/
 ---
 
 Yesterday, I wrote a post titled [10 Things about Windows Azure Web Sites](/2012/06/07/10-things-about-windows-azure-web-sites). After people read that article there were several common questions that came up that I thought I would answer.
@@ -23,3 +24,4 @@ We current don't support .Net 4.5 in Windows Azure Web Sites nor do we offer hos
 
 # End.
 Hopefully these additional points clear up some of the questions you had regarding Windows Azure Web Sites. I know that many of you want to use these features today, but as with any software project we can't always get every feature - no matter how important - in the first preview release. The engineering team is hard at work to make Windows Azure Web Sites a rich and powerful platform for web developers so you can expect to see these, and more improvements, coming.
+

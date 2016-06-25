@@ -1,10 +1,11 @@
 ---
-date: 2011-09-27 16:05:40
+date: '2011-09-27'
 layout: post
 title: Running Processes in Windows Azure
 categories:
-- NodeJS
-- Windows Azure
+  - NodeJS
+  - Windows Azure
+reirect_from: /2011/09/running-processes-in-windows-azure/
 ---
 
 One of the little known features of the Windows Azure SDK 1.5 (September 2011) Release is the ability to directly run executables on startup without writing custom code in your WorkerRole or WebRole entry point.
@@ -83,3 +84,4 @@ While our example used NodeJS, you can use pretty much any process like this. Th
 You can see my working demo deployed here: [http://simplenodejs.cloudapp.net/](http://simplenodejs.cloudapp.net/)
 
 Let me know how this works or if you have any questions or feedback.
+

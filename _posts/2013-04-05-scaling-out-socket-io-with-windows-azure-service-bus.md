@@ -1,11 +1,14 @@
 ---
-date: 2013-04-05 11:41:54
+date: '2013-04-05'
 layout: post
 title: Scaling Out Socket.IO with Windows Azure Service Bus
-description: Build large scale real-time applications with Socket.IO and Windows Azure Services Bus using the Service Bus Store.
+description: >-
+  Build large scale real-time applications with Socket.IO and Windows Azure
+  Services Bus using the Service Bus Store.
 categories:
-- NodeJS
-- Windows Azure
+  - NodeJS
+  - Windows Azure
+reirect_from: /2013/04/scaling-out-socket-io-with-windows-azure-service-bus/
 ---
 
 [Socket.IO](http://socket.io) is a handy tool that makes it easy to build real-time communication into your application. If you haven't used Socket.IO before, I recommend reading the [tutorial over on WindowsAzure.com](http://www.windowsazure.com/en-us/develop/nodejs/tutorials/app-using-socketio/). This post shows how you can scale out Socket.IO to multiple servers in order to handle many simultaneous connections by using Windows Azure Service Bus as a backing store.
@@ -37,3 +40,4 @@ io.configure(function () {
 ```
 
 After you have configured the service bus store you are now ready to scale your application to use as many servers as required. You can download the [full source](https://github.com/WindowsAzure-Samples/node-messageme-servicebus) of my sample application on [Github](https://github.com/WindowsAzure-Samples/node-messageme-servicebus).
+

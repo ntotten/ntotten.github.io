@@ -1,9 +1,10 @@
 ---
-date: 2013-01-24 13:37:41
+date: '2013-01-24'
 layout: post
 title: Implementing a Simple Registration Code Check in ASP.NET MVC
 categories:
-- ASP.NET
+  - ASP.NET
+reirect_from: /2013/01/implementing-a-simple-registration-code-check-in-asp-net-mvc/
 ---
 
 I was building a simple web app a few days ago and needed a way to control who could register to use the site. I didn't really want to build a fancy invitation system nor did I want to add all of the user accounts manually. I solved this problem by creating a very simple registration code mechanism that would check if a user provided the valid code when registering either the traditional way (username and password) or when logging in with their Facebook or other OAuth account.
@@ -117,3 +118,4 @@ Next, add the lines for the RegistrationCode directly below the Username code in
 ```
 
 That's it. Now anyone trying to register on the site will be required to provide the registration code.
+

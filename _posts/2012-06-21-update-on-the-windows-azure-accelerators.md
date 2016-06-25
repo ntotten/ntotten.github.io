@@ -1,9 +1,10 @@
 ---
-date: 2012-06-21 22:01:20
+date: '2012-06-21'
 layout: post
 title: Update on the Windows Azure Accelerators
 categories:
-- Windows Azure
+  - Windows Azure
+reirect_from: /2012/06/update-on-the-windows-azure-accelerators/
 ---
 
 # TL;DR
@@ -38,3 +39,4 @@ For those people that use the accelerators, but would like to migrate to Windows
 
 # Conclusion
 I hope that this post has cleared up some of the confusion around the Windows Azure Accelerators and their relationship to Windows Azure Web Sites. I am incredibly excited about the future of Windows Azure and Windows Azure Web Sites and look forward to seeing what you develop on our platform.  If you have any questions or feedback please feel free to post a comment or send me an email.
+

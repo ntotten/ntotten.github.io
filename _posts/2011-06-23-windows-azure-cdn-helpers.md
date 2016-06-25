@@ -1,10 +1,11 @@
 ---
-date: 2011-06-23 19:14:40
+date: '2011-06-23'
 layout: post
 title: Windows Azure CDN Helpers
 categories:
-- ASP.NET
-- Windows Azure
+  - ASP.NET
+  - Windows Azure
+reirect_from: /2011/06/windows-azure-cdn-helpers/
 ---
 
 Speed is critical for a modern web application. Users don’t wait around for your page to load or respond. If you don’t deliver speed to your users/customers/etc. you will lose them. Conveniently, I don’t need to go into too much detail on why you need to speed up your page because [Jeff Atwood](https://twitter.com/#!/codinghorror) just wrote [a post](http://www.codinghorror.com/blog/2011/06/performance-is-a-feature.html) on this very thing. I would highly suggest reading that post and implementing the recommendations made by [Yahoo ](http://developer.yahoo.com/yslow/)and [Google](http://code.google.com/speed/page-speed/) for performance.
@@ -63,3 +64,4 @@ You will also notice that the JQuery file is served from the [Microsoft Ajax CDN
 Additionally, this sample integrates with the [Sprite and Image Optimization Framework](http://aspnet.codeplex.com/releases/view/65787) to generate image sprites and serve them from the CDN. You can read more about how to use that tool on the [wiki](https://github.com/ntotten/wa-cdnhelpers/wiki).
 
 Give it a try and let me know what your page speed increases to. I suspect that most of you will receive a 10-15% bump in your score by using this tool and the Windows Azure CDN.
+

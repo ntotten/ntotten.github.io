@@ -1,9 +1,10 @@
 ---
-date: 2012-03-14 17:22:29
+date: '2012-03-14'
 layout: post
 title: Facebook jQuery Helper
 catagories:
-- Facebook
+  - Facebook
+reirect_from: /2012/03/facebook-jquery-helper/
 ---
 
 I just published a simple jQuery plugin on github that makes it super easy to use the Facebook Javascript SDK on your website. It also allows you to to use jQuery events to run code before and after the Facebook's code is initialized.
@@ -50,3 +51,4 @@ It is a pretty simple plugin, but I think it is helpful. I have used something s
 **Update:** This package is now on Nuget. It is called 'jQuery.fb'. You can find it here: [https://nuget.org/packages/jQuery.fb](https://nuget.org/packages/jQuery.fb)
 
 Let me know if you have any questions or feedback.
+

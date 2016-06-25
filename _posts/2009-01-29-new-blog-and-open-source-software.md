@@ -1,9 +1,10 @@
 ---
-date: 2009-01-29 17:41:00
+date: '2009-01-29'
 layout: post
 title: New Blog and Open Source Software
 categories:
-- Notes
+  - Notes
+reirect_from: /2009/01/new-blog-and-open-source-software/
 ---
 
 Well, we finally did it. We moved our blog to WordPress. This comes at a time when we are reevaluating our current software both inside our company and that we sell to clients. For the past years we have provided almost entirely Microsoft products to our customers and run our company off almost entirely Microsoft Products as well.
@@ -17,3 +18,4 @@ The final reason is the economy. Given the current budget constraints of our com
 I do want to make clear that this does not mean we are abandoning systems or solutions that we have deployed for ourselves or our customers. There are still many Microsoft products that we have developed significant expertise in and invested time in creating custom experiences for our customers. I still believe that there are many Microsoft products that are the best in the industry and can save organization’s money by increasing productivity or decreasing long term expenses associated with a particular piece of software.
 
 We have always believed in finding the right solution for ourselves and our customers. Part of finding the right solution is making sure that solution integrates with the customer’s existing systems and the users will easily be able to learn the new system. This means that we will use open source software only where it fits. If we cannot integrate something well into existing processes and systems in a way that will make the user’s work easier, we wont use the software.
+

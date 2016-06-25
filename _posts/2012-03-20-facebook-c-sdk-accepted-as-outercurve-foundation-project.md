@@ -1,9 +1,10 @@
 ---
-date: 2012-03-20 09:25:07
+date: '2012-03-20'
 layout: post
-title: Facebook C# SDK Accepted as Outercurve Foundation Project
+title: 'Facebook C# SDK Accepted as Outercurve Foundation Project'
 categories:
-- Facebook
+  - Facebook
+reirect_from: /2012/03/facebook-c-sdk-accepted-as-outercurve-foundation-project/
 ---
 
 We have some exciting news today regarding the Facebook C# SDK. Today [The Outercurve Foundation](http://outercurve.org) has [announced ](http://www.outercurve.org/News/articleType/ArticleView/articleId/54/Outercurve-Foundation-Accepts-Facebook-C-SDK-Project)that the Facebook C# SDK has been accepted to the foundation as part of the[ Data, Language and Systems Interoperability (DLSI) Gallery](http://www.outercurve.org/Galleries/DataLanguagesandSystemsInteroperability). This is an important milestone for the Facebook C# SDK as it even further solidifies the project's place in the Facebook and .Net ecosystem.
@@ -19,3 +20,4 @@ The final bit of news regarding the Facebook C# SDK is that we also have release
 Lots of great changes recently with the Facebook C# SDK. We are excited and honored to be a part of The Outercurve Foundation. We look forward to continually improving the Facbeook C# SDK and working with the community to give .Net and Windows developers the best tools for developing Facebook apps.
 
 As always let me know if you have any questions or feedback.
+

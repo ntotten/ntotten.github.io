@@ -1,10 +1,11 @@
 ---
-date: 2013-01-11 14:24:47
+date: '2013-01-11'
 layout: post
 title: Static Site Generation with DocPad on Windows Azure Web Sites
 categories:
-- Windows Azure
-- NodeJS
+  - Windows Azure
+  - NodeJS
+reirect_from: /2013/01/static-site-generation-with-docpad-on-windows-azure-web-sites/
 ---
 
 There has been a lot of interest recently with static content generation tools. These tools allow you to generate a website from source documents such as markdown and serve static html files. The advantage of static sites is that they are extremely fast and very inexpensive to host. There are plenty of ways you can host static content that is already generated, but if you want a solution that provides integrated deployment and automated generation you can easily setup [Windows Azure Web Sites](http://www.windowsazure.com/en-us/home/scenarios/web-sites/) to host your statically generated site.
@@ -93,3 +94,4 @@ The deployment should finish in about 30 seconds and your site will be ready. Br
 [![docpad-site](/images/2013/01/docpad-site1.png)](/images/2013/01/docpad-site1.png)
 
 You can find the full source for this post on Github [here](https://github.com/ntotten/azure-docpad).
+

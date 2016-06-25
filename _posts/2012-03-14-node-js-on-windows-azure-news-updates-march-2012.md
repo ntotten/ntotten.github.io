@@ -1,9 +1,10 @@
 ---
-date: 2012-03-14 13:50:32
+date: '2012-03-14'
 layout: post
 title: Node.js on Windows Azure News & Updates (March 2012)
 categories:
-- NodeJS
+  - NodeJS
+reirect_from: /2012/03/node-js-on-windows-azure-news-updates-march-2012/
 ---
 
 [Node.js on Windows Azure](https://www.windowsazure.com/en-us/develop/nodejs/) continues to get better. The [Windows Azure SDK  for Node.js](https://github.com/WindowsAzure/azure-sdk-for-node) is already on its third release in just a few short months, the PowerShell Cmdlets for Node.js makes deploying to Windows Azure super easy, and improvements to Windows Azure continue to make the platform even more attractive to Node.js developers.
@@ -27,3 +28,4 @@ The last bit of news is a great [post ](http://nodeblog.cloudapp.net/using-win
 Keep an eye out here for most posts like these. Additionally, I am starting a series of tutorials on Node.js and Windows Azure that you will see on my blog shortly.
 
 Let me know if you have any questions or feedback.
+

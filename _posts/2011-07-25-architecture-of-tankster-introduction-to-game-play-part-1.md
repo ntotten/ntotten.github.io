@@ -1,10 +1,11 @@
 ---
-date: 2011-07-25 18:44:27
+date: '2011-07-25'
 layout: post
 title: Architecture of Tankster – Introduction to Game Play (Part 1)
 categories:
-- ASP.NET
-- Windows Azure
+  - ASP.NET
+  - Windows Azure
+reirect_from: /2011/07/architecture-of-tankster-introduction-to-game-play-part-1/
 ---
 
 The game [Tankster](http://www.tankster.net) is a proof-of-concept game that is included in the [Windows Azure Toolkit for Social Games](http://watgames.codeplex.com/). The source code of the game is available to download and use to build your own Windows Azure games. In this series of posts I am going to show you the various components of the Tankster game both from the client side (HTML5) and the server side. This post will cover the high level overview of the architecture of the game as demonstrated by a specific use case, joining a game.
@@ -235,3 +236,4 @@ This process repeats over and over until the game is finished. At which point th
 In the next post I will show you how the various parts of this system work in more detail. I haven’t decided how many posts I will do in this series so please let me know what you would like me to write about.
 
 As always, let me know if you have any feedback.
+

@@ -1,9 +1,10 @@
 ---
-date: 2009-05-29 16:38:49
+date: '2009-05-29'
 layout: post
 title: Move to Hosted Email
 categories:
-- Notes
+  - Notes
+reirect_from: /2009/05/move-to-hosted-email/
 ---
 
 The time for an organization to host and maintain their own email system has passed. For many years, I have been a proponent of Microsoft Exchange Server and Small Business Server. I have helped many smaller sized organizations install and support these email systems. However, with the vast selection of free or inexpensive hosted email solutions available I can longer see any reason that would justify an organization maintaining their own email system.
@@ -15,3 +16,4 @@ Atlas Bay switched from using Exchange Server as a part of Microsoft Small Busin
 Since Google Apps was released Atlas Bay has helped many organizations make the switch. We have setup single person businesses and medium business. Some people still like to use Outlook while others like to use only the web interface for gmail. The beauty of Google Apps is the flexibility. This flexibility makes it easy for employees to make the switch. To date I have not had a single person say they preferred using their on-site email system over Google Apps. Additionally, every single company is seeing drastically reduced support and maintenance costs. Most customers that are on Google Apps haven’t had to pay for a single hour of support with their email systems since they made the switch.
 
 With the economy as it is and every business trying to save money I would urge you to consider moving your organization over to Google Apps. You will save money and more than likely have a much better and more reliable email experience.
+

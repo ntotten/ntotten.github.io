@@ -1,9 +1,10 @@
 ---
-date: 2011-08-25 01:53:44
+date: '2011-08-24'
 layout: post
 title: Windows Azure Toolkit for Social Games & Tankster Version 1.0
 categories:
-- Windows Azure
+  - Windows Azure
+reirect_from: /2011/08/windows-azure-toolkit-for-social-games-tankster-version-1-0/
 ---
 
 Today we released the first stable version of the [Windows Azure Toolkit for Social Games](http://go.microsoft.com/fwlink/?LinkID=234210) and the [Tankster](http://www.tankster.net/) game. This is the third drop of the code we have done since we first introduced this project about 6 weeks ago. This release adds several new features, improves the performance and stability of the server APIs, and contains many user interface improvements to the sample game. These tools will help make it easier for developers to build great game experiences across devices in less time and lower cost. While this release represents a significant milestone in this project, we have much more planned and will continue to keep the updates coming.
@@ -37,3 +38,4 @@ This release of the Social Game Toolkit and Tankster contain the following featu
   * Audio
 
 [Download](http://go.microsoft.com/fwlink/?LinkID=234210) the toolkit and give the game a try today. I will continue blogging about the architecture of the toolkit and game so keep an eye on this blog. And, as always, any feedback is welcome.
+
