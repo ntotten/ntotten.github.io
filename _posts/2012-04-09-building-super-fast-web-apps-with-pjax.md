@@ -4,7 +4,7 @@ layout: post
 title: Building Super Fast Web Apps with PJAX
 categories:
   - NodeJS
-reirect_from: /2012/04/building-super-fast-web-apps-with-pjax/
+redirect_from: /2012/04/building-super-fast-web-apps-with-pjax/
 ---
 
 There has been a great deal of interest recently in client side frameworks such as [Knockout.js](http://knockoutjs.com/), [Backbone.js](http://documentcloud.github.com/backbone/), and [Ember.js](http://emberjs.com/). These frameworks are great, but sometimes they are either overkill or simply too complicated for your particular purpose. Traditionally, the alternative approach was to just use a pure server-side framework like Ruby on Rails or ASP.NET to build HTML and serve it to your users. However, there is a third approach that, while not new, has peeked my interest recently. This approach has been nicknamed PJAX. PJAX is a blend between client side and server side rendering of HTML.

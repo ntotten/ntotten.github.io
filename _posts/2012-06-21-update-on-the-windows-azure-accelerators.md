@@ -4,7 +4,7 @@ layout: post
 title: Update on the Windows Azure Accelerators
 categories:
   - Windows Azure
-reirect_from: /2012/06/update-on-the-windows-azure-accelerators/
+redirect_from: /2012/06/update-on-the-windows-azure-accelerators/
 ---
 
 # TL;DR

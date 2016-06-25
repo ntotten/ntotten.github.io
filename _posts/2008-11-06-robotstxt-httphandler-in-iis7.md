@@ -4,7 +4,7 @@ layout: post
 title: Robots.txt HttpHandler in IIS7
 categories:
   - ASP.NET
-reirect_from: /2008/11/robotstxt-httphandler-in-iis7/
+redirect_from: /2008/11/robotstxt-httphandler-in-iis7/
 ---
 
 In a ongoing effort to automate more of my work I decided to build a HttpHandler for IIS that automatically creates my robots.txt files. This particular handler will create robots.txt files that block all search robots. This handler will be installed on our projects web server which is used for development purposes only, and as such we don't want these pages being listed in search engines.

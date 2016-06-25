@@ -4,7 +4,7 @@ layout: post
 title: Cloud Hosting Experience
 categories:
   - ASP.NET
-reirect_from: /2009/01/cloud-hosting-experience/
+redirect_from: /2009/01/cloud-hosting-experience/
 ---
 
 Recently, we have switched most of our hosting accounts over to Mosso’s ([http://www.mosso.com](http://www.mosso.com)) cloud hosting service. Previously, we were using virtual servers or dedicated servers to host all of our web applications and websites for Atlas Bay as well as our clients. My early experiences with Mosso have been great.

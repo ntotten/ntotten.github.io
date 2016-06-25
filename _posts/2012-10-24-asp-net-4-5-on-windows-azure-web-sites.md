@@ -4,7 +4,7 @@ layout: post
 title: ASP.NET 4.5 on Windows Azure Web Sites
 categories:
   - Windows Azure
-reirect_from: /2012/10/asp-net-4-5-on-windows-azure-web-sites/
+redirect_from: /2012/10/asp-net-4-5-on-windows-azure-web-sites/
 ---
 
 As of today [Windows Azure Web Sites](https://www.windowsazure.com/en-us/home/scenarios/web-sites/) now supports .Net Framework 4.5. This gives you the ability to use [all kinds of new features](http://msdn.microsoft.com/en-us/library/vstudio/hh420390.aspx#whatsnew_feature) with your web app. The most important feature for web developers with .Net 4.5 is the new asynchronous methods available in ASP.NET. This asynchronous support enables developers to easily build high scale and high performance web applications without all the hassle normally associated with asynchronous programming. In this post I will walk you through how to build a simple ASP.NET MVC 4 web application using .Net 4.5 and how to deploy that application to Windows Azure Web Sites.

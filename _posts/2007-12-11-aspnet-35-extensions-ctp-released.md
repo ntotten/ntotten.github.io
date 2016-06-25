@@ -4,8 +4,7 @@ layout: post
 title: ASP.NET 3.5 Extensions CTP Released
 categories:
   - ASP.NET
-redirect_from: /2007/12/aspnet-35-extensions-ctp-released
-reirect_from: /2007/12/aspnet-35-extensions-ctp-released/
+redirect_from: /2007/12/aspnet-35-extensions-ctp-released/
 ---
 
 I downloaded and tested the new ASP.NET 3.5 Extensions today. There are many new and exciting features in the CTP. My favorite is the MVC (Model View Controller) Framework and its accompanying tools. The MVC framework is a complete 360 from traditional ASP.NET forms pages in a number of ways. First, there is a very clear separation of the layers of your ASP.NET web app. Second, you will notice the HTML output of a MVC app is extremely clean. There are not viewstate or other hidden tags among other things. Third, and probably most important, is the page life cycle is very different. While ASP.NET MVC is built on top of System.Web many events from the old System.Web.UI.Page class are not fired inside the new ViewPage class.
@@ -21,4 +20,3 @@ From a application development standpoint I think this new framework will help d
 [![](/images/2009/01/image-41.png)](/images/2009/01/image-41.png)
 
 The end result is a very maintainable piece of software, a very nice URL for the end user and clean HTML output. It will be interesting to see how this project progresses and how it fits into our software at Atlas Bay.
-

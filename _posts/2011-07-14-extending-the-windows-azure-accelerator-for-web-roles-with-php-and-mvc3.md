@@ -5,7 +5,7 @@ title: Extending the Windows Azure Accelerator for Web Roles with PHP and MVC3
 categories:
   - ASP.NET
   - Windows Azure
-reirect_from: >-
+redirect_from: >-
   /2011/07/extending-the-windows-azure-accelerator-for-web-roles-with-php-and-mvc3/
 ---
 

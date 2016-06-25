@@ -4,7 +4,7 @@ layout: post
 title: Building Amazing Apps with the ASP.NET EmberJS Template
 categories:
   - ASP.NET
-reirect_from: /2013/02/building-amazing-apps-with-the-asp-net-emberjs-template/
+redirect_from: /2013/02/building-amazing-apps-with-the-asp-net-emberjs-template/
 ---
 
 I have been using [EmberJS](http://emberjs.com) for a while so I was pretty excited to work on the [new EmberJS template for ASP.NET](http://www.asp.net/single-page-application/overview/templates/emberjs-template). If you are not familiar with EmberJS, I highly recommend reading through their [documentation](http://emberjs.com/guides/). In short though, ember is a framework for building client-side browser apps. Ember solves the same sort of problems as frameworks like [BackboneJS](http://backbonejs.org/) and [KnockoutJS](http://knockoutjs.com/). Personally, I prefer ember over these other frameworks as I have felt more productive with ember. Ember is very convention based, and once you learn those conventions you will find yourself able to build a lot of software very quickly.

@@ -4,7 +4,7 @@ layout: post
 title: 'Seeking Contributors for the Facebook C# SDK'
 categories:
   - Facebook
-reirect_from: /2013/01/seeking-contributors-for-the-facebook-c-sdk/
+redirect_from: /2013/01/seeking-contributors-for-the-facebook-c-sdk/
 ---
 
 <img src="/images/2013/01/logo500x500.png" class="left" />

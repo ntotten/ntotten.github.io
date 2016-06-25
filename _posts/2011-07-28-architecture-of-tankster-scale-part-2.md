@@ -5,7 +5,7 @@ title: Architecture of Tankster– Scale (Part 2)
 categories:
   - ASP.NET
   - Windows Azure
-reirect_from: /2011/07/architecture-of-tankster-scale-part-2/
+redirect_from: /2011/07/architecture-of-tankster-scale-part-2/
 ---
 
 This is the second post about the architecture of the [Tankster ](http://www.tankster.net)game that is included in the [Windows Azure Toolkit for Social Games](http://watgames.codeplex.com). My [last post](http://ntotten.com/2011/07/architecture-of-tankster-introduction-to-game-play-part-1/) mentioned that we have a goal to make the solution scale up to several hundred thousand concurrent user, but we have not yet achieved that goal. In this post I will explain why our current architecture will not scale that high and how the problem can be solved.

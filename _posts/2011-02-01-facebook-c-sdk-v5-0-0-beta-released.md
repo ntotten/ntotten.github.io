@@ -4,7 +4,7 @@ layout: post
 title: 'Facebook C# SDK V5.0.0 (BETA) Released'
 categories:
   - Facebook
-reirect_from: /2011/02/facebook-c-sdk-v5-0-0-beta-released/
+redirect_from: /2011/02/facebook-c-sdk-v5-0-0-beta-released/
 ---
 
 Earlier today we released the beta version of our V5 branch of the [Facebook C# SDK](http://csharpsdk.org). We have been working on this version for over a month and hope it is a significant improvement over the 4.X versions. I will be writing a series of posts over the next few days about this update. First, I wanted to talk a little about the general ideas behind this new release.

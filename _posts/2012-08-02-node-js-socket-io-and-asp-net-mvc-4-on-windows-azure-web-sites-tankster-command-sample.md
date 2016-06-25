@@ -7,7 +7,7 @@ title: >-
 categories:
   - NodeJS
   - Windows Azure
-reirect_from: >-
+redirect_from: >-
   /2012/08/node-js-socket-io-and-asp-net-mvc-4-on-windows-azure-web-sites-tankster-command-sample/
 ---
 

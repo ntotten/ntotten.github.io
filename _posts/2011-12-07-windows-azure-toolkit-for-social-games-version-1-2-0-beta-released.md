@@ -4,7 +4,7 @@ layout: post
 title: Windows Azure Toolkit for Social Games Version 1.2.0 (beta) Released
 categories:
   - Windows Azure
-reirect_from: /2011/12/windows-azure-toolkit-for-social-games-version-1-2-0-beta-released/
+redirect_from: /2011/12/windows-azure-toolkit-for-social-games-version-1-2-0-beta-released/
 ---
 
 Today, I released version 1.2.0 (beta) of the [Windows Azure Toolkit for Social Games](http://go.microsoft.com/fwlink/?LinkID=234210). You can download the self-extracting exe [here](http://go.microsoft.com/fwlink/?LinkID=234062) or get the source directly [here](http://go.microsoft.com/fwlink/?LinkID=234213). This release is primarily a maintenance release that includes bug fixes and enhancements to the code base. There aren’t any additional features in the release, but you should notice improved performance and stability. This is a ‘point’ release because there are a few breaking changes with the APIs that were made to clean up the overall code base.

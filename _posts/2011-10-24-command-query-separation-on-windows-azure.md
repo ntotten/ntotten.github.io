@@ -4,7 +4,7 @@ layout: post
 title: Command-Query Separation on Windows Azure
 categories:
   - Windows Azure
-reirect_from: /2011/10/command-query-separation-on-windows-azure/
+redirect_from: /2011/10/command-query-separation-on-windows-azure/
 ---
 
 [Command-query separation](http://en.wikipedia.org/wiki/Command-query_separation) is a fairly common approach to software development. There are a lot of different flavors and opinions on how it should be implemented, but at the core it is about separating your write methods from your read methods. This post will discuss one of the most common ways to use that pattern on Windows Azure. I am going to focus on the big picture of this rather than some of the finer details. There is plenty of reading out there if you want more information.

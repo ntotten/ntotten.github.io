@@ -5,7 +5,7 @@ title: Task Scheduling with Windows Azure Web Sites using a Cron Job Service
 categories:
   - NodeJS
   - Windows Azure
-reirect_from: >-
+redirect_from: >-
   /2012/08/task-scheduling-with-windows-azure-web-sites-using-a-cron-job-service/
 ---
 

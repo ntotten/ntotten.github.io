@@ -4,7 +4,7 @@ layout: post
 title: Windows Azure Table Storage Tip
 categories:
   - Windows Azure
-reirect_from: /2011/04/windows-azure-table-storage-tip/
+redirect_from: /2011/04/windows-azure-table-storage-tip/
 ---
 
 I have been using Windows Azure storage for quite a while now but I seem to learn something new about it every time I start a new project. Today, I learned about a very cool static method on CloudTableClient that will create your Windows Azure tables from your model. While not quite as easy to use as Entity Framework Code First, it is very close. This will be my new default way of using Table Storage.

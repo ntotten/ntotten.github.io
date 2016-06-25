@@ -4,7 +4,7 @@ layout: post
 title: The State of .Net Facebook Development
 categories:
   - Facebook
-reirect_from: /2010/11/the-state-of-net-facebook-development/
+redirect_from: /2010/11/the-state-of-net-facebook-development/
 ---
 
 I started the Facebook C# SDK about 7 months ago because I was working on a small project and really didn’t like the options that were available for .Net developers to build Facebook applications. Since that time a lot has happened. We have worked hard to create a flexible and powerful SDK that will allow developers on all .Net platforms quickly build Facebook applications and connect existing applications with Facebook. Facebook has also changed a lot since then. The Graph API was just rolling out, OAuth 2.0 authentication was new, and the platform was largely undocumented.

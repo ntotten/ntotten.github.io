@@ -4,7 +4,7 @@ layout: post
 title: Photo Box Rotator
 categories:
   - Notes
-reirect_from: /2008/10/photo-box-rotator/
+redirect_from: /2008/10/photo-box-rotator/
 ---
 
 I have created a JavaScript photo rotator similar to the one on iStockPhoto.com's home page. This rotator is pretty simple and only requires about 20 lines of JavaScript. You can see an example here: [http://www.solanocoalition.org](http://www.solanocoalition.org). This sample was built using ASP.NET and does use a few functions from the ASP.NET AJAX Library. You could easily change it to whichever library you use or don't use.

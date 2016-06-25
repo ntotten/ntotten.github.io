@@ -4,7 +4,7 @@ layout: post
 title: Google Apps Sync for Outlook
 categories:
   - Notes
-reirect_from: /2009/06/google-apps-sync-for-outlook/
+redirect_from: /2009/06/google-apps-sync-for-outlook/
 ---
 
 Today Google issued a heavy blow in the fight for small business, non-profit, and education email systems. Google announced that they will soon be releasing a tool that will allow Google Apps Premier and Education users to synchronize all their Outlook data instantly and quickly with their Google Apps account. This new tool will behave very similar to how Outlook interacts with Microsoft Exchange server and will feel no different for users.

@@ -11,5 +11,3 @@ permalink: /:year/:month/:day/:title/
 markdown: kramdown
 gems:
   - jekyll-redirect-from
-whitelist:
-  - jekyll-redirect-from

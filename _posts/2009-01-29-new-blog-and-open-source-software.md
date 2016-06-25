@@ -4,7 +4,7 @@ layout: post
 title: New Blog and Open Source Software
 categories:
   - Notes
-reirect_from: /2009/01/new-blog-and-open-source-software/
+redirect_from: /2009/01/new-blog-and-open-source-software/
 ---
 
 Well, we finally did it. We moved our blog to WordPress. This comes at a time when we are reevaluating our current software both inside our company and that we sell to clients. For the past years we have provided almost entirely Microsoft products to our customers and run our company off almost entirely Microsoft Products as well.

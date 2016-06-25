@@ -5,7 +5,7 @@ title: 'Facebook C# SDK Tutorial–ASP.NET MVC3 Website with Facebook Authentica
 categories:
   - ASP.NET
   - Facebook
-reirect_from: >-
+redirect_from: >-
   /2011/03/facebook-c-sdk-tutorialasp-net-mvc3-website-with-facebook-authentication/
 ---
 

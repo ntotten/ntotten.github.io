@@ -5,7 +5,7 @@ title: Multitenant Windows Azure Web Roles with Live Deployments
 categories:
   - ASP.NET
   - Windows Azure
-reirect_from: /2011/03/multitenant-windows-azure-web-roles-with-live-deployments/
+redirect_from: /2011/03/multitenant-windows-azure-web-roles-with-live-deployments/
 ---
 
 **Update: I would recommend using the [Windows Azure Accelerator for Web Roles](http://waawebroles.codeplex.com) instead of this code. See my post about it [here](http://ntotten.com/2011/07/windows-azure-accelerator-for-web-roles/).**

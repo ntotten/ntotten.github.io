@@ -4,7 +4,7 @@ layout: post
 title: Facebook jQuery Helper
 catagories:
   - Facebook
-reirect_from: /2012/03/facebook-jquery-helper/
+redirect_from: /2012/03/facebook-jquery-helper/
 ---
 
 I just published a simple jQuery plugin on github that makes it super easy to use the Facebook Javascript SDK on your website. It also allows you to to use jQuery events to run code before and after the Facebook's code is initialized.

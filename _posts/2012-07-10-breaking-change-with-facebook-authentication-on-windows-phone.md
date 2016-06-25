@@ -4,7 +4,7 @@ layout: post
 title: 'UPDATED: Breaking Change with Facebook C# SDK Authentication on Windows Phone'
 categories:
   - Facebook
-reirect_from: /2012/07/breaking-change-with-facebook-authentication-on-windows-phone/
+redirect_from: /2012/07/breaking-change-with-facebook-authentication-on-windows-phone/
 ---
 
 **UPDATE: **Good news! It looks like Facebook rolled out updates that fixed both of these issues. I was able to test a sample app and was not able to reproduce the issues. Facebook Authentication using the Facebook C# SDK for Windows Phone should be functioning as expected.

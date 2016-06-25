@@ -4,7 +4,7 @@ layout: post
 title: Password Caching when Publishing with Git to Windows Azure Web Sites
 categories:
   - Windows Azure
-reirect_from: /2013/04/password-caching-when-publishing-with-git-to-windows-azure-web-sites/
+redirect_from: /2013/04/password-caching-when-publishing-with-git-to-windows-azure-web-sites/
 ---
 
 If you have [setup git publishing](http://www.windowsazure.com/en-us/develop/net/common-tasks/publishing-with-git/) on a [Windows Azure Web Site](http://www.windowsazure.com/en-us/home/scenarios/web-sites/) you have noticed that our git endpoints use HTTPS rather than SSH. This means that you can't use an SSH key to authenticate and thus you will need to enter your password every time you publish to Windows Azure Web Sites via a git push. The good news is that Github has created a tool that allows credential caching of HTTPS git endpoints. This tool is compatible with both OS X and Windows and is very easy to setup.

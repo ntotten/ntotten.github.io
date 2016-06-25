@@ -4,7 +4,7 @@ layout: post
 title: Google Apps Account Renaming Tool
 categories:
   - Notes
-reirect_from: /2009/08/google-apps-account-renaming-tool/
+redirect_from: /2009/08/google-apps-account-renaming-tool/
 ---
 
 Yesterday a client of Atlas Bay asked me if it was possible to rename some of their user accounts in Google Apps. After a bit of digging I found that it was possible, but only using the Google’s provisioning API. Unfortunately, the provisioning API is only available for Google Apps Premier Edition users. I decided that the easiest way to complete this renaming of the user accounts was to build a tool using Google’s .Net SDK. After a few minutes I developed a simple command application that will allow me to rename any user account in a Google Apps domain. Using the tools is simple, and I have made it available for anyone to use. Here is how you complete an account rename.

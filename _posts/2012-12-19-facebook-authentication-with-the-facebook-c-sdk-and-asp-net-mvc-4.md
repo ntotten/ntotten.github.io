@@ -5,7 +5,7 @@ title: 'Facebook Authentication with the Facebook C# SDK and ASP.NET MVC 4'
 categories:
   - ASP.NET
   - Facebook
-reirect_from: /2012/12/facebook-authentication-with-the-facebook-c-sdk-and-asp-net-mvc-4/
+redirect_from: /2012/12/facebook-authentication-with-the-facebook-c-sdk-and-asp-net-mvc-4/
 ---
 
 > **NOTICE**: This content is very outdated. I recommend you check out [Auth0](https://auth0.com/docs/quickstart/webapp/aspnet/) for an easy way to authenticate with Facebook.

@@ -5,7 +5,7 @@ title: Sample Code for Node.js and MongoDB Task List App on Windows Azure
 categories:
   - NodeJS
   - Windows Azure
-reirect_from: /2013/04/sample-code-for-node-js-and-mongodb-task-list-app-on-windows-azure/
+redirect_from: /2013/04/sample-code-for-node-js-and-mongodb-task-list-app-on-windows-azure/
 ---
 
 [Sample Code for Node.js and MongoDB Task List App on Windows Azure](https://github.com/WindowsAzure-Samples/node-websites-tasklist-mongodb)

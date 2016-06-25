@@ -4,7 +4,7 @@ layout: post
 title: 'New Facebook Connect in C#'
 categories:
   - Facebook
-reirect_from: /2010/04/new-facebook-connect-in-csharp/
+redirect_from: /2010/04/new-facebook-connect-in-csharp/
 ---
 
 The recent announcements of the Facebook Graph API brought with them some breaking changes to the way Facebook Connect authentication works. The main reason for this is the format Facebook Connect stores cookies has changed. In order to take advantage of these new features on ASP.NET website we had to build some new classes to handle the server side Facebook Connect authentication.

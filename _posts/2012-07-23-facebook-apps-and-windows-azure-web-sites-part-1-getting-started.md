@@ -5,7 +5,7 @@ title: Facebook Apps and Windows Azure Web Sites
 categories:
   - Facebook
   - Windows Azure
-reirect_from: /2012/07/facebook-apps-and-windows-azure-web-sites-part-1-getting-started/
+redirect_from: /2012/07/facebook-apps-and-windows-azure-web-sites-part-1-getting-started/
 ---
 
 [Windows Azure Web Sites](https://www.windowsazure.com/en-us/home/scenarios/web-sites/) (WAWS) is a great platform for deploying Facebook Applications. Not only is it super easy to deploy your application to WAWS, but it is also free to get started. In this first part you will see how to build a site using ASP.NET MVC 4 and the Facebook C# SDK that allows your users to login to your application with Facebook. For this post I will be using Visual Studio 2012 RC, but you could also use Visual Studio 2010. I will be targeting .Net 4.0 as .Net 4.5 is not yet supported in Windows Azure Web Sites.

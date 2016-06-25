@@ -4,7 +4,7 @@ layout: post
 title: 'Build or Buy: CRM Software'
 categories:
   - Notes
-reirect_from: /2009/05/build-or-buy-crm-software/
+redirect_from: /2009/05/build-or-buy-crm-software/
 ---
 
 CRM (Customer Relationship Management) software comes in all kinds of forms from countless vendors. There is not doubt that every organization should be using CRM software. It simply isn’t enough for a business to keep spreadsheets of data and private contact lists with client information anymore. Businesses need reliable data that can be analyzed, reported, and accessed by anyone in the organization. Once your organization has made the choice to implement CRM software the choice is what software do you use or do you hire a consultant to build a custom solution for you.

@@ -4,7 +4,7 @@ layout: post
 title: 'Hacking Node.js on WebMatrix 2 '
 categories:
   - NodeJS
-reirect_from: /2012/09/hacking-node-js-on-webmatrix-2/
+redirect_from: /2012/09/hacking-node-js-on-webmatrix-2/
 ---
 
 I know a lot of people have viewed [WebMatrix ](http://www.microsoft.com/web/webmatrix/)as kind of a toy or the less capable cousin of  Visual Studio. I will admit that was my initial impression of WebMatrix as well. However, with the[ release of WebMatrix 2 today](http://blogs.msdn.com/b/windowsazure/archive/2012/09/06/webmatrix-2-is-released-new-windows-azure-features.aspx) I decided to really give it another try and I was quite impressed with the experience especially for Node.js. WebMatrix definitely isn't for everybody, but if you are looking for a powerful yet simple IDE for Node.js development it is certainly worth a look.

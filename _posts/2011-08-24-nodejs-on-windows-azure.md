@@ -5,7 +5,7 @@ title: NodeJS on Windows Azure
 categories:
   - NodeJS
   - Windows Azure
-reirect_from: /2011/08/nodejs-on-windows-azure/
+redirect_from: /2011/08/nodejs-on-windows-azure/
 ---
 
 We have been working on some enhancements to the [Windows Azure Toolkit for Social Games](http://watgames.codeplex.com) in the past few weeks. One of the enhancements has been to include support for Web Sockets to enable faster real time communication between the different players of a game. There are a lot of choices out there for running Web Sockets, but the one we liked best was Socket.IO on Node.JS. Node.JS is getting to the point where it runs [almost as well](http://twitter.com/#!/ryah/status/106123259908599808) on Windows as is does on Linux and it is improving weekly. This post will show you the most basic setup of how to run Node.JS on Windows Azure.

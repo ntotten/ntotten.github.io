@@ -6,7 +6,7 @@ title: >-
   Javascript SDK)
 categories:
   - Facebook
-reirect_from: >-
+redirect_from: >-
   /2011/03/facebook-c-sdk-tutorial-getting-started-with-an-asp-net-mvc-3-website-with-javascript-sdk/
 ---
 

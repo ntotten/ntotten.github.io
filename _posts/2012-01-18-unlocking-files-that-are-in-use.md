@@ -4,7 +4,7 @@ layout: post
 title: Unlocking files that are in use.
 post_format:
   - Notes
-reirect_from: /2012/01/unlocking-files-that-are-in-use/
+redirect_from: /2012/01/unlocking-files-that-are-in-use/
 ---
 
 [Unlocking files that are in use.](http://www.microsoftnow.com/2008/10/unlocking-files-that-are-in-use.html)

@@ -4,7 +4,7 @@ layout: post
 title: Magento on Rackspace Cloud Sites
 categories:
   - Notes
-reirect_from: /2010/05/magento-on-rackspace-cloud-sites/
+redirect_from: /2010/05/magento-on-rackspace-cloud-sites/
 ---
 
 After a little bit of work I was able to setup Magento 1.4 on Rackspace cloud sites. This new version runs quickly and correctly almost by default on Rackspace Cloud sites. I am not sure if this was the result of changes made to the Magento code or changes that Rackspace made to their infrastructure, but version 1.4 runs much better than previous versions on cloud sites. For the most part you simply need to follow the default instructions for setup and configuration of Magento on the Rackspace Cloud. These standard instructions are available both [here](http://cloudsites.rackspacecloud.com/index.php/Magento) on the Rackspace Cloud Sites wiki and [here](http://www.magentocommerce.com/wiki/magento_installation_guide) on the official Magento wiki.

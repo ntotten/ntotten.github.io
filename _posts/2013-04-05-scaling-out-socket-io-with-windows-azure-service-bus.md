@@ -8,7 +8,7 @@ description: >-
 categories:
   - NodeJS
   - Windows Azure
-reirect_from: /2013/04/scaling-out-socket-io-with-windows-azure-service-bus/
+redirect_from: /2013/04/scaling-out-socket-io-with-windows-azure-service-bus/
 ---
 
 [Socket.IO](http://socket.io) is a handy tool that makes it easy to build real-time communication into your application. If you haven't used Socket.IO before, I recommend reading the [tutorial over on WindowsAzure.com](http://www.windowsazure.com/en-us/develop/nodejs/tutorials/app-using-socketio/). This post shows how you can scale out Socket.IO to multiple servers in order to handle many simultaneous connections by using Windows Azure Service Bus as a backing store.

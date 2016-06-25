@@ -4,7 +4,7 @@ layout: post
 title: 'Dynamic objects and the Facebook C# SDK'
 categories:
   - Facebook
-reirect_from: /2010/09/dynamic-objects-and-the-facebook-c-sdk/
+redirect_from: /2010/09/dynamic-objects-and-the-facebook-c-sdk/
 ---
 
 Developing with Facebook is like building a house on a swamp. Facebook is constantly evolving their platform, adding new features, and making changes. This makes it a challenge for an application developer to keep their application working and up to date. For these reasons, an application developer needs a solid framework to build on that keeps the development experience consistent, intuitive, and flexible.

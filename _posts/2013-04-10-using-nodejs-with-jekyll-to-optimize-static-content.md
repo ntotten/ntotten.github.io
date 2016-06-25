@@ -7,7 +7,7 @@ description: >-
   in a Jekyll page.
 categories:
   - NodeJS
-reirect_from: /2013/04/using-nodejs-with-jekyll-to-optimize-static-content/
+redirect_from: /2013/04/using-nodejs-with-jekyll-to-optimize-static-content/
 ---
 
 I recently migrated my blog to [Jekyll](https://github.com/mojombo/jekyll) hosted on Github Pages. I did this primarily because I was sick of dealing with the web editor in Wordpress. Wordpress is a great blogging platform for many people, but I just wanted something simpler and more flexible. I have [written about](http://ntotten.com/2012/03/02/github-pages-with-jekyll-local-development-on-windows/) how to configure Jekyll on Windows in the past. This post is about optimizing the content of a Jekyll page using Node.js.

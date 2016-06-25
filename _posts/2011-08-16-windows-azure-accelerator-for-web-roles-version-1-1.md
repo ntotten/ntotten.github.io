@@ -4,7 +4,7 @@ layout: post
 title: Windows Azure Accelerator for Web Roles Version 1.1
 categories:
   - Windows Azure
-reirect_from: /2011/08/windows-azure-accelerator-for-web-roles-version-1-1/
+redirect_from: /2011/08/windows-azure-accelerator-for-web-roles-version-1-1/
 ---
 
 Today we released the first update to the [Windows Azure Accelerator for Web Roles](http://waawebroles.codeplex.com). This update includes bug fixes and several new features. This release is compatible with the previous version of the accelerator so you can replace this version with your existing accelerator deployment and your sites will synchronize and continue working. In this post I will show you some of the new features and a few work arounds for some known issues. If you have not used this accelerator before be sure to read my intro post [here](http://ntotten.com/2011/07/windows-azure-accelerator-for-web-roles/).

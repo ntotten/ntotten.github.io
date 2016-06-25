@@ -5,7 +5,7 @@ title: MVC Extension Method for Hosting Static Content on a CDN
 categories:
   - ASP.NET
   - Windows Azure
-reirect_from: /2011/04/mvc-static-content-extensions/
+redirect_from: /2011/04/mvc-static-content-extensions/
 ---
 
 I created a simple extension method that allows you to easily host your static content off the Microsoft ASP.NET Ajax CDN and Windows Azure CDN. This simple extension method will improve the performance of your website as well as saving server capacity (i.e. money).

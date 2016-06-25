@@ -4,7 +4,7 @@ layout: post
 title: ASP.NET MVC RC on Mosso
 categories:
   - ASP.NET
-reirect_from: /2009/02/aspnet-mvc-rc-on-mosso/
+redirect_from: /2009/02/aspnet-mvc-rc-on-mosso/
 ---
 
 Today, I setup my first production ASP.NET MVC website. After a little investigation and a contact to Mosso’s tech support everything went up as planned. The first step is to configure your application like you would for any IIS7 host. You don’t need to have the “mvc” extension after your controllers in your routes. Next upload the application to your Mosso website. When you upload your site make sure you include the ASP.NET MVC dll files in your website’s bin directory. The needed files are System.Web.Abstractions.dll, System.Web.Mvc.dll, and System.Web.Routing.dll. These files will be located in Program FilesMicrosoft ASP.NETASP.NET MVC RCAssemblies on your computer. At this point your default route should be working. The last thing to take care of is resolving the 404 error you will receive when accessing urls within the site.

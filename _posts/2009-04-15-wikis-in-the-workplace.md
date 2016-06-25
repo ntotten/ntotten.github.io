@@ -4,7 +4,7 @@ layout: post
 title: Wikis In the Workplace
 categories:
   - Notes
-reirect_from: /2009/04/wikis-in-the-workplace/
+redirect_from: /2009/04/wikis-in-the-workplace/
 ---
 
 Most likely when you hear the work “wiki” you think of [Wikipedia](http://en.wikipedia.org/wiki/Main_Page). Wikipedia, as you probably know, is a wildly popular online encyclopedia. If you haven’t integrated Wikipedia into your daily live you are really missing out, but that isn’t the topic of this post. This post is about the role of wikis in the workplace.

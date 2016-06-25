@@ -4,7 +4,7 @@ layout: post
 title: Editing a Local Windows Azure Project with the Emulator Running
 categories:
   - Windows Azure
-reirect_from: /2011/10/editing-a-local-windows-azure-project-with-the-emulator-running/
+redirect_from: /2011/10/editing-a-local-windows-azure-project-with-the-emulator-running/
 ---
 
 While working on another blog post today I just discovered a hidden gem in the Windows Azure Emulator. You can now edit projects and files while the emulator is running and view these changes without restarting the Windows Azure emulator. For anyone who does lots of local development for Windows Azure this is a huge time saver. These changes were actually made in SDK 1.3 and refreshed in SDK 1.4.1, but somehow I did not notice them.

@@ -4,7 +4,7 @@ layout: post
 title: Getting Serious About Online Personal Security - Two-Factor Authentication
 categories:
   - Notes
-reirect_from: >-
+redirect_from: >-
   /2012/12/getting-serious-about-online-personal-security-two-factor-authentication/
 ---
 

@@ -5,7 +5,7 @@ title: Using Windows Azure Mobile Services with the Facebook SDK for Windows Pho
 categories:
   - Facebook
   - Windows Azure
-reirect_from: >-
+redirect_from: >-
   /2013/03/using-windows-azure-mobile-services-with-the-facebook-sdk-for-windows-phone/
 ---
 

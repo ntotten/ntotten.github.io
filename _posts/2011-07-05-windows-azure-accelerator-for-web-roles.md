@@ -5,7 +5,7 @@ title: Windows Azure Accelerator for Web Roles
 categories:
   - ASP.NET
   - Windows Azure
-reirect_from: /2011/07/windows-azure-accelerator-for-web-roles/
+redirect_from: /2011/07/windows-azure-accelerator-for-web-roles/
 ---
 
 I am excited to announce the first release of the [Windows Azure Accelerator for Web Roles](https://github.com/microsoft-dpe/wa-accelerator-webroles). This accelerator enables you to deploy websites to a Windows Azure role with multiple instances using Web Deploy. You can now easily and quickly build, test, and deploy sites on Windows Azure using Web Deploy while still utilizing the full scale and reliability of Windows Azure.

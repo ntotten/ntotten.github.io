@@ -4,7 +4,7 @@ layout: post
 title: 'Dynamic C# with Frequently Changing Web Services'
 categories:
   - Facebook
-reirect_from: /2010/08/dynamic-csharp-with-frequently-changing-web-services/
+redirect_from: /2010/08/dynamic-csharp-with-frequently-changing-web-services/
 ---
 
 The introduction of dynamic objects in C# 4.0 has been somewhat controversial in the .Net community. Some people argue that dynamic should be left to only dynamic languages such as Ruby. Personally, I love this new feature in C# and I believe there are some very good reasons to use dynamic in your code. Once such example is when building frameworks that interact with frequently changing web services.

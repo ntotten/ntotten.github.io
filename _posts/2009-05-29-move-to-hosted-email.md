@@ -4,7 +4,7 @@ layout: post
 title: Move to Hosted Email
 categories:
   - Notes
-reirect_from: /2009/05/move-to-hosted-email/
+redirect_from: /2009/05/move-to-hosted-email/
 ---
 
 The time for an organization to host and maintain their own email system has passed. For many years, I have been a proponent of Microsoft Exchange Server and Small Business Server. I have helped many smaller sized organizations install and support these email systems. However, with the vast selection of free or inexpensive hosted email solutions available I can longer see any reason that would justify an organization maintaining their own email system.

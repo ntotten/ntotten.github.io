@@ -4,7 +4,7 @@ layout: post
 title: IIS Extensions on Windows Azure
 categories:
   - Windows Azure
-reirect_from: /2011/04/iis-extensions-on-windows-azure/
+redirect_from: /2011/04/iis-extensions-on-windows-azure/
 ---
 
 I have had a few questions recently about using IIS Extensions in Windows Azure. I thought it would be a good idea to clarify a few things and start a list of what extensions will work and which ones either won’t work or aren’t needed. First, off it is important to remember that a Windows Azure Web Role runs regular IIS so you can pretty much do anything you want to it.

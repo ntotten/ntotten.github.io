@@ -4,7 +4,7 @@ layout: post
 title: 'Facebook C# SDK Road Map'
 categories:
   - Facebook
-reirect_from: /2012/02/facebook-c-sdk-road-map/
+redirect_from: /2012/02/facebook-c-sdk-road-map/
 ---
 
 **_Disclaimer - The Facebook C# SDK is not a Microsoft project. The Facebook C# SDK as well as this post are the work and opinions of myself and not those of Microsoft._**

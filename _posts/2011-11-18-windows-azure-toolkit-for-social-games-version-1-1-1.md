@@ -4,7 +4,7 @@ layout: post
 title: Windows Azure Toolkit for Social Games Version 1.1.1
 categories:
   - Windows Azure
-reirect_from: /2011/11/windows-azure-toolkit-for-social-games-version-1-1-1/
+redirect_from: /2011/11/windows-azure-toolkit-for-social-games-version-1-1-1/
 ---
 
 I just released a minor update to the [Windows Azure Toolkit for Social Games](http://go.microsoft.com/fwlink/?LinkID=234210) Version 1.1. You can download this release [here](http://go.microsoft.com/fwlink/?LinkID=234062). This release updates the toolkit to use [Windows Azure Tools and SDK Version 1.6](http://blogs.msdn.com/b/windowsazure/archive/2011/11/14/updated-windows-azure-sdk-amp-windows-azure-hpc-scheduler-sdk.aspx). Additionally, this release includes a few minor, but significant, performance enhancements.

@@ -4,7 +4,7 @@ layout: post
 title: Paste into the Windows Command Prompt with Keyboard Shortcut
 categories:
   - Notes
-reirect_from: /2012/12/paste-into-the-windows-command-prompt-with-keyboard-shortcut/
+redirect_from: /2012/12/paste-into-the-windows-command-prompt-with-keyboard-shortcut/
 ---
 
 [Paste into the Windows Command Prompt with Keyboard Shortcut](http://stackoverflow.com/questions/131955/keyboard-shortcut-to-paste-clipboard-content-into-command-prompt-window-win-xp)

@@ -4,7 +4,7 @@ layout: post
 title: Windows Azure Toolkit for Social Games Version 1.1
 categories:
   - Windows Azure
-reirect_from: /2011/11/windows-azure-toolkit-for-social-games-version-1-1/
+redirect_from: /2011/11/windows-azure-toolkit-for-social-games-version-1-1/
 ---
 
 I am happy to report that we have updated the [Windows Azure Toolkit for Social Games](http://go.microsoft.com/fwlink/p/?LinkID=234210) to version 1.1. You can download the release [here](http://go.microsoft.com/fwlink/p/?LinkID=234062). This version is a significant step forward and enables developers to more easily and quickly build out their social games on the Windows Azure Platform.
