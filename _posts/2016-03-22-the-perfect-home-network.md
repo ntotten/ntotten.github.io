@@ -14,7 +14,7 @@ On the other hand you can do it right. Depending on the size of your house you c
 Below is my current recommendation for the "perfect" home network. Fair warning, I am not a network engineer. I am just an enthusiast who has tried a bunch of things and found something that works well for me.
 
 ## Router
-You want a seperate router. Don't even think about buying a router + access point + coffee maker type device. They are crap, don't do it. Additionally, you usually want your tangle of wires to be in a closet or off to some corner of the office - this is exactly where you DON'T WANT your access point.
+You want a separate router. Don't even think about buying a router + access point + coffee maker type device. They are crap, don't do it. Additionally, you usually want your tangle of wires to be in a closet or off to some corner of the office - this is exactly where you DON'T WANT your access point.
 
 My current recommendation for a router is the [Ubiquiti EdgeRouter™ PoE](https://www.ubnt.com/edgemax/edgerouter-poe/) (Model ERPoe‑5). This is an awesome and versatile router. It has all the features a networking junkie would want, but it is easy enough for most anyone (at least who is reading this) to setup. I currently use this device to load balance two WAN internet connections and the router has a simple wizard for even this complex setup. This thing is fast, small, and reliable. Plus it has PoE ports which will come in handy when you connect your access points.
 
