@@ -11,3 +11,5 @@ permalink: /:year/:month/:day/:title/
 markdown: kramdown
 gems:
   - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-feed
