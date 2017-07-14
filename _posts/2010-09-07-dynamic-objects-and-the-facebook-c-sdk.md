@@ -9,7 +9,7 @@ redirect_from: /2010/09/dynamic-objects-and-the-facebook-c-sdk/
 
 Developing with Facebook is like building a house on a swamp. Facebook is constantly evolving their platform, adding new features, and making changes. This makes it a challenge for an application developer to keep their application working and up to date. For these reasons, an application developer needs a solid framework to build on that keeps the development experience consistent, intuitive, and flexible.
 
-This is why we have created the [Facebook C# SDK](http://csharpsdk.org/). With this new SDK, .Net developers can quickly and easily create Facebook applications and connected websites using all of the latest and fully supported Facebook APIs.
+This is why we have created the [Facebook C# SDK](https://github.com/facebook-csharp-sdk/facebook-csharp-sdk). With this new SDK, .Net developers can quickly and easily create Facebook applications and connected websites using all of the latest and fully supported Facebook APIs.
 
 There have been many attempts at building Facebook SDKs for .Net developers. Some of them successful and others less so. Most of these SDKs have attempted to create extremely rich service layers that wrap every Facebook API call in static methods. This approach creates a framework that is so large it is difficult to maintain and so complex it is difficult to learn. Our framework solves these problems by heavily relying on the new C# dynamic objects.
 

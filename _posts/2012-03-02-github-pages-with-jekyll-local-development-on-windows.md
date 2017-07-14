@@ -7,7 +7,7 @@ categories:
 redirect_from: /2012/03/github-pages-with-jekyll-local-development-on-windows/
 ---
 
-I love [Github pages](http://pages.github.com). They make writing simple sites, blogs, or even [complex documentation](http://csharpsdk.org) super enjoyable. Github pages uses [Jekyll](https://github.com/mojombo/jekyll) to build your markdown or other site content into static HTML pages. While it is easy to push new content to Github and preview changes in your live site, sometimes you want to develop and test your site locally. In order to do this you will need to install Ruby and Jekyll on your local machine. Since I do much of my development on Windows 7 or Windows 8 I wanted to have Jekyll setup on these machines as well. Below you see how to install and use Jekyll on your Windows box.
+I love [Github pages](http://pages.github.com). They make writing simple sites, blogs, or even complex documentation super enjoyable. Github pages uses [Jekyll](https://github.com/mojombo/jekyll) to build your markdown or other site content into static HTML pages. While it is easy to push new content to Github and preview changes in your live site, sometimes you want to develop and test your site locally. In order to do this you will need to install Ruby and Jekyll on your local machine. Since I do much of my development on Windows 7 or Windows 8 I wanted to have Jekyll setup on these machines as well. Below you see how to install and use Jekyll on your Windows box.
 
 First, you need to install Ruby. You download the Ruby installer for Windows [here](http://rubyinstaller.org/downloads/). Download the most recent version of Ruby and run the installer. When you install Ruby you will want to select a few options to make ruby easier to use.
 

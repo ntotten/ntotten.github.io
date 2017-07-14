@@ -7,7 +7,7 @@ categories:
 redirect_from: /2012/03/facebook-c-sdk-accepted-as-outercurve-foundation-project/
 ---
 
-We have some exciting news today regarding the Facebook C# SDK. Today [The Outercurve Foundation](http://outercurve.org) has [announced ](http://www.outercurve.org/News/articleType/ArticleView/articleId/54/Outercurve-Foundation-Accepts-Facebook-C-SDK-Project)that the Facebook C# SDK has been accepted to the foundation as part of the[ Data, Language and Systems Interoperability (DLSI) Gallery](http://www.outercurve.org/Galleries/DataLanguagesandSystemsInteroperability). This is an important milestone for the Facebook C# SDK as it even further solidifies the project's place in the Facebook and .Net ecosystem.
+We have some exciting news today regarding the Facebook C# SDK. Today The Outercurve Foundation has announced that the Facebook C# SDK has been accepted to the foundation as part of the Data, Language and Systems Interoperability (DLSI) Gallery. This is an important milestone for the Facebook C# SDK as it even further solidifies the project's place in the Facebook and .Net ecosystem.
 
 For those who have been following the Facebook C# SDK recently, you may have noticed some other big changes as well. In addition to moving the project to [Github](https://github.com/facebook-csharp-sdk), we have also completely rewritten our documentation. You can find the full source of the SDK at [http://github.com/facebook-csharp-sdk](https://github.com/facebook-csharp-sdk).
 
