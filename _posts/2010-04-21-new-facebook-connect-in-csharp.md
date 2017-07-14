@@ -145,5 +145,5 @@ public class ConnectService : IConnectService {
 
 As you can see, this class is responsible for ensuring the user is connected and providing the UserId and SessionKey to the caller. Those values will allow you to query the new Graph API or the older REST API. You can use the [Facebook Toolkit](http://facebooktoolkit.codeplex.com) to query various data as well.
 
-**UPDATE: **I have posted the new Facebook .Net SDK on Github. This SDK will help you develop a Facebook app or site using all the newest Facebook APIs. You can download the SDK and samples here: [http://facebooksdk.net/](http://facebooksdk.net/)
+**UPDATE: **I have posted the new Facebook .Net SDK on Github. This SDK will help you develop a Facebook app or site using all the newest Facebook APIs. You can download the SDK and samples here: [https://github.com/facebook-csharp-sdk/facebook-csharp-sdk](https://github.com/facebook-csharp-sdk/facebook-csharp-sdk)
 
