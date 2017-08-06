@@ -18,7 +18,7 @@ You want a separate router. Don't even think about buying a router + access poin
 
 My current recommendation for a router is the [Unifi Security Gateway](https://www.amazon.com/gp/product/B00LV8YZLK/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00LV8YZLK&linkCode=as2&tag=ntotten-20&linkId=3b9599b0b6cc392bea33d54b640d368e) (Model USG). This is an awesome and versatile router. It has all the features a networking junkie would want, but it is easy enough for most anyone (at least who is reading this) to setup. It integrates with the Unifi control software. It has some extras that you might use like the ability to fail over to a second internet service provider if you need extra reliability.
 
-![](/images/2016/03/edgerouter.jpg)
+![](/images/2016/03/usg.png)
 
 ## Switch
 While you need a decent switch, this is one of the areas that you likely don't need to go crazy. I haven't used it, but I'm sure the [Ubiquiti Switches](https://www.amazon.com/gp/product/B01MU3WUX1/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=ntotten-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B01MU3WUX1&linkId=10447e88c74b0d5bb207072b8dbc7589) are fantastic. If you don't mind the price (or size) I would say go for it. However, for most people (and what I use) the Netgear ProSAFE line of switches will be enough. You can find them on [Amazon](http://www.amazon.com/NETGEAR-ProSAFE-Gigabit-Desktop-GS108-400NAS/dp/B00MPVR50A/) in 5, 8, 16, 24 port configurations.
