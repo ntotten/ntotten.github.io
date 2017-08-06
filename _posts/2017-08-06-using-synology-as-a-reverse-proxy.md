@@ -86,6 +86,8 @@ If you get an error creating the certificate is it likely that port 80 is not be
 
 The last step is to map the correct certificate to the correct application. To do this open the `Configure` settings and set the each host to the correct certificate.
 
+> Note, some applications may require web sockets. Unforutnately, this isn't support out of the box but you can make it work as shown in [these instructions](https://github.com/orobardet/dsm-reverse-proxy-websocket)
+
 ![Certificate Configuration](/images/2017/08/certificate-configure.png)
 
 ## Wrapup
