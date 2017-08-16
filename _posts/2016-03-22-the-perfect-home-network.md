@@ -23,7 +23,7 @@ My current recommendation for a router is the [Unifi Security Gateway](https://w
 ## Switch
 I have two Unifi switches. One in my main wiring closet and one in my home theater closet so that all my video devices are hard wired. They are fantastic and they provide a completely unified management experience with the Unifi Controller. I would recommend the [powered 8 port switch](https://www.ubnt.com/unifi-switching/unifi-switch-8-150w/)
 
-![](/images/2016/03/unifi_switch.jpg)
+![](/images/2016/03/unifi_switch.png)
 
 ## Access Points
 This part is important. If you want a good wireless network, don't go cheap on this part. First off some basics. There are different protocols for wireless access points. New computers and phones support [802.11ac](https://en.wikipedia.org/wiki/IEEE_802.11ac). You want this. AC wireless is faster than the old protocols like N, B, G, etc.
