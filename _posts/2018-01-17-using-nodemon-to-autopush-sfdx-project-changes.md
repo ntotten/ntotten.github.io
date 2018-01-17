@@ -1,8 +1,8 @@
 ---
 date: 2018-01-17
 layout: post
-title: Using Watchman to Automatically Push SFDX Project Changes
-description: How to use the watchman too to push change to files in an SFDX project to your scratch org automatically when files are saved.
+title: Using Nodemon to Automatically Push SFDX Project Changes
+description: How to use the nodemon too to push change to files in an SFDX project to your scratch org automatically when files are saved.
 ---
 
 Several people have asked if it was possible to have changes to your local files automatically pushed to your scratch org when you save. This can be helpful if you are making small changes to things like CSS and need to test the output in the browser quickly.
