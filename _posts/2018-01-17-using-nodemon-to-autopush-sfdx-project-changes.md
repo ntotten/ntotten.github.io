@@ -35,4 +35,4 @@ Next, you will need to edit your `package.json` file and add a new section calle
 
 You can read more about the config of nodemon [here](https://github.com/remy/nodemon), but basically what you need to know is that `watch` specifies the folder to monitor, in this case `force-app`, `exec` is the script that is run, `ext` is the file extensions to monitor, and `delay` is the time in milliseconds to wait between saves. The delay is useful if you same multiple files quickly so that ideally all files are pushed at the same time.
 
-Finally, when you want to run this auto-push on save simply run `npx nodemon` in the command line and let it run. It will run continuously until you stop it.
+Finally, when you want to enable auto-push on save simply run `npx nodemon` in the command line. It will run continuously until you stop it.
