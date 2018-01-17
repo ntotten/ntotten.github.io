@@ -6,8 +6,10 @@ description: How to use the nodemon too to push change to files in an SFDX proje
 ---
 
 Several people have asked if it was possible to have changes to your local files automatically pushed to your scratch org when you save. This can be helpful if you are making small changes to things like CSS and need to test the output in the browser quickly.
-Fortunately, this is easy using a tool called [nodemon](https://nodemon.io/). Nodemon allows developers to monitor a folder for file changes of all or some file types and then respond by running a script. In our case, we can use this to watch the app's source folder and run the SFDX CLI to push code changes on file saves.
+Fortunately, there is easy using a tool called [nodemon](https://nodemon.io/) that can solve this problem. Nodemon allows developers to monitor a folder for file changes of all or some file types and then respond by running a script. In our case, we can use this to watch the app's source folder and run the SFDX CLI to push code changes on file saves.
+
 To start, you will need to install nodemon. Installation can be done quickly using npm. If you don't already have [node.js](https://nodejs.org/en/) installed on your computer, you will need to do this first.
+
 If you don't already have a `package.json` file in your project you will need to create one using the command below in the root of your project. You can accept all the defaults.
 
 ```bash
