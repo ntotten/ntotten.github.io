@@ -2,7 +2,7 @@
 date: 2018-07-22
 layout: post
 title: Running NGINX on Heroku with Docker
-description: Deploy a Docker image running NGINX on Heroku in just a few lines of config.
+description: Deploy a Docker container running NGINX on Heroku in just a few lines of config.
 ---
 
 Docker is a great way to manage your NGINX deployments. Heroku is a great place to deploy Docker. While many of the buildpacks on Heroku use NGINX and can be configured to also serve as a reverse proxy, it sometimes is useful to run NGINX on its own.
@@ -35,7 +35,7 @@ server {
 }
 ```
 
-Next, create an app in Heroku and deploy the image by running the following commands.
+Next, create an app in Heroku and deploy the container by running the following commands.
 
 > Note you need to login to Heroku (`heroku login` and to the container service (`heroku container:login`) through the CLI before you run the next commands.
 
@@ -45,4 +45,4 @@ heroku container:push web --app <APPNAME>
 heroku container:release web --app <APPNAME>
 ```
 
-And that's it, you now have NGINX deployed as a Docker image to Heroku.
+And that's it, you now have NGINX deployed as a Docker container on Heroku.
