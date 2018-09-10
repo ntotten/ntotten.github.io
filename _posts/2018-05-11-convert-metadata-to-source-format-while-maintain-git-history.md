@@ -5,9 +5,23 @@ title: Converting Salesforce Metadata to Source Format While Maintain Git Histor
 description: Learn how to correctly convert the metadata of your large project to source format while keeping your git history intact.
 ---
 
-If you have a massive Salesforce project that is in metadata format and tracked in git, you have a lot of valuable history in that project. You cannot merely do a bulk convert on that project to the new source format and lose complete access to that history. It is a little work, but it is possible to do the conversion and maintain your git history. 
+UPDATE: I ran into another option that might be even easier for some people. Git has a [configuration option](http://www.brettallred.com/blog/2012/02/18/you-may-want-to-set-your-merge-renamelimit-git) that controls how many files it will scan to determine renames. I tested this option out and it seemed to pick up all renames except for custom objects in a single commit.
 
-First, I'll explain the reason this isn't working. When you rename a file in git usually it is pretty good about detecting the changes. However, the problem arises when there is an enormous amount of changes at one time. Git has [built in limits](https://stackoverflow.com/questions/13805750/git-fails-to-detect-renaming/13808715#13808715), and it will fail to figure out what renames occurred because there is too much going on. 
+```bash
+git config merge.renameLimit 999999
+sfdx force:mdapi:convert -r src -d src2
+rm -rf src
+mv src2 src
+git add -A
+git commit -m "Converted from metadata to source format"
+git config --unset merge.renameLimit # Return the git config option to the default
+```
+
+---
+
+If you have a massive Salesforce project that is in metadata format and tracked in git, you have a lot of valuable history in that project. You cannot merely do a bulk convert on that project to the new source format and lose complete access to that history. It is a little work, but it is possible to do the conversion and maintain your git history.
+
+First, I'll explain the reason this isn't working. When you rename a file in git usually it is pretty good about detecting the changes. However, the problem arises when there is an enormous amount of changes at one time. Git has [built in limits](https://stackoverflow.com/questions/13805750/git-fails-to-detect-renaming/13808715#13808715), and it will fail to figure out what renames occurred because there is too much going on.
 
 The solution on the surface is simple. Do the convert in smaller chunks. However, there are a few caveats to be aware. Below I will walk through the steps used for converting an application (in this case dreamhouse in metadata form).
 
@@ -89,7 +103,7 @@ To do the convert with Custom Objects you would run the following.
 $ mkdir ./project/force-app/main/default/objects
 $ mkdir ./project/force-app/main/default/objects/MyObject__c
 $ mv ./tempproj/force-app/main/default/objects/MyObject__c/MyObject__c.object-meta.xml /
-     ./project/force-app/main/default/objects/MyObject__c/MyObject__c.object-meta.xml 
+     ./project/force-app/main/default/objects/MyObject__c/MyObject__c.object-meta.xml
 $ rm ./project/metadata/objects/MyObject__c.object
 $ git add -A
 $ git commit -m "Converted MyObject to source format"
@@ -103,6 +117,6 @@ $ git add -A
 $ git commit -m "Added MyObject expanded source files"
 ```
 
-You should be able to repeat either of these two processes for everything in your project to maintain the source history after your move to the new source format. 
+You should be able to repeat either of these two processes for everything in your project to maintain the source history after your move to the new source format.
 
 Let me know if you run into any issues or have any suggestions: [@ntotten](https://twitter.com/ntotten).
