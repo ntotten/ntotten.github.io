@@ -5,7 +5,7 @@ title: Converting Salesforce Metadata to Source Format While Maintain Git Histor
 description: Learn how to correctly convert the metadata of your large project to source format while keeping your git history intact.
 ---
 
-UPDATE: I ran into another option that might be even easier for some people. Git has a [configuration option](http://www.brettallred.com/blog/2012/02/18/you-may-want-to-set-your-merge-renamelimit-git) that controls how many files it will scan to determine renames. I tested this option out and it seemed to pick up all renames except for custom objects in a single commit.
+**UPDATE on 2018-09-10**: I ran into another option that might be even easier for some people. Git has a [configuration option](http://www.brettallred.com/blog/2012/02/18/you-may-want-to-set-your-merge-renamelimit-git) that controls how many files it will scan to determine renames. I tested this option out and it seemed to pick up all renames except for custom objects in a single commit.
 
 ```bash
 git config merge.renameLimit 999999
