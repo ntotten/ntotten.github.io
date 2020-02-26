@@ -21,7 +21,6 @@ Next, add the following code to your application.
 
 ```php
 <?php
-use Auth0\SDK\Helpers\JWKFetcher;
 use Auth0\SDK\Helpers\Tokens\AsymmetricVerifier;
 use Auth0\SDK\Helpers\Tokens\IdTokenVerifier;
 
