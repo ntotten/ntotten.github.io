@@ -9,12 +9,14 @@ I recently was working on a simple PHP utility that was secured with an `.htacce
 
 I am a huge fan of Cloudflare and their [Cloudflare Access](https://developers.cloudflare.com/access/about/how-access-works/) product was a perfect fit to move this application to modern authentication. To secure your app with Cloudflare Access you should both restrict access to only [Cloudflare's IPs](https://www.cloudflare.com/ips/) and most importantly [verify the JWT](https://developers.cloudflare.com/access/setting-up-access/validate-jwt-tokens/) that is sent by Cloudflare.
 
-To verify the token, I am using the [Auth0-PHP](https://github.com/auth0/auth0-PHP) library. The library is mostly just a wrapper around [lcobucci/jwt](https://github.com/lcobucci/jwt), but I found the interface to be much simpler to use.
+To verify the token, I am using the [Auth0-PHP](https://github.com/auth0/auth0-PHP) library. The library is mostly just a wrapper around [lcobucci/jwt](https://github.com/lcobucci/jwt), but I found the interface to be much simpler to use. We will also use Guzzel for HTTP requests and a simple utility to convert certificates.
 
-To install it run:
+To install the dependancies:
 
 ```txt
 $ composer require auth0/auth0-php
+$ composer require codercat/jwk-to-pem
+$ composer require guzzlehttp/guzzle:~6.0
 ```
 
 Next, add the following code to your application.
@@ -23,6 +25,10 @@ Next, add the following code to your application.
 <?php
 use Auth0\SDK\Helpers\Tokens\AsymmetricVerifier;
 use Auth0\SDK\Helpers\Tokens\IdTokenVerifier;
+use CoderCat\JWKToPEM\JWKConverter;
+
+$issuer = getenv('CLOUDFLARE_ACCESS_ISSUER');
+$aud = getenv('CLOUDFLARE_ACCESS_AUD');
 
 $cfAuth = $_COOKIE['CF_Authorization'] ?? '';
 
@@ -31,15 +37,28 @@ if (empty($cfAuth)) {
   exit();
 }
 
-$id_token = rawurldecode($cfAuth);
+function getKey($jwksUrl)
+{
+  $client = new GuzzleHttp\Client();
+  $res = $client->request('GET', $jwksUrl);
 
-$issuer = getenv('CLOUDFLARE_ACCESS_ISSUER');
-$aud = getenv('CLOUDFLARE_ACCESS_AUD');
-$key_id = getenv('CLOUDFLARE_ACCESS_KEY_ID');
-$key = getenv('CLOUDFLARE_ACCESS_PUBLIC_KEY');
+  if ($res->getStatusCode() != '200') {
+    throw new \Exception('Could not fetch JWKS');
+  }
+
+  $json = $res->getBody();
+  $jwks = json_decode($json);
+  $key_id = $jwks->keys[0]->kid;
+
+  $jwkConverter = new JWKConverter();
+  $key = $jwkConverter->toPEM((array) $jwks->keys[0]);
+  return [$key_id => $key];
+}
 
 try {
-  $signature_verifier = new AsymmetricVerifier([$key_id => $key]);
+  $id_token = rawurldecode($cfAuth);
+  $key = getKey($issuer . '/cdn-cgi/access/certs');
+  $signature_verifier = new AsymmetricVerifier($key);
   $token_verifier = new IdTokenVerifier($issuer, $aud, $signature_verifier);
   $user_identity = $token_verifier->verify($id_token);
   // Do something with identity if you need
@@ -56,18 +75,6 @@ The `CLOUDFLARE_ACCESS_ISSUER` is just your cloudflare Access domain `https://<a
 
 The `CLOUDFLARE_ACCESS_AUD` can be found on the Cloudflare dashboard when creating an access policy, it is called `Audience Tag` in the dashboard.
 
-To get the `CLOUDFLARE_ACCESS_KEY_ID` run the following command.
-
-```txt
-$ curl -s https://<account>.cloudflareaccess.com/cdn-cgi/access/certs | jq '.keys[0].kid'
-```
-
-And, finally to get the `CLOUDFLARE_ACCESS_PUBLIC_KEY` run this command and copy the results.
-
-```txt
-$ curl -s https://<account>.cloudflareaccess.com/cdn-cgi/access/certs | jq '.keys[0]' | lokey to pem
-```
-
-Set all those environmental variables and everything should be good. If you need to access the account details you can get the `sub` and `email` claims from the `$user_identity` object returned when you verify the token.
+Set those environmental variables and everything should be good. If you need to access the account details you can get the `sub` and `email` claims from the `$user_identity` object returned when you verify the token.
 
 That's it, your app is now secured with modern identity that can be setup with single-sign-on.
